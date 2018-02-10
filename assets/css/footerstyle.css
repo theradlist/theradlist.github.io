@@ -1,0 +1,10 @@
+
+/* Footer Style */
+
+.site-footer .rightcontent {
+    height: 100px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

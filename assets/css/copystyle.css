@@ -1,0 +1,56 @@
+/* Copy Style (style of text) */
+
+@import url("https://use.typekit.net/kmt3uyl.css");
+body {
+    color: #757575;
+    font-family: 'nimbus-sans', sans-serif;
+    line-height: 1.278;
+    -webkit-transition: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+h1 {
+    font-family: "eloquent-jf-pro", serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+p {
+    margin-top: 0
+}
+
+.signature {
+    color: darkgray;
+    font-size: smaller;
+    margin-left: 5px;
+}
+
+.site-footer p {
+    font-size: small;
+    margin: 15px;
+}
+
+
+/* Link style */
+
+a.red,
+h1 a {
+    color: #ed1c24;
+    font-weight: normal;
+}
+
+a.red:hover,
+h1 a:hover {
+    color: darker(#ed1c24, 20%)
+}
+
+a {
+    color: #757575;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darker(#757575, 20%)
+}
