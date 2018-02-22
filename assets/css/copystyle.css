@@ -16,6 +16,16 @@ h1 {
     font-weight: normal;
 }
 
+h1.big-text {
+    font-size: 3vw;
+}
+
+@media all and (max-width:850px) {
+    h1.big-text {
+        font-size: 7vw;
+    }
+}
+
 p {
     margin-top: 0
 }

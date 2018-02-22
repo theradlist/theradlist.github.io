@@ -8,3 +8,8 @@
     flex-direction: column;
     justify-content: center;
 }
+
+/* Push footer to below the screen */
+main {
+    min-height: 100vh; 
+}

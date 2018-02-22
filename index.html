@@ -56,7 +56,7 @@
 
       <div class="bg-image">
         <img class="desktop" title="" alt="" src="./assets/images/bg-cropped.png">
-        <img class="mobile" title="" alt="" src="./assets/images/bg-cropped.png">
+        <img class="mobile" title="" alt="" src="./assets/images/bg-cropped-mobile.png">
       </div>
 
       <div id="logo">theradlist</div>
@@ -70,29 +70,32 @@
       <div class="wrapper">
 
         <div class="text-container">
-          <h1 id="forgoogle"><img id="eicon" alt="G" title="G" src="./assets/images/EdmontonEIconified.png">dmonton is poppin'</h1>
+          <h1 id="forgoogle" class="big-text">
+            Foodies take note, <br/> Edmonton is <i>poppin'</i>
+          </h1>
 
           <div class="copy">
 
-            <p>but only if you know where you can explore. the rad list is a foodie's treat to the city. <span class="hide-inline">Lorem ipsum dolor sit amet, no delectus mandamus his. Vel lorem numquam petentium te, iisque phaedrum salutandi eos in. Quo no mutat errem erroribus. Voluptatum inciderint eum ad.</span>&nbsp;<a class="red" href="#">more</a></p>
+            <p>but only for those that look it seems. Here to help you see, TheRADList, look through Edmonton's most interesting bars, cafe's and restraunts. 
+              <a class="red read-more" href="#">more</a></p>
 
-            <div class="hide"><p>Repellendus eu etiam ut egestas, nunc magna in mattis lacus lacus, pede ut mauris id, massa nec elit egestas aenean nec cras.</p>
+            <div class="hide">
+              <p>What is theradlist? Proin in, sit volutpat ipsum nec luctus ut, orci viverra nulla vel, vestibulum ut, arcu nulla tristique morbi. Posuere dolor pellentesque nullam. Massa amet duis volutpat sagittis tincidunt quam, quis est ac. Tellus tincidunt vel nulla tincidunt, turpis phasellus, lorem pede.</p>
 
-            <p>What is theradlist? Proin in, sit volutpat ipsum nec luctus ut, orci viverra nulla vel, vestibulum ut, arcu nulla tristique morbi. Posuere dolor pellentesque nullam. Massa amet duis volutpat sagittis tincidunt quam, quis est ac. Tellus tincidunt vel nulla tincidunt, turpis phasellus, lorem pede.</p>
+              <p>We are excited about…</p>
+              <ul>
+                <li>Exploring more of what Edmonton has to offer.</li>
+                <li>Sharing those places with you.</li>
+                <li>And hopefully… as a result of all this, make Edmonton feel a little more happening.</li>
+              </ul>
 
-            <p>We are excited about…</p>
-            <ul>
-              <li>Exploring more of what Edmonton has to offer.</li>
-              <li>Sharing those places with you.</li>
-              <li>And hopefully… as a result of all this, make Edmonton feel a little more happening.</li>
-            </ul>
-
-            <p>What could be better? No wonder we are so excited to keep building up this website and continue adding to @theradlist.</p></div>
+              <p>What could be better? No wonder we are so excited to keep building up this website and continue adding to @theradlist.</p>
+            </div>
 
           </div>
 
           <br>
-          <p class="signature">Radhika Kalra</p>
+          <p class="signature">By Radhika Kalra</p>
 
         </div>
 
@@ -108,8 +111,15 @@
 
     <script>
       function getHeight(el){var el_style=window.getComputedStyle(el),el_display=el_style.display,el_max_height=el_style.maxHeight.replace("px","").replace("%",""),wanted_height=0;if(el_display!=="none"&&el_max_height!=="0")return el.offsetHeight;el.style.display="block";wanted_height=el.offsetHeight;el.style.display=el_display;return wanted_height}
-function toggleSlide(el){var el_max_height=0;if(el.getAttribute("data-max-height"))if(el.style.maxHeight.replace("px","").replace("%","")==="0")el.style.maxHeight=el.getAttribute("data-max-height");else el.style.maxHeight="0";else{el_max_height=getHeight(el)+"px";el.style["transition"]="max-height 0.5s ease-in-out";el.style.overflowY="hidden";el.style.maxHeight="0";el.setAttribute("data-max-height",el_max_height);el.style.display="block";setTimeout(function(){el.style.maxHeight=el_max_height},10);
-setTimeout(function(){document.querySelector(".hide").style["transition"]="all 0s 0s ease";document.querySelector(".hide").style["max-height"]="none"},700)}}if(window.addEventListener)document.querySelector(".read-more").addEventListener("click",function(e){this.style.display="none";document.querySelector(".hide-inline").style.display="inline";toggleSlide(document.querySelector(".hide"));e.preventDefault();return false},false);
+      function toggleSlide(el){var el_max_height=0;if(el.getAttribute("data-max-height"))if(el.style.maxHeight.replace("px","").replace("%","")==="0")el.style.maxHeight=el.getAttribute("data-max-height");else el.style.maxHeight="0";else{el_max_height=getHeight(el)+"px";el.style["transition"]="max-height 0.5s ease-in-out";el.style.overflowY="hidden";el.style.maxHeight="0";el.setAttribute("data-max-height",el_max_height);el.style.display="block";setTimeout(function(){el.style.maxHeight=el_max_height},10);
+      setTimeout(function(){document.querySelector(".hide").style["transition"]="all 0s 0s ease";document.querySelector(".hide").style["max-height"]="none"},700)}}if(window.addEventListener)document.querySelector(".read-more").addEventListener("click",function(e){this.style.display="none";document.querySelector(".hide-inline").style.display="inline";toggleSlide(document.querySelector(".hide"));e.preventDefault();return false},false);
+      if(window.addEventListener)
+        document.querySelector(".read-more").addEventListener("click",function(e){
+          this.style.display="none";
+          // document.querySelector(".hide-inline").style.display="inline";
+          toggleSlide(document.querySelector(".hide"));
+          e.preventDefault();
+          return false},false);
     </script>
   
 
