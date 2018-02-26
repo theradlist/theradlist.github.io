@@ -2,7 +2,7 @@
 
 @import url("https://use.typekit.net/kmt3uyl.css");
 body {
-    color: #757575;
+    color: #A0A1A4;
     font-family: 'nimbus-sans', sans-serif;
     line-height: 1.278;
     -webkit-transition: none;
@@ -20,6 +20,10 @@ h1.big-text {
     font-size: 3vw;
 }
 
+h1.big-text i {
+    color: #F75648;
+}
+
 @media all and (max-width:850px) {
     h1.big-text {
         font-size: 7vw;
@@ -31,7 +35,7 @@ p {
 }
 
 .signature {
-    color: darkgray;
+    color: #C6C7C9;
     font-size: smaller;
     margin-left: 5px;
 }
@@ -46,21 +50,21 @@ p {
 
 a.red,
 h1 a {
-    color: #ed1c24;
+    color: #F75648;
     font-weight: normal;
 }
 
 a.red:hover,
 h1 a:hover {
-    color: darker(#ed1c24, 20%)
+    color: darker(#F75648, 20%)
 }
 
 a {
-    color: #757575;
+    color: #A0A1A4;
     font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
-    color: darker(#757575, 20%)
+    color: darker(#A0A1A4, 20%)
 }

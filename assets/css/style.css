@@ -1,5 +1,4 @@
-
-/* Chrome-Windows font anti-aliasing fix */
+                        /* Chrome-Windows font anti-aliasing fix */
 
 #forgoogle {
     margin-bottom: 51px;
@@ -228,7 +227,6 @@ body {
     padding: 0
 }
 
-
 #menu li {
     display: inline-block;
     padding-left: 20px
@@ -278,19 +276,13 @@ footer.site-footer {
 }
 
 #logo {
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    color: transparent;
-    font: 0 / 0 a;
-    text-shadow: none;
-    background: url(../img/logo_2x.png) 0 0 no-repeat;
-    background-size: 100px 24px;
-    height: 24px;
     left: 36px;
     position: absolute;
     top: 27px;
-    width: 100px;
-    z-index: 999
+    z-index: 999; 
+    width: 64px; 
+    height: 33px;
+    border: none; 
 }
 
 #logo img {
@@ -298,7 +290,7 @@ footer.site-footer {
 }
 
 .lt-ie9 #logo {
-    background-image: url(../img/logo_1x.png)
+    background-image: url(../images/ColourWhiteIcon128.png)
 }
 
 #eicon {
