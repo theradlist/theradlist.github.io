@@ -133,7 +133,7 @@ body {
 
 .wrapper {
     box-sizing: border-box;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
     padding-left: 185px;
     padding-top: 225px;
     position: relative
@@ -331,15 +331,21 @@ footer.site-footer {
     }
 }
 
+.section {
+    padding-top: 30px; 
+    width: 70%; 
+    margin: 0 auto; 
+}
+
 @media all and (max-width:700px) {
-    #forgoogle {}
+    #forgoogle }
     @media all and (max-width: 449px) {
-        #forgoogle {}
+        #forgoogle }
         .lt-ie9 #forgoogle {
             @media all and (max-width:700px) {
-                .lt-ie9 #forgoogle {}
+                .lt-ie9 #forgoogle }
                 @media all and (max-width:449px) {
-                    .lt-ie9 #forgoogle {}
+                    .lt-ie9 #forgoogle }
                     #forgoogle:after {
                         #signature {
                             margin-left:-15px;
