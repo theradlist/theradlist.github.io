@@ -332,7 +332,7 @@ var list = [
 // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
 // var shuffledlist = shuffle(list);
 function shuffle(sourceArray) {
-    for (var i = 0; i < sourceArray.length - 1; i++) {
+    for (var i = 0; i < 11; i++) {
         var j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
         var temp = sourceArray[j];
@@ -351,3 +351,32 @@ console.log(featuredPlace.place_id);
 
 
 // });
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 53.518, lng: -113.511 },
+        zoom: 10
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails({
+        placeId: featuredPlace.place_id 
+    }, function (place, status) {
+        console.log(place.geometry.location.lat()); 
+        console.log(place.geometry.location.lng()); 
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                    'Place ID: ' + place.place_id + '<br>' +
+                    place.formatted_address + '</div>');
+                infowindow.open(map, this);
+            });
+        }
+    });
+}
