@@ -24,6 +24,13 @@ h1.big-text i {
     color: #F75648;
 }
 
+@media all and (max-width: 1160px) {
+    h1.big-text {
+        font-size: 5vw;
+        margin-left: 10px; 
+    }
+}
+
 @media all and (max-width:850px) {
     h1.big-text {
         font-size: 7vw;
@@ -44,7 +51,6 @@ p {
     font-size: small;
     margin: 15px;
 }
-
 
 /* Link style */
 
