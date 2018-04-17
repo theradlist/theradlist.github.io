@@ -292,6 +292,17 @@ footer.site-footer {
     border: none; 
 }
 
+@media all and (max-width:480px) {
+    #logo {
+        left: unset; 
+        right: 36px; 
+        height: 25px; 
+    }
+    .wrapper {
+        padding-top: 130px; 
+    }
+}
+
 #logo img {
     image-rendering: optimizeQuality
 }
