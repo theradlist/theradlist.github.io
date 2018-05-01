@@ -390,6 +390,24 @@ function initMap() {
                 ]
             },
             {
+                "featureType": "administrative",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
                 "featureType": "administrative.land_parcel",
                 "elementType": "labels.text.fill",
                 "stylers": [
@@ -400,10 +418,27 @@ function initMap() {
             },
             {
                 "featureType": "poi",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
                 "elementType": "geometry",
                 "stylers": [
                     {
                         "color": "#eeeeee"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "visibility": "off"
                     }
                 ]
             },
@@ -444,6 +479,15 @@ function initMap() {
                 ]
             },
             {
+                "featureType": "road",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
                 "featureType": "road.arterial",
                 "elementType": "labels.text.fill",
                 "stylers": [
@@ -472,10 +516,27 @@ function initMap() {
             },
             {
                 "featureType": "road.local",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
                 "elementType": "labels.text.fill",
                 "stylers": [
                     {
                         "color": "#9e9e9e"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "stylers": [
+                    {
+                        "visibility": "off"
                     }
                 ]
             },
@@ -530,11 +591,48 @@ function initMap() {
                 position: place.geometry.location
             });
             google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                    'Place ID: ' + place.place_id + '<br>' +
-                    place.formatted_address + '</div>');
-                infowindow.open(map, this);
+                // infowindow.setContent('<div style="z-index: 2;"><strong>' + place.name + '</strong><br>' + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</div>');
+                // infowindow.open(map, this);
+                console.log("hi"); 
+                $(".map .highlight-card .card-content .card-title").empty(); 
+                $(".map .highlight-card .card-content .card-title").append(place.name);
+                $(".map .highlight-card .card-content p").empty();
+                $(".map .highlight-card .card-content p").append(place.name); 
             });
         }
     });
+}
+
+function makeObj() {
+    var dict = {}
+    dict["name"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > div.section-hero-header.white-foreground > div.section-hero-header-description > div:nth-child(1) > h1").innerText
+    dict["description"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > jsl > button > div > div:nth-child(1) > div.section-editorial-quote.section-editorial-divider > span").innerHTML
+    dict["short_description"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > div.section-hero-header.white-foreground > div.section-hero-header-description > div.section-hero-header-description-container > div > div:nth-child(2) > span.section-rating-term > span:nth-child(1) > button").innerHTML
+    
+    // API: 
+        // rating given 
+        // location given 
+        // open/closed given
+        // picture given 
+
+    // tags 
+    var tags = []; 
+    
+    var highlights = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(2) > div.section-attribute-group-container").innerText.split("\n"); 
+    highlights.pop(); 
+    tags.append(highlights); 
+
+    var atmosphere = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(14) > div.section-attribute-group-container").innerText.split("\n");
+    atmosphere.pop(); 
+    tags.append(atmosphere); 
+
+    var offerings = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(8) > div.section-attribute-group-container").innerText.split("\n")
+    offerings.pop(); 
+    tags.append(offerings); 
+
+    var amenities = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(11) > div.section-attribute-group-container").innerText.split("\n"); 
+    amenities.pop(); 
+    tags.append(amenities); 
+
+    dict["tags"] = tags; 
 }
