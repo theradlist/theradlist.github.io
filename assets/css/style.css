@@ -138,7 +138,7 @@ body {
     -webkit-flex: 1 0 auto
 }
 
-.wrapper {
+.top.wrapper {
     box-sizing: border-box;
     /* padding-bottom: 200px; */
     padding-left: 185px;
@@ -146,25 +146,25 @@ body {
     position: relative
 }
 
-.error-404 .wrapper {
+.error-404 .top.wrapper {
     padding-right: 30px
 }
 
 @media all and (max-width:1200px) {
-    .wrapper {
+    .top.wrapper {
         padding-left: 160px;
         padding-bottom: 150px
     }
 }
 
 @media all and (max-width:850px) {
-    .wrapper {
+    .top.wrapper {
         padding-left: 135px
     }
 }
 
 @media all and (max-width:700px) {
-    .wrapper {
+    .top.wrapper {
         padding-top: 160px;
         padding-left: 100px;
         padding-bottom: 100px
@@ -172,14 +172,14 @@ body {
 }
 
 @media all and (max-width:600px) {
-    .wrapper {
+    .top.wrapper {
         padding-top: 160px;
         padding-left: 80px
     }
 }
 
 @media all and (max-width:500px) {
-    .wrapper {
+    .top.wrapper {
         padding-top: 120px;
         padding-left: 36px
     }
@@ -298,7 +298,7 @@ footer.site-footer {
         right: 36px; 
         height: 25px; 
     }
-    .wrapper {
+    .top.wrapper {
         padding-top: 130px; 
     }
 }
