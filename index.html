@@ -57,14 +57,14 @@
 	
 	<main class="outer-container">
 		
-		<div class="bg-image">
+		<!-- <div class="bg-image">
 			<img class="desktop" title="" alt="" src="./assets/images/bg-cropped.png">
 			<img class="mobile" title="" alt="" src="./assets/images/bg-cropped-mobile.png">
 		</div>
 		
 		<img id="logo" src="./assets/images/Logo500.png" />
 		
-		<nav id="menu">
+		<nav id="menu"> -->
 			<ul>
 				<!-- <li><a href="#" target="_blank">Suggest</a></li> -->
 			</ul>
@@ -120,206 +120,112 @@
 		</div>
 		
 		<div class="search section">
-			<div id="filters">
-				<div class="size-filter">
-					<div class="title">How Much Do You <br> Want to Know?</div>
-					<div class="filter-links size-toggle">
-						<a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
-							<div class="emoji"></div>
-							<span>Skim</span>
-						</a>
-						<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
-							<div class="emoji"></div>
-							<span>Peruse</span>
-						</a>
-						<a href="#" class=" detailed" data-size="large" onclick="changeSize({'name':'detailed', 'class':'large'})">
-							<div class="emoji"></div>
-							<span>Deep Dive</span>
-						</a>
-					</div>
-				</div>
-			</div>
 		</div>
 		
 		<div class="list section">
 			<div id="main-content">
 				<div style="position:relative; z-index:6;">
+					<div id="filters">
+						<div class="size-filter">
+							<div class="title">How Much Do You
+								<br> Want to Know?</div>
+							<div class="filter-links size-toggle">
+								<a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
+									<div class="emoji"></div>
+									<span>Skim</span>
+								</a>
+								<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
+									<div class="emoji"></div>
+									<span>Peruse</span>
+								</a>
+								<a href="#" class=" detailed" data-size="large" onclick="changeSize({'name':'detailed', 'class':'large'})">
+									<div class="emoji"></div>
+									<span>Deep Dive</span>
+								</a>
+							</div>
+						</div>
+					</div>
 					<div id="item-list" class="grid">
 						<div id="list-players">
 							<div class="card-item col-xs-12 guards has-hover" data-player-id="luka_doncic" data-id="1">
-								<div id="luka_doncic" class="offset-id"></div>
 								<div class="card-info show-info-">
 								</div>
 								<div class="wrapper">
 									<div class="rank-column background-theme">
-										<div class="image">
-											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Luka-Doncic-2-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Luka-Doncic-2-small.png"
+										<!-- <div class="image">
+											<img src="http://dorinku.ca/wp-content/uploads/2015/07/index.jpg" data-src="http://dorinku.ca/wp-content/uploads/2015/07/index.jpg"
 											alt="LUKA DONCIC" class="not-hover image-loaded">
-											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Luka-Doncic-3-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Luka-Doncic-3-small.png"
+											<img src="http://dorinku.ca/wp-content/uploads/2015/07/index.jpg" data-src="http://dorinku.ca/wp-content/uploads/2015/07/index.jpg"
 											alt="LUKA DONCIC" class="hover-image image-loaded">
-										</div>
-										<div class="ringer-coverage"></div>
+										</div> -->
 									</div>
 									<div class="info-column">
 										<div class="medium-show">
 											<div class="player-main">
-												<h3>RESTAURANT</h3>
+												<h3>Dorinku</h3>
 												<h4>
-													<strong>Point Guard</strong>
+													<strong>Izakaya Restaurant</strong>
 												</h4>
-												<h4>Real Madrid / Slovenia</h4>
-											</div>
-											<div class="player-stats">
-												<ul>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">PTS</span>
-															<span class="number">14.5</span>
-															<span class="detail color-theme">23.3 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">REB</span>
-															<span class="number">5.2</span>
-															<span class="detail color-theme">8.4 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">AST</span>
-															<span class="number">4.7</span>
-															<span class="detail color-theme">7.5 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">EFG%</span>
-															<span class="number">53.4</span>
-															<span class="detail color-theme">585 FGA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">STL</span>
-															<span class="number">1.1</span>
-															<span class="detail color-theme">1.8 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">BLK</span>
-															<span class="number">0.4</span>
-															<span class="detail color-theme">0.6 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">3PT%</span>
-															<span class="number">31.0</span>
-															<span class="detail color-theme">281 3PA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">FT%</span>
-															<span class="number">80.2</span>
-															<span class="detail color-theme">288 FTA</span>
-														</div>
-													</li>
-												</ul>
+												<h4>Whyte Ave</h4>
 											</div>
 											<div class="player-meta">
 												<div>
 													<div class="medium-column">
 														<div class="ringer-stat">
-															<span class="label non-mobile is-tablet">Main Selling Point</span>
-															<span class="label is-mobile">Main Selling Point:</span>
-															<span class="value">Playmaking</span>
+															<span class="label non-mobile is-tablet">Vibe</span>
+															<span class="label is-mobile">Vibe:</span>
+															<span class="value">Chill</span>
 														</div>
 														<div>
-															<span class="label">Age</span>
-															<span class="value">19.2</span>
-														</div>
-													</div>
-													<div class="medium-column">
-														<div>
-															<span class="label">Height/Weight</span>
-															<span class="value">6'8''/228</span>
-														</div>
-														<div>
-															<span class="label">Wingspan</span>
-															<span class="value">N/A</span>
+															<span class="label">Price</span>
+															<span class="value">Moderate</span>
 														</div>
 													</div>
 													<div class="medium-column">
 														<div>
-															<span class="label">Standing Reach</span>
-															<span class="value">N/A</span>
+															<span class="label">Service</span>
+															<span class="value">Lax</span>
+														</div>
+														<div>
+															<span class="label">Food Quality</span>
+															<span class="value">Good</span>
+														</div>
+													</div>
+													<div class="medium-column">
+														<div>
+															<span class="label">Food Amount</span>
+															<span class="value">Nice</span>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="player-description">
-												<div class="player-headline">A basketball prodigy dominating the ACB and EuroLeague as a teenager who could become a game-changing NBA playmaker.</div>
+												<div class="player-headline">Creative takes on Japanese street fare, from sushi to ramen & beef, in a chic space with a full bar.</div>
 												<div class="player-subline">
-													<strong>Shades Of:</strong> James Harden, Jumbo Manu Ginobili, Tyreke Evans
+													<strong>Types Of Food:</strong> Sushi/Sashimi, Noodles, Meat
 												</div>
 											</div>
 										</div>
 										<div class="player-info">
 											<div class="player-plus-minus">
-												<h6>PLUSES</h6>
+												<h6>NOTES</h6>
 												<ul>
-													<li>Transcendent passer: Throws Manu-style overhead whips, accurate cross-court dimes, and no-looks that’ll make highlight
-														reels.
+													<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 													</li>
-													<li>Puts perfect velocity and touch on passes, plus has the height to pass over the defense.
+													<li>Faucibus turpis in eu mi bibendum neque egestas. Amet facilisis magna etiam tempor orci eu lobortis elementum.
 													</li>
-													<li>Surgically navigates pick-and-rolls, snaking to the middle, keeping defenders on his back, and picking defenses
-														apart as a passer.
+													<li>Tristique et egestas quis ipsum suspendisse ultrices. Scelerisque varius morbi enim nunc faucibus a. Condimentum vitae sapien
 													</li>
-													<li>Advanced ball handler for his age with an excellent feel for using crossovers, hesitations, and different speeds.
+													<li>pellentesque habitant morbi. In pellentesque massa placerat duis ultricies. Ultricies integer quis auctor elit sed. Cras adipiscing
 													</li>
-													<li>Draws a ton of fouls; knows how to use his thick, strong frame to create and absorb contact.
+													<li>enim eu turpis egestas pretium aenean. In tellus integer feugiat scelerisque varius morbi enim nunc faucibus
 													</li>
-													<li>Feathery touch on floaters and layups. His outstanding free throw percentage suggests he can develop into a knockdown
-														shooter.
+													<li>Bibendum ut tristique et egestas quis ipsum suspendisse. Mattis rhoncus urna neque viverra justo nec
 													</li>
-													<li>Flashes Harden-like upside on jumpers off the dribble; he can stop abruptly, smoothly step back, and launch.
-													</li>
-													<li>Advanced at using fakes to shake defenses loose when running through screens or cutting.
-													</li>
-													<li>Skilled post player; he uses his excellent footwork to work into turnaround jumpers, up-and-unders, drop steps,
-														and hook shots.
-													</li>
-													<li>Excellent rebounder for his position, and he quickly turns boards into transition offense.
-													</li>
-													<li>Competitive, physical defender who hustles, closes out hard, and battles on switches.
-													</li>
-													<li>Displays a special level of maturity: He’s excelled in the world’s second-best league and come up clutch in tense
-														moments.
-													</li>
-												</ul>
-												<h6>MINUSES</h6>
-												<ul>
-													<li>Struggles to contain quicker, more explosive players due to average agility and lateral quickness.
-													</li>
-													<li>Pick-and-roll defense must improve in terms of positioning and fighting over screens.
-													</li>
-													<li>Doesn’t create a ton of separation when turning the corner on drives due to lack of elite burst. Ends up settling
-														for contested midrange pull-ups.
-													</li>
-													<li>Jumper needs some slight adjustments: He occasionally misses left or right. Could stand to speed up his release.
-													</li>
-													<li>Rarely uses his left hand to finish around the rim, which is important to develop for a player who lacks explosiveness
-														inside.
+													<li>ultrices dui. Turpis massa sed elementum tempus egestas sed. Quis vel eros donec ac odio.
 													</li>
 												</ul>
 											</div>
-											<h6 class="more-ringer-coverage">
-												<a href="" class="color-theme">SEE MORE RINGER COVERAGE</a>
-											</h6>
 											<div class="player-social">
 												<a href="https://www.facebook.com/sharer/sharer.php?u=https://nbadraft.theringer.com?player=luka_doncic%23luka_doncic" target="_blank"
 												class="facebook">Share To Facebook</a>
@@ -347,177 +253,90 @@
 								</div>
 							</div>
 							<div class="card-item col-xs-12 bigs has-hover" data-player-id="deandre_ayton" data-id="2">
-								<div id="deandre_ayton" class="offset-id"></div>
 								<div class="card-info show-info-">
 								</div>
 								<div class="wrapper">
 									<div class="rank-column background-theme">
-										<div class="nba-team-wrapper">
-											<span>Sacramento Kings</span>
-										</div>
-										<div class="image">
+										<!-- <div class="image">
 											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Deandre-Ayton-2-1-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Deandre-Ayton-2-1-small.png"
 											alt="DEANDRE AYTON" class="not-hover image-loaded">
 											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Deandre-Ayton-3-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Deandre-Ayton-3-small.png"
 											alt="DEANDRE AYTON" class="hover-image image-loaded">
-										</div>
-										<div class="ringer-coverage"></div>
+										</div> -->
 									</div>
 									<div class="info-column">
 										<div class="medium-show">
 											<div class="player-main">
-												<h3 style="font-size:;">DEANDRE AYTON</h3>
+												<h3>Rostizado</h3>
 												<h4>
-													<strong>Center</strong>
+													<strong>Mexican Restaurant</strong>
 												</h4>
-												<h4>Arizona, Freshman</h4>
-											</div>
-											<div class="player-stats">
-												<ul>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">PTS</span>
-															<span class="number">20.1</span>
-															<span class="detail color-theme">24.0 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">REB</span>
-															<span class="number">11.6</span>
-															<span class="detail color-theme">13.8 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">AST</span>
-															<span class="number">1.6</span>
-															<span class="detail color-theme">1.9 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">EFG%</span>
-															<span class="number">62.5</span>
-															<span class="detail color-theme">451 FGA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">STL</span>
-															<span class="number">0.6</span>
-															<span class="detail color-theme">0.7 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">BLK</span>
-															<span class="number">1.9</span>
-															<span class="detail color-theme">2.3 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">3PT%</span>
-															<span class="number">34.3</span>
-															<span class="detail color-theme">35 3PA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">FT%</span>
-															<span class="number">73.3</span>
-															<span class="detail color-theme">191 FTA</span>
-														</div>
-													</li>
-												</ul>
+												<h4>Downtown</h4>
 											</div>
 											<div class="player-meta">
 												<div>
 													<div class="medium-column">
 														<div class="ringer-stat">
-															<span class="label non-mobile is-tablet">Main Selling Point</span>
-															<span class="label is-mobile">Main Selling Point:</span>
-															<span class="value">All-NBA upside</span>
+															<span class="label non-mobile is-tablet">Vibe</span>
+															<span class="label is-mobile">Vibe:</span>
+															<span class="value">Fun</span>
 														</div>
 														<div>
-															<span class="label">Age</span>
-															<span class="value">19.8</span>
-														</div>
-													</div>
-													<div class="medium-column">
-														<div>
-															<span class="label">Height/Weight</span>
-															<span class="value">7'0''/243</span>
-														</div>
-														<div>
-															<span class="label">Wingspan</span>
-															<span class="value">7'5''</span>
+															<span class="label">Price</span>
+															<span class="value">Expensive</span>
 														</div>
 													</div>
 													<div class="medium-column">
 														<div>
-															<span class="label">Standing Reach</span>
-															<span class="value">8'11"</span>
+															<span class="label">Service</span>
+															<span class="value">Lax</span>
+														</div>
+														<div>
+															<span class="label">Food Quality</span>
+															<span class="value">Superb</span>
+														</div>
+													</div>
+													<div class="medium-column">
+														<div>
+															<span class="label">Food Amount</span>
+															<span class="value">Lots</span>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="player-description">
-												<div class="player-headline">A star center prospect whose body was built by the basketball gods, with a potentially elite two-way game.</div>
+												<div class="player-headline">Elevated, creative Mexican cuisine served in stylish surrounds accented with brick & exposed wood.</div>
 												<div class="player-subline">
-													<strong>Shades Of:</strong> Patrick Ewing, Karl-Anthony Towns, DeMarcus Cousins
+													<strong>Types Of Food:</strong> Prensados, Carnitas, Meat Platters
 												</div>
 											</div>
 										</div>
 										<div class="player-info">
 											<div class="player-plus-minus">
-												<h6>PLUSES</h6>
+												<h6>NOTES</h6>
 												<ul>
-													<li>Has wide shoulders and a thick frame with room to add even more muscle.
+													<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 													</li>
-													<li>Bouncy athlete vertically, but also very fluid and agile. He has light feet like a dancer, and runs the floor like
-														a T-800 android.
+													<li>Faucibus turpis in eu mi bibendum neque egestas. Amet facilisis magna etiam tempor orci eu lobortis elementum.
 													</li>
-													<li>Excellent finisher around the rim using either hand. Knows how to use angles and footwork to create space on the
-														post.
+													<li>Tristique et egestas quis ipsum suspendisse ultrices. Scelerisque varius morbi enim nunc faucibus a. Condimentum vitae
+														sapien
 													</li>
-													<li>Effective shooter due to soft touch and good mechanics; his range projects to the NBA 3-point line.
+													<li>pellentesque habitant morbi. In pellentesque massa placerat duis ultricies. Ultricies integer quis auctor elit sed. Cras
+														adipiscing
 													</li>
-													<li>Better ball handler attacking from the perimeter than he was able to show at Arizona.
+													<li>enim eu turpis egestas pretium aenean. In tellus integer feugiat scelerisque varius morbi enim nunc faucibus
 													</li>
-													<li>Underrated passer who makes accurate outlets and kickouts to shooters and cutters. Stays under control when facing
-														pressure or doubles.
+													<li>Bibendum ut tristique et egestas quis ipsum suspendisse. Mattis rhoncus urna neque viverra justo nec
 													</li>
-													<li>Good rebounder due to his sheer athletic advantage.
-													</li>
-													<li>Potentially a super-switchable defender with the length and power to defend true bigs and the lateral quickness
-														to contain wings and guards.
-													</li>
-													<li>Does a good job of altering shots without fouling by keeping his hands straight up and not reaching.
-													</li>
-												</ul>
-												<h6>MINUSES</h6>
-												<ul>
-													<li>Gets caught in no-man’s-land too often on defense; are his instincts poor, or does he just need more coaching?</li>
-													<li>Sometimes just flat-out misses on help defense against dribble penetration.
-													</li>
-													<li>Intensity wanes, which has been a knock since he was young; is that because of fatigue, focus, or his mind-set?</li>
-													<li>Low block and steal rates are notable considering his elite measurables and theoretical defensive potential.
-													</li>
-													<li>Occasionally drifts on the perimeter.
-													</li>
-													<li>His hands have improved since high school, but he still occasionally fumbles passes.
+													<li>ultrices dui. Turpis massa sed elementum tempus egestas sed. Quis vel eros donec ac odio.
 													</li>
 												</ul>
 											</div>
-											<h6 class="more-ringer-coverage">
-												<a href="" class="color-theme">SEE MORE RINGER COVERAGE</a>
-											</h6>
 											<div class="player-social">
-												<a href="https://www.facebook.com/sharer/sharer.php?u=https://nbadraft.theringer.com?player=deandre_ayton%23deandre_ayton"
-												target="_blank" class="facebook">Share To Facebook</a>
-												<a href="https://twitter.com/intent/tweet?url=https://nbadraft.theringer.com?player=deandre_ayton%23deandre_ayton&amp;text=DEANDRE AYTON is one our players to watch in the NCAA tournament ahead of the 2018 NBA draft. Here’s what you need to know:"
+												<a href="https://www.facebook.com/sharer/sharer.php?u=https://nbadraft.theringer.com?player=luka_doncic%23luka_doncic" target="_blank"
+												class="facebook">Share To Facebook</a>
+												<a href="https://twitter.com/intent/tweet?url=https://nbadraft.theringer.com?player=luka_doncic%23luka_doncic&amp;text=LUKA DONCIC is one our players to watch in the NCAA tournament ahead of the 2018 NBA draft. Here’s what you need to know:"
 												target="_blank" class="twitter">Share To Twitter</a>
 											</div>
 										</div>
@@ -541,172 +360,94 @@
 								</div>
 							</div>
 							<div class="card-item col-xs-12 bigs has-hover" data-player-id="jaren_jackson" data-id="3">
-								<div id="jaren_jackson" class="offset-id"></div>
 								<div class="card-info show-info-">
 								</div>
 								<div class="wrapper">
 									<div class="rank-column background-theme">
-										<div class="nba-team-wrapper">
-											<span>Atlanta Hawks</span>
-										</div>
-										<div class="image">
+										<!-- <div class="image">
 											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Jaren-Jackson-2-1-2-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Jaren-Jackson-2-1-2-small.png"
 											alt="JAREN JACKSON JR." class="not-hover image-loaded">
 											<img src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Jaren-Jackson-3-1-small.png" data-src="https://d3gmc2itu3p9gx.cloudfront.net/public/media/nba2018/Jaren-Jackson-3-1-small.png"
 											alt="JAREN JACKSON JR." class="hover-image image-loaded">
-										</div>
-										<div class="ringer-coverage"></div>
+										</div> -->
 									</div>
 									<div class="info-column">
 										<div class="medium-show">
 											<div class="player-main">
-												<h3 style="font-size:57px;">JAREN JACKSON JR.</h3>
+												<h3 style="font-size:57px;">Bar Bricco</h3>
 												<h4>
-													<strong>Big</strong>
+													<strong>Wine Bar</strong>
 												</h4>
-												<h4>Michigan State, Freshman</h4>
-											</div>
-											<div class="player-stats">
-												<ul>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">PTS</span>
-															<span class="number">10.9</span>
-															<span class="detail color-theme">20.0 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">REB</span>
-															<span class="number">5.8</span>
-															<span class="detail color-theme">10.6 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">AST</span>
-															<span class="number">1.1</span>
-															<span class="detail color-theme">2.0 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">EFG%</span>
-															<span class="number">59.5</span>
-															<span class="detail color-theme">232 FGA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">STL</span>
-															<span class="number">0.6</span>
-															<span class="detail color-theme">1.1 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">BLK</span>
-															<span class="number">3.0</span>
-															<span class="detail color-theme">5.5 per 40</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">3PT%</span>
-															<span class="number">39.6</span>
-															<span class="detail color-theme">96 3PA</span>
-														</div>
-													</li>
-													<li>
-														<div class="stat-wrap">
-															<span class="title">FT%</span>
-															<span class="number">79.7</span>
-															<span class="detail color-theme">133 FTA</span>
-														</div>
-													</li>
-												</ul>
+												<h4>Jasper Ave</h4>
 											</div>
 											<div class="player-meta">
 												<div>
 													<div class="medium-column">
 														<div class="ringer-stat">
-															<span class="label non-mobile is-tablet">Main Selling Point</span>
-															<span class="label is-mobile">Main Selling Point:</span>
-															<span class="value">Versatile defense</span>
+															<span class="label non-mobile is-tablet">Vibe</span>
+															<span class="label is-mobile">Vibe:</span>
+															<span class="value">Conversational</span>
 														</div>
 														<div>
-															<span class="label">Age</span>
-															<span class="value">18.7</span>
-														</div>
-													</div>
-													<div class="medium-column">
-														<div>
-															<span class="label">Height/Weight</span>
-															<span class="value">6'11"/240</span>
-														</div>
-														<div>
-															<span class="label">Wingspan</span>
-															<span class="value">7'4"</span>
+															<span class="label">Price</span>
+															<span class="value">Expensive</span>
 														</div>
 													</div>
 													<div class="medium-column">
 														<div>
-															<span class="label">Standing Reach</span>
-															<span class="value">9'1"</span>
+															<span class="label">Service</span>
+															<span class="value">Attendant</span>
+														</div>
+														<div>
+															<span class="label">Food Quality</span>
+															<span class="value">Superb</span>
+														</div>
+													</div>
+													<div class="medium-column">
+														<div>
+															<span class="label">Food Amount</span>
+															<span class="value">Nice</span>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="player-description">
-												<div class="player-headline">One of the youngest players in the draft is also one of the safest bets. Jackson projects as a reliable two-way big man.
-												</div>
+												<div class="player-headline">A boisterous 30-seat Italian wine and spuntini bar. Sharable cured meats and cheeses imported from Italy, as well as house-made pastas, crostini, and other small plates.</div>
 												<div class="player-subline">
-													<strong>Shades Of:</strong> Myles Turner, millionaire’s Taj Gibson, billionaire’s Amile Jefferson
+													<strong>Types Of Food:</strong> Wine, Cured Meats and Cheeses
 												</div>
 											</div>
 										</div>
 										<div class="player-info">
 											<div class="player-plus-minus">
-												<h6>PLUSES</h6>
+												<h6>NOTES</h6>
 												<ul>
-													<li>Ambidextrous shot blocker with superb timing and closing speed.
+													<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 													</li>
-													<li>Effective when switching ball screens onto guards and wings.
+													<li>Faucibus turpis in eu mi bibendum neque egestas. Amet facilisis magna etiam tempor orci eu lobortis elementum.
 													</li>
-													<li>Glue-guy skills; cuts well, runs the floor hard, finishes with either hand.
+													<li>Tristique et egestas quis ipsum suspendisse ultrices. Scelerisque varius morbi enim nunc faucibus a. Condimentum vitae
+														sapien
 													</li>
-													<li>Shows flashes finishing with power when he has space, though he must get stronger to finish through contact.
+													<li>pellentesque habitant morbi. In pellentesque massa placerat duis ultricies. Ultricies integer quis auctor elit sed. Cras
+														adipiscing
 													</li>
-													<li>Spaces the floor well and shows ability to attack with straight-line drives.
+													<li>enim eu turpis egestas pretium aenean. In tellus integer feugiat scelerisque varius morbi enim nunc faucibus
 													</li>
-													<li>Odd shooting mechanics with fling motion on a low release. It works, but he’ll need to show it can translate in
-														the NBA.
+													<li>Bibendum ut tristique et egestas quis ipsum suspendisse. Mattis rhoncus urna neque viverra justo nec
 													</li>
-													<li></li>
-												</ul>
-												<h6>MINUSES</h6>
-												<ul>
-													<li>Inconsistent rebounder who lacks physicality boxing out; he isn’t the quickest leaper from a standstill position.
-													</li>
-													<li>His lack of mass and strength means that he doesn’t deter opponents from driving the lane. Bites on too many shot
-														fakes.
-													</li>
-													<li>Predictable when asked to create; handle gets too loose in traffic, and he tends to drive left.
-													</li>
-													<li>Average touch on post-ups and tough-angle layups.
+													<li>ultrices dui. Turpis massa sed elementum tempus egestas sed. Quis vel eros donec ac odio.
 													</li>
 												</ul>
 											</div>
-											<h6 class="more-ringer-coverage">
-												<a href="" class="color-theme">SEE MORE RINGER COVERAGE</a>
-											</h6>
 											<div class="player-social">
-												<a href="https://www.facebook.com/sharer/sharer.php?u=https://nbadraft.theringer.com?player=jaren_jackson%23jaren_jackson"
-												target="_blank" class="facebook">Share To Facebook</a>
-												<a href="https://twitter.com/intent/tweet?url=https://nbadraft.theringer.com?player=jaren_jackson%23jaren_jackson&amp;text=JAREN JACKSON JR. is one our players to watch in the NCAA tournament ahead of the 2018 NBA draft. Here’s what you need to know:"
+												<a href="https://www.facebook.com/sharer/sharer.php?u=https://nbadraft.theringer.com?player=luka_doncic%23luka_doncic" target="_blank"
+												class="facebook">Share To Facebook</a>
+												<a href="https://twitter.com/intent/tweet?url=https://nbadraft.theringer.com?player=luka_doncic%23luka_doncic&amp;text=LUKA DONCIC is one our players to watch in the NCAA tournament ahead of the 2018 NBA draft. Here’s what you need to know:"
 												target="_blank" class="twitter">Share To Twitter</a>
 											</div>
 										</div>
+										
 									</div>
 									<div class="toggle-card" onclick="toggleCard(this)">
 										<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.5 39.5">
@@ -728,41 +469,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div> 
-				<div class="list-item">
-					<div class="name">Dorinku</div>
-					<a class="arrow" href="www.arjunkalburgi.com">
-						<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-							<g fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
-								<circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
-								<path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
-							</g>
-						</svg>
-					</a>
-				</div>
-				<div class="list-item">
-					<div class="name">Rostizado</div>
-					<a class="arrow" href="www.arjunkalburgi.com">
-						<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-							<g fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
-								<circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
-								<path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
-							</g>
-						</svg>
-					</a>
-				</div>
-				<div class="list-item">
-					<div class="name">Mayday Dogs</div>
-					<a class="arrow" href="www.arjunkalburgi.com">
-						<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-							<g fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
-								<circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
-								<path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
-							</g>
-						</svg>
-					</a>
 				</div>
 			</div>
 		</div>
