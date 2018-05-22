@@ -398,3 +398,21 @@ function toggleCard(param) {
         param.parentElement.parentElement.className += " expanded-card";
     }
 }
+
+function filterType(t) {
+    $(".filter-position .active").removeClass("active");
+    $("." + t.name).addClass("active");
+
+    $('#item-list').removeClass("filtered all restaurant bar cafe fast-food dessert");
+    if (t.name != "filter-all") {
+        $("#item-list").addClass("filtered " + t.class)
+    }
+}
+
+// $("body").hasClass("show-teams") || (e.filter_id = $(t.currentTarget).data("filter"), i || $(".filter-links .pointer").css({
+//     top: $(t.currentTarget).position().top - 2
+// }), $("#filters .filter-position a.active, #mobile-nav .nav-filter a").removeClass("active"), $(t.currentTarget).addClass("active"), $(window).scrollTop() > e.filterOffsetPos && ($(window).width() < 767 ? $("html,body").scrollTop(e.filterOffsetPos + 40) : $("body,html").animate({
+//     scrollTop: e.filterOffsetPos + 1
+// })), "all" === e.filter_id ? e.$el.removeClass("filtered big guard forward") : (e.$el.removeClass("big guard forward"), e.$el.addClass("filtered " + e.filter_id)), e.$el[0].querySelectorAll(".m-ad").forEach(function (e) {
+//     e.style.display = "none"
+// })

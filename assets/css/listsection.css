@@ -1051,9 +1051,14 @@ body.large .card-item .ringer-coverage {
     body.small .filtered .card-item {
         padding: 0
     }
-    body.small .filtered.big .card-item.bigs,
+    body.small #item-list.filtered.restaurant .card-item.restaurants,
+    body.small #item-list.filtered.bar .card-item.bars,
+    body.small #item-list.filtered.cafe .card-item.cafes,
+    body.small #item-list.filtered.fast-food .card-item.fast-food,
+    body.small #item-list.filtered.dessert .card-item.desserts {
+    /* body.small .filtered.big .card-item.bigs,
     body.small .filtered.forward .card-item.forwards,
-    body.small .filtered.guard .card-item.guards {
+    body.small .filtered.guard .card-item.guards { */
         padding: 15px 0 15px 15px
     }
     body.small .card-item .rank-column {
@@ -3069,18 +3074,28 @@ body #item-list.filtered .card-item {
     margin-bottom: -2px
 }
 
-body #item-list.filtered.big .card-item.bigs,
+/* body #item-list.filtered.big .card-item.bigs,
 body #item-list.filtered.forward .card-item.forwards,
-body #item-list.filtered.guard .card-item.guards {
+body #item-list.filtered.guard .card-item.guards { */
+body #item-list.filtered.restaurant .card-item.restaurants,
+body #item-list.filtered.bar .card-item.bars,
+body #item-list.filtered.cafe .card-item.cafes,
+body #item-list.filtered.fast-food .card-item.fast-food,
+body #item-list.filtered.dessert .card-item.desserts {
     max-height: 3000px;
     opacity: 1;
     margin-bottom: 30px;
     overflow: visible
 }
 
-body.small #item-list.filtered.big .card-item.bigs:not(.expanded-card),
+body.small #item-list.filtered.restaurant .card-item.restaurants:not(.card-item.expanded-card),
+body.small #item-list.filtered.bar .card-item.bars:not(.card-item.expanded-card),
+body.small #item-list.filtered.cafe .card-item.cafes:not(.card-item.expanded-card),
+body.small #item-list.filtered.fast-food .card-item.fast-food:not(.card-item.expanded-card),
+body.small #item-list.filtered.dessert .card-item.desserts:not(.card-item.expanded-card) {
+/* body.small #item-list.filtered.big .card-item.bigs:not(.expanded-card),
 body.small #item-list.filtered.forward .card-item.forwards:not(.expanded-card),
-body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
+body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) { */
     max-height: 145px;
     overflow: hidden
 }
