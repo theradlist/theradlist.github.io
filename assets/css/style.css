@@ -355,6 +355,12 @@ footer.site-footer {
     margin: 0 auto; 
 }
 
+@media all and (max-width: 1200px) {
+    .list.section {
+        width: 90%; 
+    }
+}
+
 @media all and (max-width:700px) {
     #forgoogle }
     @media all and (max-width: 449px) {

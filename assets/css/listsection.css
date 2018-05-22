@@ -1,5 +1,5 @@
 .list {
-    /* padding: 10px; */
+    padding: 10px;
 }
 
 .list .list-item {
@@ -67,6 +67,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 html {
+    text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -210,6 +211,7 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
+    appearance: button;
     -webkit-appearance: button;
     cursor: pointer
 }
@@ -241,13 +243,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=search] {
+    appearance: textfield;
     -webkit-appearance: textfield;
     box-sizing: content-box
 }
 
 input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-decoration {
-    -webkit-appearance: none
+    appearance: none; 
+    -webkit-appearance: none; 
 }
 
 fieldset {
@@ -463,13 +467,16 @@ body:not(.mobile):not(.no-transition) .background-theme-after:after {
 .ringring {
     display: none;
     border: 1px solid #62bd19;
+    border-radius: 30px;
     -webkit-border-radius: 30px;
     height: 13px;
     width: 13px;
     position: absolute;
     left: 0;
     top: 0;
+    animation: pulsate 1.5s ease-out;
     -webkit-animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     opacity: 0
 }
@@ -482,6 +489,28 @@ body.tablet .ringring {
     display: block
 }
 
+
+@keyframes pulsate {
+    0% {
+        -moz-transform: scale(.1, .1);
+        -o-transform: scale(.1, .1);
+        -ms-transform: scale(.1, .1);
+        -webkit-transform: scale(.1, .1);
+        transform: scale(.1, .1);
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        -moz-transform: scale(1.2, 1.2);
+        -o-transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        opacity: 0
+    }
+}
 @-webkit-keyframes pulsate {
     0% {
         -moz-transform: scale(.1, .1);
@@ -530,17 +559,8 @@ body.small .card-item:not(.expanded-card) .rank-column {
     max-width: 15.25%
 }
 
-body.small .card-item:not(.expanded-card) .rank-column .rank {
-    color: #000;
-    font-size: 135px;
-    line-height: .45;
-    text-align: left;
-    left: 20px;
-    right: auto
-}
-
 body.small .card-item:not(.expanded-card) .info-column {
-    max-width: 86.75%
+    max-width: 86.75%; 
 }
 
 body:not(.large) .card-item:not(.expanded-card) {
@@ -560,11 +580,6 @@ body:not(.small) .card-item.has-hover:hover .rank-column img.hover-image {
 body .card-item.expanded-card .rank-column,
 body:not(.small) .card-item .rank-column {
     max-width: calc(100% - 728px)
-}
-
-body .card-item.expanded-card .rank-column .rank,
-body:not(.small) .card-item .rank-column .rank {
-    font-size: 130px
 }
 
 body .card-item.expanded-card .rank-column img,
@@ -799,14 +814,6 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         overflow: visible
     }
-    body.small .card-item:not(.expanded-card) .rank-column .rank {
-        color: #000;
-        font-size: 135px;
-        line-height: .45;
-        text-align: left;
-        left: 20px;
-        right: auto
-    }
     body.small .card-item:not(.expanded-card) .rank-column img {
         display: none
     }
@@ -852,11 +859,6 @@ body.large .card-item .ringer-coverage {
         position: relative;
         overflow: hidden
     }
-    body.small .card-item .rank-column .rank {
-        top: 30px;
-        left: 30px;
-        right: auto
-    }
     body.small .card-item .rank-column img {
         visibility: visible;
         opacity: 1;
@@ -897,12 +899,6 @@ body.large .card-item .ringer-coverage {
         float: none;
         overflow: hidden;
         height: 210px !important
-    }
-    body.medium .card-item .rank-column .rank {
-        font-size: 200px;
-        top: 30px;
-        left: 30px;
-        right: auto
     }
     body.medium .card-item .info-column .player-description {
         margin-bottom: 0
@@ -1014,13 +1010,6 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         overflow: visible
     }
-    body.small .card-item:not(.expanded-card) .rank-column .rank {
-        position: relative;
-        font-size: 93px;
-        left: 0;
-        line-height: .85;
-        color: #000
-    }
     body.small .card-item:not(.expanded-card) .info-column {
         margin-top: 0;
         position: relative;
@@ -1070,17 +1059,7 @@ body.large .card-item .ringer-coverage {
         max-width: 100%;
         background: 0 0;
         padding: 0;
-        float: left
-    }
-    body.small .card-item .rank-column .rank {
-        position: relative;
-        top: auto;
-        right: auto;
-        left: auto;
-        bottom: auto;
-        line-height: 1;
-        font-size: 117px;
-        margin-bottom: -30px
+        float: left;
     }
     body.small .card-item .rank-column img {
         visibility: hidden
@@ -1130,12 +1109,6 @@ body.large .card-item .ringer-coverage {
     body:not(.small) .card-item .rank-column {
         max-width: 100%
     }
-    body .card-item.expanded-card .rank-column .rank,
-    body:not(.small) .card-item .rank-column .rank {
-        font-size: 200px;
-        left: 15px;
-        top: 15px
-    }
     body .card-item.expanded-card .info-column .player-stats,
     body:not(.small) .card-item .info-column .player-stats {
         width: 100%
@@ -1155,11 +1128,6 @@ body.large .card-item .ringer-coverage {
     }
     body:not(.large) .card-item .info-column .player-stats ul li span.detail {
         margin-top: -8px
-    }
-    body.medium .card-item .rank-column .rank {
-        font-size: 200px;
-        top: 15px;
-        left: 15px
     }
     body.medium .card-item .toggle-card {
         bottom: 20px
@@ -1204,14 +1172,6 @@ body.large .card-item .ringer-coverage {
         height: 210px !important;
         overflow: hidden;
         padding: 30px 20px
-    }
-    body .card-item.expanded-card .rank-column .rank,
-    body.large .card-item .rank-column .rank {
-        position: absolute;
-        font-size: 200px;
-        right: auto;
-        left: 15px;
-        top: 15px
     }
     body .card-item.expanded-card .info-column,
     body.large .card-item .info-column {
@@ -1333,42 +1293,6 @@ body.large .card-item .ringer-coverage {
     display: none
 }
 
-    position: relative;
-    background: #fff;
-    width: 82.75%;
-    max-width: 1390px;
-    float: right;
-    padding: 0;
-    z-index: 2;
-    margin-top: -50px
-}
-
-    position: relative;
-    margin-bottom: 15px;
-    text-align: left
-}
-
-    width: calc(25% - 23px)
-}
-
-    height: 195px
-}
-
-    margin-left: 30px
-}
-
-@media (max-width:1200px) {
-        width: 100%
-    }
-        padding-bottom: 0
-    }
-        width: calc(50% - 15px);
-        margin: 0 0 30px
-    }
-        margin-left: 30px
-    }
-}
-
 @media (max-width:767px) {
     .more-coverage {
         padding-bottom: 0
@@ -1378,25 +1302,6 @@ body.large .card-item .ringer-coverage {
     }
     .more-coverage div a:nth-child(n+2) {
         display: none
-    }
-        padding: 0;
-        width: 100%
-    }
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        text-align: left
-    }
-        margin: 15px 0 -40px
-    }
-        max-width: 100%;
-        margin: 0 auto
-    }
-        width: 100% !important;
-        margin: 15px 0 30px !important;
-        float: none
-    }
-        display: block
     }
 }
 
@@ -1577,7 +1482,7 @@ body.large .card-item .ringer-coverage {
     color: #111;
     line-height: 1;
     text-align: left;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     cursor: pointer
 }
 
@@ -1715,7 +1620,7 @@ body.large .card-item .ringer-coverage {
     background-position: right 20px top 27px;
     background-size: 20px auto;
     background-repeat: no-repeat;
-    background-opacity: .35;
+    background-color: rgba(0, 0, 0, .35); 
     -webkit-transition: max-height .15s linear;
     -moz-transition: max-height .15s linear;
     -ms-transition: max-height .15s linear;
@@ -2331,7 +2236,7 @@ body.large .card-item .ringer-coverage {
     #filters .switcher {
         display: inline-block;
         margin-bottom: 0;
-        float: left
+        float: left; 
     }
     #filters .title {
         display: none
@@ -2406,405 +2311,9 @@ body.large .card-item .ringer-coverage {
     }
 }
 
-@font-face {
-    src: url(../../webfonts/DevinylLine-Regular.eot);
-    src: url(../../webfonts/DevinylLine-Regular.eot?#iefix) format("embedded-opentype"), url(../../webfonts/DevinylLine-Regular.woff2) format("woff2"), url(../../webfonts/DevinylLine-Regular.woff) format("woff"), url(../../webfonts/DevinylLine-Regular.ttf) format("truetype"), url(../../webfonts/DevinylLine-Regular.svg#DevinylLine-Regular) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CondensedBold.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CondensedBold.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CondensedBold.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CondensedBold.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CondensedBold.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CondensedBold.svg#GTAmerica-CondensedBold) format("svg");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-Medium.eot);
-    src: url(../../webfonts/hinted-GTAmerica-Medium.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-Medium.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-Medium.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-Medium.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-Medium.svg#GTAmerica-Medium) format("svg");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CompressedUltraLight.svg#GTAmerica-CompressedUltraLight) format("svg");
-    font-weight: 200;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CondensedThin.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CondensedThin.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CondensedThin.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CondensedThin.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CondensedThin.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CondensedThin.svg#GTAmerica-CondensedThin) format("svg");
-    font-weight: 100;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmericaMono-Regular.eot);
-    src: url(../../webfonts/hinted-GTAmericaMono-Regular.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmericaMono-Regular.woff2) format("woff2"), url(../../webfonts/hinted-GTAmericaMono-Regular.woff) format("woff"), url(../../webfonts/hinted-GTAmericaMono-Regular.ttf) format("truetype"), url(../../webfonts/hinted-GTAmericaMono-Regular.svg#GTAmericaMono-Regular) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CompressedThin.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CompressedThin.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CompressedThin.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CompressedThin.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CompressedThin.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CompressedThin.svg#GTAmerica-CompressedThin) format("svg");
-    font-weight: 100;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmericaMono-RegularItalic.eot);
-    src: url(../../webfonts/hinted-GTAmericaMono-RegularItalic.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmericaMono-RegularItalic.woff2) format("woff2"), url(../../webfonts/hinted-GTAmericaMono-RegularItalic.woff) format("woff"), url(../../webfonts/hinted-GTAmericaMono-RegularItalic.ttf) format("truetype"), url(../../webfonts/hinted-GTAmericaMono-RegularItalic.svg#GTAmericaMono-RegularItalic) format("svg");
-    font-weight: 400;
-    font-style: italic
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-Regular.eot);
-    src: url(../../webfonts/hinted-GTAmerica-Regular.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-Regular.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-Regular.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-Regular.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-Regular.svg#GTAmerica-Regular) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-Medium.eot);
-    src: url(../../webfonts/hinted-GTAmerica-Medium.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-Medium.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-Medium.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-Medium.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-Medium.svg#GTAmerica-Medium) format("svg");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CondensedThinItalic.svg#GTAmerica-CondensedThinItalic) format("svg");
-    font-weight: 100;
-    font-style: italic
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CondensedMediumItalic.svg#GTAmerica-CondensedMediumItalic) format("svg");
-    font-weight: 500;
-    font-style: italic
-}
-
-@font-face {
-    src: url(../../webfonts/hinted-GTAmerica-CondensedMedium.eot);
-    src: url(../../webfonts/hinted-GTAmerica-CondensedMedium.eot?#iefix) format("embedded-opentype"), url(../../webfonts/hinted-GTAmerica-CondensedMedium.woff2) format("woff2"), url(../../webfonts/hinted-GTAmerica-CondensedMedium.woff) format("woff"), url(../../webfonts/hinted-GTAmerica-CondensedMedium.ttf) format("truetype"), url(../../webfonts/hinted-GTAmerica-CondensedMedium.svg#GTAmerica-CondensedMedium) format("svg");
-    font-weight: 500;
-    font-style: normal
-}
-
-    position: relative;
-    width: 100%;
-    padding: 250px 0 100px;
-    z-index: 1;
-    display: none
-}
-
-    max-width: 1390px;
-    width: 95%;
-    margin: 0 auto;
-    text-align: center;
-    display: none
-}
-
-    position: relative;
-    height: auto;
-    overflow: hidden;
-    height: 100vh;
-    background-color: #0a131c;
-    color: #fff
-}
-
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    width: 55vw
-}
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    opacity: 0
-}
-
-    opacity: 1
-}
-
-    position: absolute;
-    top: 0;
-    left: 5555px
-}
-
-    right: 0;
-    left: 0
-}
-
-    position: absolute;
-    bottom: 30px;
-    left: 3.5vw
-}
-
-    display: inline-block;
-    vertical-align: bottom;
-    font-weight: 100;
-    color: #fff
-}
-
-    height: 25px;
-    margin-left: 5px
-}
-
-    position: relative;
-    display: block;
-    height: calc(100vh - 40px);
-    text-align: center;
-    z-index: 1;
-    top: auto;
-    max-width: 1400px;
-    margin: 0 auto
-}
-
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    z-index: 2
-}
-
-    opacity: 1
-}
-
-    margin-top: 250px;
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 2
-}
-
-    width: 100%
-}
-
-    padding: 0 3vw;
-    position: relative;
-    font-size: 14vw;
-    line-height: .675;
-    color: #fffefe;
-    text-transform: none;
-    display: block;
-    margin: 0
-}
-
-    font-size: 3vw;
-    line-height: 80%;
-    font-weight: 100
-}
-
-    font-weight: 500;
-    letter-spacing: .02em
-}
-
-    font-weight: 400;
-    text-transform: uppercase
-}
-
-    display: block;
-    text-align: left
-}
-
-    padding: 2vw 3.5vw;
-    text-align: left;
-    font-weight: 100;
-    font-size: 22px
-}
-
-    width: 100%;
-    display: block;
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    background-color: #2a45a7
-}
-
-    content: '';
-    clear: both;
-    display: table
-}
-
-    display: inline-block;
-    max-width: 110px;
-    margin-left: 10px;
-    padding-top: 5px
-}
-
-    display: block;
-    width: 100%
-}
-
-    float: right;
-    padding-top: 5px;
-    padding-right: 15px;
-    padding-bottom: 6px
-}
-
-    display: inline-block;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    font-weight: 100;
-    letter-spacing: .15em;
-    color: #fff;
-    margin-left: 15px
-}
-
-    display: inline-block;
-    padding: 5px 0;
-    color: #fff
-}
-
-@media (min-width:1400px) {
-        font-size: 24vh;
-        line-height: .675
-    }
-        font-size: 44px;
-        line-height: 35px
-    }
-}
-
-@media (max-width:1024px) and (min-width:1024px) {
-        height: auto
-    }
-        height: 100%
-    }
-        position: relative;
-        top: auto;
-        padding: 60px 0 100px;
-        -moz-transform: translateY(0);
-        -o-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-        padding: 0 30px
-    }
-}
-
-@media (max-width:1023px) and (min-width:767px) {
-        min-height: 600px;
-        height: 100vh
-    }
-        height: 100vh;
-        min-height: 559px
-    }
-        bottom: 20%
-    }
-        position: absolute;
-        width: 100%;
-        text-align: left;
-        left: auto;
-        padding: 5vh
-    }
-        font-size: 15px
-    }
-        height: 20px
-    }
-}
-
-@media (max-width:767px) {
-        min-height: 0;
-        height: auto
-    }
-        height: calc(100vh - 38px)
-    }
-        position: absolute;
-        width: 100%;
-        bottom: -100px;
-        padding: 8vh 15px 3vh;
-        -moz-transform: translateY(-40%);
-        -o-transform: translateY(-40%);
-        -ms-transform: translateY(-40%);
-        -webkit-transform: translateY(-40%);
-        transform: translateY(-40%)
-    }
-        padding: 0;
-        font-size: 24vw;
-        padding: 0
-    }
-        font-size: 5vw
-    }
-        padding: 4vw 1vw;
-        font-size: 3vw
-    }
-        position: absolute;
-        top: auto;
-        bottom: 0;
-        width: 55%;
-        margin: 0 auto
-    }
-        width: 100%;
-        height: auto
-    }
-        position: absolute;
-        width: 100%;
-        text-align: left;
-        bottom: 10px;
-        left: auto;
-        padding: 2vh 22px
-    }
-        font-size: 15px
-    }
-        height: 20px
-    }
-}
-
 @media (max-width:475px) {
     nav ul {
         display: none
-    }
-        min-height: 0;
-        height: auto
-    }
-        height: calc(100vh - 36px)
-    }
-        bottom: -100px;
-        padding: 8vh 15px 3vh;
-        -moz-transform: translateY(-40%);
-        -o-transform: translateY(-40%);
-        -ms-transform: translateY(-40%);
-        -webkit-transform: translateY(-40%);
-        transform: translateY(-40%)
-    }
-        padding: 0;
-        font-size: 19.5vh;
-        padding: 0
-    }
-        font-size: 30px
-    }
-        font-size: 16px
-    }
-        position: absolute;
-        top: auto;
-        bottom: 0;
-        width: 55%;
-        margin: 0 auto
-    }
-        width: 100%;
-        height: auto
     }
 }
 
@@ -3004,68 +2513,6 @@ body.large .card-item .ringer-coverage {
     width: 100%
 }
 
-#list-intros {
-    float: right;
-    width: 82.75%
-}
-
-#list-intros .intro {
-    padding: 0 0;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: opacity .25s linear;
-    -moz-transition: opacity .25s linear;
-    -ms-transition: opacity .25s linear;
-    -o-transition: opacity .25s linear;
-    transition: opacity .25s linear;
-    opacity: 0
-}
-
-#list-intros .intro p {
-    margin-bottom: 30px;
-    font-size: 25px;
-    line-height: 1.2;
-    margin-bottom: 7.5px;
-    font-weight: 100;
-}
-
-#list-intros .intro .list-intro-image {
-    width: 80px;
-    float: left;
-    margin-bottom: 30px;
-    margin-right: 15px
-}
-
-#list-intros .intro .list-intro-image img {
-    width: 100%
-}
-
-#list-intros .intro .list-intro-content {
-    width: calc(100% - 100px);
-    float: left
-}
-
-#list-intros .intro:after {
-    clear: both;
-    content: '';
-    display: table
-}
-
-body.jonathan #jonathan-intro {
-    max-height: 100%;
-    opacity: 1
-}
-
-body.kevin #kevin-intro {
-    max-height: 100%;
-    opacity: 1
-}
-
-body.danny #danny-intro {
-    max-height: 100%;
-    opacity: 1
-}
-
 body.personSorting .nba-team-wrapper {
     display: none !important
 }
@@ -3184,7 +2631,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
     -ms-transform: rotate(-90deg) translateX(-100%);
     -webkit-transform: rotate(-90deg) translateX(-100%);
     transform: rotate(-90deg) translateX(-100%);
-    moz-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
     -o-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
@@ -3324,17 +2771,6 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 
 .card-item .rank-column>.nba-team-wrapper {
     display: none
-}
-
-.card-item .rank-column .rank {
-    font-weight: 400;
-    font-size: 150px;
-    position: absolute;
-    top: 24px;
-    right: 25px;
-    line-height: .55;
-    color: #fff;
-    z-index: 3
 }
 
 .card-item .rank-column .movement {
@@ -3943,14 +3379,14 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 
 @media (max-width:1260px) {
     #item-list {
-        width: 1003px
+        /* width: 1003px; */
     }
 }
 
 @media (min-width:1023px) {
     .card-item .rank-column {
-        border-right-top-radius: .625rem;
-        border-right-bottom-radius: .625rem;
+        border-top-right-radius: .625rem;
+        border-bottom-right-radius: .625rem;
         -webkit-border-top-left-radius: .625rem;
         -webkit-border-bottom-left-radius: .625rem;
         -moz-border-radius-topleft: .625rem;
@@ -3978,7 +3414,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         opacity: 1
     }
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div {
-        /* opacity: 0 */
+        opacity: 1;
     }
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div:first-of-type {
         opacity: 1
@@ -4006,10 +3442,6 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
     #item-list {
         width: 100%
     }
-    #list-intros {
-        width: 100%;
-        float: none
-    }
     .card-item>.nba-team-wrapper {
         display: none
     }
@@ -4035,11 +3467,6 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
     }
     .card-item .rank-column .ringer-coverage {
         display: none
-    }
-    .card-item .rank-column .rank {
-        font-size: 200px;
-        top: 23px;
-        left: 25px
     }
     .card-item .rank-column img {
         opacity: 1;
@@ -4128,13 +3555,6 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         top: auto;
         left: auto
     }
-    .card-item .rank-column .rank {
-        font-size: 117px;
-        left: 15px;
-        top: 15px;
-        right: auto;
-        bottom: 15px
-    }
     .card-item .rank-column img {
         margin-left: auto;
         top: 0;
@@ -4151,7 +3571,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         padding: 20px 15px
     }
     .card-item .info-column h3 {
-        font-size: 55px
+        font-size: 25px
     }
     .card-item .info-column h4 {
         font-size: 15px
@@ -4335,7 +3755,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 }
 
 .list_inter .content .inter-title {
-    font-size: 45px;
+    font-size: 15px;
     font-weight: 400;
     line-height: .95;
     padding: 15px 0 7.5px;
@@ -4344,7 +3764,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 
 .list_inter .content .player-name {
     font-weight: 200;
-    font-size: 55px;
+    font-size: 25px;
     text-transform: uppercase;
     line-height: .85;
     padding: 15px 0;
@@ -4384,7 +3804,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         width: 100%
     }
     .list_inter .content .player-name {
-        font-size: 48
+        font-size: 28;
     }
     .list_inter .content .inter-title {
         line-height: .95
