@@ -2241,9 +2241,15 @@ body.large .card-item .ringer-coverage {
     #filters .title {
         display: none
     }
-    #filters .filter-links {
+    #filters div:nth-child(even) .filter-links {
         float: right;
-        margin-bottom: 0
+        margin-bottom: 0; 
+    }
+    #filters div:nth-child(odd) .filter-links {
+        float: left; 
+        margin-bottom: 0; 
+        width: 49%;
+        padding-left: 0; 
     }
     #filters .filter-links .emoji,
     #filters .filter-links .pointer {
@@ -2252,17 +2258,14 @@ body.large .card-item .ringer-coverage {
     #filters #amplitude {
         display: none
     }
-    #filters .size-toggle {
-        float: left
-    }
-    #filters .size-toggle a {
+    #filters div:nth-child(odd) .filter-links a {
         padding: 0;
         margin: 0 15px 0 0
     }
-    #filters .size-toggle li {
+    #filters div:nth-child(odd) .filter-links li {
         left: -3px
     }
-    #filters .size-toggle li:nth-child(3) {
+    #filters div:nth-child(odd) .filter-links li:nth-child(3) {
         right: -3px
     }
     #filters:after {
