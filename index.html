@@ -120,6 +120,69 @@
 		</div>
 		
 		<div class="search section">
+			<div id="sticky-anchor"></div>
+			<div id="sticky-phantom">&nbsp; &nbsp;</div>
+			<nav id="mobile-nav">
+				<div class="toggle-zone">
+				</div>
+				<div class="toggle-close"></div>
+				<div class="filter-logo">
+					<a target="_blank">
+						<img src="assets/images/ColourWhiteIcon64.png" alt="View">
+					</a>
+				</div>
+				<div class="toggle"></div>
+				<div class="current-sort">
+					Filter Restaurants
+				</div>
+				<div class="nav-contents">
+					<div class="nav-actions">
+						<div class="actions-column">
+							<div class="title">How Much Do You
+								<br> Want to Know?
+							</div>
+							<div class="filter-links size-toggle">
+								<a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
+									<div class="emoji"></div>
+									<span>Skim</span>
+								</a>
+								<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
+									<div class="emoji"></div>
+									<span>Peruse</span>
+								</a>
+								<a href="#" class=" detailed" data-size="large" onclick="changeSize({'name':'detailed', 'class':'large'})">
+									<div class="emoji"></div>
+									<span>Deep Dive</span>
+								</a>
+							</div>
+						</div>
+						<div class="actions-column">
+							<div class="title">Sort By Type</div>
+							<div class="filter-links type-toggle">
+								<div class="pointer"></div>
+								<a href="#" class="active filter-all" data-filter="All" onclick="filterType({'name':'filter-all', 'class':'all'})">
+									<span>All</span>
+								</a>
+								<a href="#" class="filter-restaurant" data-filter="Restaurant" onclick="filterType({'name':'filter-restaurant', 'class':'restaurant'})">
+									<span>Restaurant</span>
+								</a>
+								<a href="#" class="filter-bar" data-filter="Bar" onclick="filterType({'name':'filter-bar', 'class':'bar'})">
+									<span>Bar</span>
+								</a>
+								<a href="#" class="filter-cafe" data-filter="Cafe" onclick="filterType({'name':'filter-cafe', 'class':'cafe'})">
+									<span>Cafe</span>
+								</a>
+								<a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType({'name':'filter-fast-food', 'class':'fast-food'})">
+									<span>Fast Food</span>
+								</a>
+								<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType({'name':'filter-dessert', 'class':'dessert'})">
+									<span>Dessert</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
 		</div>
 		
 		<div class="list section">
@@ -128,7 +191,8 @@
 					<div id="filters">
 						<div class="size-filter">
 							<div class="title">How Much Do You
-								<br> Want to Know?</div>
+								<br> Want to Know?
+							</div>
 							<div class="filter-links size-toggle">
 								<a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
 									<div class="emoji"></div>

@@ -385,6 +385,16 @@ function makeObj() {
     dict["tags"] = tags;
 }
 
+toggleMobileNav = function () {
+    $(window).scrollTop() < $("#sticky-anchor").offset().top && !$("#mobile-nav").hasClass("open") && $("body,html").scrollTop($("#sticky-anchor").offset().top + 1), $("#mobile-nav").toggleClass("open")
+}
+
+$("#mobile-nav").on("click", ".toggle-zone", toggleMobileNav);
+$("#mobile-nav").on("click", ".toggle-close", toggleMobileNav);
+// $("#mobile-nav").on("click", ".person", mobileSort);
+// $("#mobile-nav").on("click", ".filter-position a", mobileFilter);
+// $("#mobile-nav .nav-actions").on("click", ".size-toggle a", mobileChangeSize);
+
 function changeSize(s) {
     $(".size-toggle .active").removeClass("active"); 
     $("." + s.name).addClass("active");

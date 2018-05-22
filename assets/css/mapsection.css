@@ -84,3 +84,9 @@
         left: 5%;
     }
 }
+
+@media all and (max-width: 767px) {
+    .map.section {
+        margin-bottom: 150px; 
+    }
+}

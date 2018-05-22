@@ -3574,10 +3574,10 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         padding: 20px 15px
     }
     .card-item .info-column h3 {
-        font-size: 25px
+        font-size: 15px
     }
     .card-item .info-column h4 {
-        font-size: 15px
+        font-size: 13px
     }
     .card-item .info-column .player-main {
         width: 100%;
@@ -3598,7 +3598,10 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         padding-right: 0
     }
     .card-item .info-column .player-description .player-headline {
-        font-size: 23px
+        font-size: 15px; 
+    }
+    .card-item .info-column .player-description .player-subline {
+        font-size: 13px;
     }
     .card-item .info-column .player-stat-image {
         width: 100%;
@@ -3644,7 +3647,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
     .card-item .info-column .player-stats ul li span.detail {
         position: relative;
         bottom: auto;
-        font-size: 10px;
+        font-size: 7px;
         margin: 5px 0 0
     }
     .card-item .info-column .player-info {
@@ -4184,7 +4187,8 @@ h3 .brand {
         display: none
     }
     #mobile-nav.open .toggle {
-        margin-left: 15.5px
+        margin-left: 100%; 
+        float: right; 
     }
     #mobile-nav.open .nav-contents {
         position: relative;
