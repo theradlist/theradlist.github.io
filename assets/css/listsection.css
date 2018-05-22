@@ -519,8 +519,8 @@ body.small .card-item:not(.expanded-card) .toggle-card {
 }
 
 body.small .card-item:not(.expanded-card) .player-main h3 {
-    font-size: 48px;
-    line-height: .85;
+    /* font-size: 48px; */
+    /* line-height: .85; */
     margin-top: 8px
 }
 
@@ -3147,8 +3147,8 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
     opacity: 0
 }
 
-.card-item:hover .card-info .nba-team-wrapper {
-    color: #2a45a7
+body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
+    color: #F75648
 }
 
 .card-item:hover .toggle-card {
@@ -3258,14 +3258,11 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
 }
 
 .card-item h3 {
-    font-weight: 200;
-    font-size: 55px;
-    line-height: .85;
+    font-size: 20px; 
     text-transform: uppercase;
-    letter-spacing: 0;
-    margin-top: -3px;
-    margin-left: -2px;
-    display: inline-block
+    display: inline-block; 
+    font-family: "eloquent-jf-pro", serif; 
+    font-style: italic; 
 }
 
 .card-item h4 {
@@ -3277,7 +3274,7 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
 }
 
 .card-item h4 strong {
-    font-weight: 500
+    font-weight: 700
 }
 
 .card-item h4 strong:after {
@@ -3376,7 +3373,7 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
 }
 
 .card-item .info-column .player-description .player-headline {
-    font-size: 25px;
+    font-size: 18px;
     line-height: 1.2;
     margin-bottom: 7.5px;
     font-weight: 100;
@@ -3963,9 +3960,20 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) {
         opacity: 1
     }
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div {
-        opacity: 0
+        /* opacity: 0 */
     }
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div:first-of-type {
+        opacity: 1
+    }
+    body.small .card-item:not(.expanded-card) .medium-column:nth-of-type(2) {
+        opacity: 1
+    }
+
+    body.small .card-item:not(.expanded-card) .medium-column:nth-of-type(2)>div {
+        opacity: 0
+    }
+
+    body.small .card-item:not(.expanded-card) .medium-column:nth-of-type(2)>div:first-of-type {
         opacity: 1
     }
     body.small .card-item:not(.expanded-card) .player-main {
@@ -4467,7 +4475,6 @@ h1 span.white {
 h3 {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
-    font-size: 20px;
     width: 100%;
     letter-spacing: .15em
 }
