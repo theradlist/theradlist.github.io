@@ -2067,11 +2067,14 @@ body.large .card-item .ringer-coverage {
     transition: top .15s linear
 }
 
+.filter-links {
+    margin-bottom: 30px
+}
+
 .filter-links.size-toggle {
     position: relative;
     vertical-align: top;
     padding: 0;
-    margin-bottom: 30px
 }
 
 .filter-links.size-toggle a {

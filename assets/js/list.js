@@ -400,7 +400,7 @@ function toggleCard(param) {
 }
 
 function filterType(t) {
-    $(".filter-position .active").removeClass("active");
+    $(".type-toggle .active").removeClass("active");
     $("." + t.name).addClass("active");
 
     $('#item-list').removeClass("filtered all restaurant bar cafe fast-food dessert");
