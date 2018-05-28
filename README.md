@@ -1,5 +1,4 @@
-[![alt text](https://cdn-images-1.medium.com/max/2000/1*3A1c7OFEVCFWX-nwayHYdQ.png
-,00000000ffffffff-nd-c0xffffffff-rj-k-no "TheRadList frontpage")](https://www.theradlist.com)
+[![alt text](https://cdn-images-1.medium.com/max/1600/1*3A1c7OFEVCFWX-nwayHYdQ.png "TheRadList frontpage")](https://www.theradlist.com)
 
 ### Introduction
 
