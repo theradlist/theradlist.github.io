@@ -342,55 +342,30 @@ function shuffle(sourceArray) {
 }
 
 var featuredPlace = list[0];
-console.log(featuredPlace.place_id);
 
-// $.each(obj, function (key, object) {
-//     var name = object.name; 
-//     var place_id = object.place_id; 
-
-
-// });
-
-function makeObj() {
-    var dict = {}
-    dict["name"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > div.section-hero-header.white-foreground > div.section-hero-header-description > div:nth-child(1) > h1").innerText
-    dict["description"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > jsl > button > div > div:nth-child(1) > div.section-editorial-quote.section-editorial-divider > span").innerHTML
-    dict["short_description"] = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div > div.section-hero-header.white-foreground > div.section-hero-header-description > div.section-hero-header-description-container > div > div:nth-child(2) > span.section-rating-term > span:nth-child(1) > button").innerHTML
-
-    // API: 
-    // rating given 
-    // location given 
-    // open/closed given
-    // picture given 
-
-    // tags 
-    var tags = [];
-
-    var highlights = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(2) > div.section-attribute-group-container").innerText.split("\n");
-    highlights.pop();
-    tags.append(highlights);
-
-    var atmosphere = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(14) > div.section-attribute-group-container").innerText.split("\n");
-    atmosphere.pop();
-    tags.append(atmosphere);
-
-    var offerings = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(8) > div.section-attribute-group-container").innerText.split("\n")
-    offerings.pop();
-    tags.append(offerings);
-
-    var amenities = $("#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-listbox.section-scrollbox.scrollable-y.scrollable-show > div:nth-child(11) > div.section-attribute-group-container").innerText.split("\n");
-    amenities.pop();
-    tags.append(amenities);
-
-    dict["tags"] = tags;
+// Toggle the filterview on mobile when it's pressed 
+toggleMobileNavView = function () {
+    // $(window).scrollTop() < $("#sticky-anchor").offset().top && !$("#mobile-nav").hasClass("open") && $("body,html").scrollTop($("#sticky-anchor").offset().top + 1), 
+    $("#mobile-nav").toggleClass("open")
 }
+$("#mobile-nav").on("click", ".toggle-zone", toggleMobileNavView);
+$("#mobile-nav").on("click", ".toggle-close", toggleMobileNavView);
 
-toggleMobileNav = function () {
-    $(window).scrollTop() < $("#sticky-anchor").offset().top && !$("#mobile-nav").hasClass("open") && $("body,html").scrollTop($("#sticky-anchor").offset().top + 1), $("#mobile-nav").toggleClass("open")
+// Make the filterview button stick to the top of the page when scrolling down
+var stickyAnchorPlacement = false; 
+function toggleFixedMobileNavButton() {
+    $("body").toggleClass("filter-fixed"); 
+    stickyAnchorPlacement = !stickyAnchorPlacement; 
+    $("#sticky-phantom").toggle(); 
 }
+$("body").on('scroll', function () {
+    console.log("scrolling"); 
+    if ($("#mobile-nav").css("display") != "none") {
+        if (stickyAnchorPlacement && $("#sticky-anchor").offset().top > 0) toggleFixedMobileNavButton();
+        if (!stickyAnchorPlacement && $("#sticky-anchor").offset().top < 0) toggleFixedMobileNavButton();
+    }
+})
 
-$("#mobile-nav").on("click", ".toggle-zone", toggleMobileNav);
-$("#mobile-nav").on("click", ".toggle-close", toggleMobileNav);
 // $("#mobile-nav").on("click", ".person", mobileSort);
 // $("#mobile-nav").on("click", ".filter-position a", mobileFilter);
 // $("#mobile-nav .nav-actions").on("click", ".size-toggle a", mobileChangeSize);
@@ -418,11 +393,3 @@ function filterType(t) {
         $("#item-list").addClass("filtered " + t.class)
     }
 }
-
-// $("body").hasClass("show-teams") || (e.filter_id = $(t.currentTarget).data("filter"), i || $(".filter-links .pointer").css({
-//     top: $(t.currentTarget).position().top - 2
-// }), $("#filters .filter-position a.active, #mobile-nav .nav-filter a").removeClass("active"), $(t.currentTarget).addClass("active"), $(window).scrollTop() > e.filterOffsetPos && ($(window).width() < 767 ? $("html,body").scrollTop(e.filterOffsetPos + 40) : $("body,html").animate({
-//     scrollTop: e.filterOffsetPos + 1
-// })), "all" === e.filter_id ? e.$el.removeClass("filtered big guard forward") : (e.$el.removeClass("big guard forward"), e.$el.addClass("filtered " + e.filter_id)), e.$el[0].querySelectorAll(".m-ad").forEach(function (e) {
-//     e.style.display = "none"
-// })

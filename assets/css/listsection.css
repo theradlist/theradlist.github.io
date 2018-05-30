@@ -1018,7 +1018,7 @@ body.large .card-item .ringer-coverage {
         left: 15%
     }
     body.small .card-item:not(.expanded-card) .info-column h3 {
-        font-size: 48px !important;
+        font-size: 18px !important;
         line-height: .85;
         margin-top: -2px
     }
@@ -2001,15 +2001,15 @@ body.large .card-item .ringer-coverage {
 }
 
 .filter-links.size-toggle a.compact .emoji {
-    background-image: url(../../img/compact-emoji.png)
+    background-image: url(https://nbadraft.theringer.com/img/compact-emoji.png)
 }
 
 .filter-links.size-toggle a.default .emoji {
-    background-image: url(../../img/default-emoji.png)
+    background-image: url(https://nbadraft.theringer.com/img/default-emoji.png)
 }
 
 .filter-links.size-toggle a.detailed .emoji {
-    background-image: url(../../img/detailed-emoji.png)
+    background-image: url(https://nbadraft.theringer.com/img/detailed-emoji.png)
 }
 
 .show-teams #filters .size-filter {
@@ -3574,7 +3574,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         padding: 20px 15px
     }
     .card-item .info-column h3 {
-        font-size: 15px
+        font-size: 18px
     }
     .card-item .info-column h4 {
         font-size: 13px
@@ -4093,7 +4093,7 @@ h3 .brand {
         padding: 10px 0;
         border: 1px solid #111;
         background-image: url(../../img/mobile-nav-arrow.png);
-        background-image: url(../../img/mobile-nav-arrow.svg);
+        background-image: url(https://nbadraft.theringer.com/img/mobile-nav-arrow.svg);
         background-position: right 15px center;
         background-size: 11px;
         background-repeat: no-repeat;
@@ -4102,7 +4102,7 @@ h3 .brand {
     }
     #mobile-nav .filter-logo {
         position: absolute;
-        width: 10.5%;
+        width: 16.5%;
         height: 100%;
         top: 0;
         left: 0;
@@ -4135,7 +4135,7 @@ h3 .brand {
         position: absolute;
         top: 0;
         right: 0;
-        left: 10.5%;
+        left: 16.5%;
         z-index: 5;
         height: 40px
     }
@@ -4154,9 +4154,9 @@ h3 .brand {
         width: 18px;
         height: 20px;
         margin-right: 14px;
-        margin-left: 13%;
+        margin-left: 16%;
         background-image: url(../../img/toggle.png);
-        background-image: url(../../img/toggle.svg);
+        background-image: url(https://nbadraft.theringer.com/img/toggle.svg);
         background-size: 100%;
         background-position: center center;
         -webkit-transition: margin-left 125ms linear;
@@ -4181,14 +4181,15 @@ h3 .brand {
         margin-bottom: 0
     }
     #mobile-nav.open .filter-logo {
-        left: -10.5%
+        left: -16.5%
     }
     #mobile-nav.open .current-sort {
         display: none
     }
     #mobile-nav.open .toggle {
-        margin-left: 100%; 
-        float: right; 
+        margin-left: 15.5px; 
+        /* margin-left: 100%;  */
+        /* float: right;  */
     }
     #mobile-nav.open .nav-contents {
         position: relative;
@@ -4262,7 +4263,7 @@ h3 .brand {
         top: 9px;
         height: 23px;
         width: 23px;
-        background-image: url(../../img/point-right.png);
+        background-image: url(https://nbadraft.theringer.com/img/point-right.png);
         background-size: 100%;
         background-position: center center
     }
