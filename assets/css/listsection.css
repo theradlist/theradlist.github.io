@@ -795,7 +795,7 @@ body.large .card-item .ringer-coverage {
         margin-top: -13px
     }
     body.small .card-item:not(.expanded-card) .info-column h3 {
-        font-size: 48px !important;
+        font-size: 18px !important;
         line-height: .85;
         margin-top: -2px
     }
@@ -891,6 +891,11 @@ body.large .card-item .ringer-coverage {
     body.medium .card-item .info-column .player-meta li {
         visibility: visible;
         opacity: 1
+    }
+    body.large .card-item .rank-column img {
+        width: 100%; 
+        height: auto !important; 
+        max-height: 500px; 
     }
     body .card-item.expanded-card {
         max-height: 100%;
@@ -1140,7 +1145,7 @@ body.large .card-item .ringer-coverage {
         max-height: 220px;
         height: 210px !important;
         overflow: hidden;
-        padding: 30px 20px
+        padding: 30px 0px; 
     }
     body .card-item.expanded-card .info-column,
     body.large .card-item .info-column {
@@ -3411,6 +3416,8 @@ body.large .card-item .rank-column img,
         -moz-border-radius-topleft: .625rem;
         -moz-border-radius-topright: .625rem;
         border-top-left-radius: .625rem;
+
+        justify-content: end; 
     }
     .card-item .rank-column>.nba-team-wrapper {
         display: block;
@@ -3424,10 +3431,9 @@ body.large .card-item .rank-column img,
     .card-item .rank-column img {
         opacity: 1;
         visibility: 1;
-        max-width: 25%;
-        right: 10%;
+        max-width: 33%;
+        /* right: 10%; */
         left: auto;
-        margin-top: -35px !important;
         -moz-transform: translateX(0);
         -o-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -3449,11 +3455,11 @@ body.large .card-item .rank-column img,
 
 @media (max-width:767px) {
     #item-list {
-        max-width: 450px;
+        max-width: 80%;
         margin: 0 auto
     }
     .card-item {
-        max-width: 500px;
+        max-width: 100%;
         margin-bottom: 20px
     }
     .card-item .rank-column {
@@ -3467,7 +3473,7 @@ body.large .card-item .rank-column img,
         max-height: 220px;
         height: 220px;
         overflow: hidden;
-        padding: 30px 20px;
+        /* padding: 30px 20px; */
         -webkit-transition: all, 0s, linear, 0s;
         -moz-transition: all, 0s, linear, 0s;
         -ms-transition: all, 0s, linear, 0s;
@@ -3514,7 +3520,8 @@ body.large .card-item .rank-column img,
         width: 100%;
         margin-top: auto;
         left: auto;
-        margin: 0 !important
+        margin: 0 !important; 
+        border-top-right-radius: .625rem;
     }
     .card-item .info-column {
         width: 100%;
@@ -4927,8 +4934,9 @@ h3 .brand {
 @media (max-width:767px) {
     .card-item .rank-column img,
     .card-item.expanded-card .rank-column img {
-        max-width: 50%;
-        margin-top: 10px !important;
+        max-width: 100%;
+        height: auto; 
+        /* margin-top: 10px !important; */
         -moz-transform: translateX(0) !important;
         -o-transform: translateX(0) !important;
         -ms-transform: translateX(0) !important;

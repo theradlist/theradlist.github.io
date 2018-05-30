@@ -351,11 +351,11 @@ footer.site-footer {
 
 .section {
     padding-top: 30px; 
-    width: 90%; 
+    width: 70%; 
     margin: 0 auto; 
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1500px) {
     .list.section {
         width: 90%; 
     }
