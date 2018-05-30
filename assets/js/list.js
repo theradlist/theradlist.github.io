@@ -359,7 +359,6 @@ function toggleFixedMobileNavButton() {
     $("#sticky-phantom").toggle(); 
 }
 $("body").on('scroll', function () {
-    console.log("scrolling"); 
     if ($("#mobile-nav").css("display") != "none") {
         if (stickyAnchorPlacement && $("#sticky-anchor").offset().top > 0) toggleFixedMobileNavButton();
         if (!stickyAnchorPlacement && $("#sticky-anchor").offset().top < 0) toggleFixedMobileNavButton();
