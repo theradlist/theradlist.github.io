@@ -572,11 +572,6 @@ body:not(.small) .card-item {
     max-height: 3000px
 }
 
-body .card-item.expanded-card.has-hover:hover .rank-column img.hover-image,
-body:not(.small) .card-item.has-hover:hover .rank-column img.hover-image {
-    opacity: 1
-}
-
 body .card-item.expanded-card .rank-column,
 body:not(.small) .card-item .rank-column {
     max-width: calc(100% - 728px)
@@ -585,22 +580,7 @@ body:not(.small) .card-item .rank-column {
 body .card-item.expanded-card .rank-column img,
 body:not(.small) .card-item .rank-column img {
     visibility: visible;
-    padding-bottom: 10px
-}
-
-body .card-item.expanded-card .rank-column img.image-loaded,
-body:not(.small) .card-item .rank-column img.image-loaded {
-    opacity: 1
-}
-
-body .card-item.expanded-card .rank-column img.hover-image,
-body:not(.small) .card-item .rank-column img.hover-image {
-    opacity: 0;
-    -webkit-transition: opacity 0s linear;
-    -moz-transition: opacity 0s linear;
-    -ms-transition: opacity 0s linear;
-    -o-transition: opacity 0s linear;
-    transition: opacity 0s linear
+    /* padding-bottom: 10px */
 }
 
 body .card-item.expanded-card.has-hover .rank-column img,
@@ -614,17 +594,6 @@ body:not(.small) .card-item.has-hover .rank-column img {
 
 body .card-item.expanded-card.has-hover:hover .rank-column img,
 body:not(.small) .card-item.has-hover:hover .rank-column img {
-    opacity: 0;
-    -webkit-transition: opacity 0s linear;
-    -moz-transition: opacity 0s linear;
-    -ms-transition: opacity 0s linear;
-    -o-transition: opacity 0s linear;
-    transition: opacity 0s linear
-}
-
-body .card-item.expanded-card.has-hover:hover .rank-column img.hover-image,
-body:not(.small) .card-item.has-hover:hover .rank-column img.hover-image {
-    opacity: 1
 }
 
 body .card-item.expanded-card .info-column,
@@ -2611,21 +2580,20 @@ body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) { */
     line-height: 100%
 }
 
-.card-item.has-hover:hover .rank-column img {
-    opacity: 0
+body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
+    filter: grayscale(100%);
 }
 
 body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
-    color: #F75648
+    color: var(--lightred); 
+}
+body:not(.large) .card-item.has-hover:hover .rank-column {
+    filter: grayscale(0%); 
 }
 
 .card-item:hover .toggle-card {
     animation-name: bounce;
     -moz-animation-name: bounce
-}
-
-.card-item:hover .rank-column img.hover-image {
-    opacity: 1
 }
 
 .card-item .card-info {
@@ -2766,10 +2734,13 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
     max-height: 100%;
     width: 100%;
     max-width: 18.25%;
-    padding: 30px;
+    /* padding: 30px; */
     border-right: 1px solid #f5f5f5;
     background-size: 20%;
-    overflow: hidden
+    overflow: hidden; 
+
+    display: flex; 
+    justify-content: center; 
 }
 
 .card-item .rank-column>.nba-team-wrapper {
@@ -2782,31 +2753,14 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 
 .card-item .rank-column img {
     visibility: hidden;
-    opacity: 0;
     position: absolute;
-    width: 90%;
-    margin-left: -3%;
-    margin-top: -7%;
-    opacity: 0;
-    -webkit-transition: opacity 125ms linear;
-    -moz-transition: opacity 125ms linear;
-    -ms-transition: opacity 125ms linear;
-    -o-transition: opacity 125ms linear;
-    transition: opacity 125ms linear
+    height: 100%;
 }
 
-.card-item .rank-column img.image-loaded {
-    opacity: 1
-}
-
-.card-item .rank-column img.hover-image,
-.card-item .rank-column img.hover-image.image-loaded {
-    -webkit-transition: opacity 0s linear;
-    -moz-transition: opacity 0s linear;
-    -ms-transition: opacity 0s linear;
-    -o-transition: opacity 0s linear;
-    transition: opacity 0s linear;
-    opacity: 0
+body.large .card-item .rank-column img,
+.card-item.expanded-card .rank-column img {
+    height: 50%; 
+    max-height: 500px; 
 }
 
 .card-item .info-column {
@@ -3388,8 +3342,6 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
 
 @media (min-width:1023px) {
     .card-item .rank-column {
-        border-top-right-radius: .625rem;
-        border-bottom-right-radius: .625rem;
         -webkit-border-top-left-radius: .625rem;
         -webkit-border-bottom-left-radius: .625rem;
         -moz-border-radius-topleft: .625rem;
@@ -3456,11 +3408,9 @@ body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
         background-size: 10%;
         border-right: 0 !important;
         -webkit-border-top-left-radius: .625rem;
-        -webkit-border-top-right-radius: .625rem;
         -moz-border-radius-topleft: .625rem;
         -moz-border-radius-topright: .625rem;
         border-top-left-radius: .625rem;
-        border-top-right-radius: .625rem
     }
     .card-item .rank-column>.nba-team-wrapper {
         display: block;
