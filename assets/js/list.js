@@ -365,6 +365,25 @@ $("body").on('scroll', function () {
     }
 })
 
+// Make search bar filter on text input
+function filterCusineOptions() {
+    var input, filter, ul, li, a, i;
+    filter = $(".cusine-toggle input").val().toUpperCase();
+    a = $(".cusine-toggle .dropdown-content.cusineList a").get();
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+function toggleCusineList(dir) {
+    setTimeout(() => {
+        $(".cusineList.dropdown-content").toggleClass("show"); 
+    }, 250);
+}
+
 // $("#mobile-nav").on("click", ".person", mobileSort);
 // $("#mobile-nav").on("click", ".filter-position a", mobileFilter);
 // $("#mobile-nav .nav-actions").on("click", ".size-toggle a", mobileChangeSize);
@@ -387,8 +406,21 @@ function filterType(t) {
     $(".type-toggle .active").removeClass("active");
     $("." + t.name).addClass("active");
 
-    $('#item-list').removeClass("filtered all restaurant bar cafe fast-food dessert");
+    $('#item-list').removeClass("restaurant bar cafe fast-food dessert");
     if (t.name != "filter-all") {
         $("#item-list").addClass("filtered " + t.class)
+    }
+}
+
+function filterCusine(t) {
+    $(".cusine-toggle .active").removeClass("active");
+    $("." + t.name).addClass("active");
+
+    $('#item-list').removeClass("asian bakery barfood breaky french halal indian italian latin mediterranean middleeast");
+    if (t.name != "filter-all") {
+        $("#item-list").addClass("filtered " + t.class)
+        $(".cusine-toggle input").val(t.class.charAt(0).toUpperCase() + t.class.slice(1));
+    } else {
+        $(".cusine-toggle input").val(""); 
     }
 }
