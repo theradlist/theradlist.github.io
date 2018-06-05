@@ -1,5 +1,6 @@
 .list {
     padding: 10px;
+    min-height: -webkit-fill-available;
 }
 
 .list .list-item {
