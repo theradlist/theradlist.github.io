@@ -403,24 +403,64 @@ function toggleCard(param) {
 }
 
 function filterType(t) {
+    // show that the filter is active
     $(".type-toggle .active").removeClass("active");
     $("." + t.name).addClass("active");
 
+    // add class to item-list 
     $('#item-list').removeClass("restaurant bar cafe fast-food dessert");
     if (t.name != "filter-all") {
         $("#item-list").addClass("filtered " + t.class)
-    }
+    } 
+    
+    // filter list items
+    filterListItems();
 }
 
 function filterCusine(t) {
+    // show that the filter is active
     $(".cusine-toggle .active").removeClass("active");
-    $("." + t.name).addClass("active");
+    $("." + t.elementname).addClass("active");
 
+    // add class to item-list 
     $('#item-list').removeClass("asian bakery barfood breaky french halal indian italian latin mediterranean middleeast");
-    if (t.name != "filter-all") {
+    if (t.elementname != "filter-all") {
         $("#item-list").addClass("filtered " + t.class)
-        $(".cusine-toggle input").val(t.class.charAt(0).toUpperCase() + t.class.slice(1));
+        $(".cusine-toggle input").val(t.name);
+        $(".cusine-toggle input").addClass("active"); 
     } else {
-        $(".cusine-toggle input").val(""); 
+        $(".cusine-toggle input").val("");
+        $(".cusine-toggle input").removeClass("active");
     }
+    
+    // filter list items
+    filterListItems();
+}
+
+function filterListItems() {
+    // make classList
+    classList = new Set($("#item-list").attr("class").split(" "));
+    classList.delete("grid"); 
+    classList.delete("filtered"); 
+
+    // remove filtered if there aren't any other classes
+    if (classList.size == 0) {
+        $("#item-list").removeClass("filtered"); 
+        $(".card-item").each(function () {
+            $(this).removeClass("filtered-in filtered-out"); 
+        })
+    }
+
+    $(".card-item").each(function() {
+        $(this).removeClass("filtered-in"); 
+        filteredin = true; 
+        classList.forEach(classfilter => {
+            if (!$(this).hasClass(classfilter)) {
+                filteredin = false; 
+            }
+        });
+        if (filteredin) {
+            $(this).addClass("filtered-in")
+        }
+    })
 }

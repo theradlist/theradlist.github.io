@@ -1015,25 +1015,7 @@ body.large .card-item .ringer-coverage {
     body.small .filtered .card-item {
         padding: 0
     }
-    body.small #item-list.filtered.asian .card-item.asian,
-    body.small #item-list.filtered.bakery .card-item.bakery,
-    body.small #item-list.filtered.barfood .card-item.barfood,
-    body.small #item-list.filtered.breaky .card-item.breaky,
-    body.small #item-list.filtered.french .card-item.french,
-    body.small #item-list.filtered.halal .card-item.halal,
-    body.small #item-list.filtered.indian .card-item.indian,
-    body.small #item-list.filtered.italian .card-item.italian,
-    body.small #item-list.filtered.latin .card-item.latin,
-    body.small #item-list.filtered.mediterranean .card-item.mediterranean,
-    body.small #item-list.filtered.middleeast .card-item.middleeast,
-    body.small #item-list.filtered.restaurant .card-item.restaurants,
-    body.small #item-list.filtered.bar .card-item.bars,
-    body.small #item-list.filtered.cafe .card-item.cafes,
-    body.small #item-list.filtered.fast-food .card-item.fast-food,
-    body.small #item-list.filtered.dessert .card-item.desserts {
-    /* body.small .filtered.big .card-item.bigs,
-    body.small .filtered.forward .card-item.forwards,
-    body.small .filtered.guard .card-item.guards { */
+    body.small .filtered .card-item.filtered-in { 
         padding: 15px 0 15px 15px
     }
     body.small .card-item .rank-column {
@@ -2513,50 +2495,14 @@ body #item-list.filtered .card-item {
     margin-bottom: -2px
 }
 
-/* body #item-list.filtered.big .card-item.bigs,
-body #item-list.filtered.forward .card-item.forwards,
-body #item-list.filtered.guard .card-item.guards { */
-body #item-list.filtered.asian .card-item.asian,
-body #item-list.filtered.bakery .card-item.bakery,
-body #item-list.filtered.barfood .card-item.barfood,
-body #item-list.filtered.breaky .card-item.breaky,
-body #item-list.filtered.french .card-item.french,
-body #item-list.filtered.halal .card-item.halal,
-body #item-list.filtered.indian .card-item.indian,
-body #item-list.filtered.italian .card-item.italian,
-body #item-list.filtered.latin .card-item.latin,
-body #item-list.filtered.mediterranean .card-item.mediterranean,
-body #item-list.filtered.middleeast .card-item.middleeast,
-body #item-list.filtered.restaurant .card-item.restaurants,
-body #item-list.filtered.bar .card-item.bars,
-body #item-list.filtered.cafe .card-item.cafes,
-body #item-list.filtered.fast-food .card-item.fast-food,
-body #item-list.filtered.dessert .card-item.desserts {
+body #item-list.filtered .card-item.filtered-in {
     max-height: 3000px;
     opacity: 1;
     margin-bottom: 30px;
-    overflow: visible
+    overflow: visible;
 }
 
-body.small #item-list.filtered.asian .card-item.asian:not(.card-item.expanded-card),
-body.small #item-list.filtered.bakery .card-item.bakery:not(.card-item.expanded-card),
-body.small #item-list.filtered.barfood .card-item.barfood:not(.card-item.expanded-card),
-body.small #item-list.filtered.breaky .card-item.breaky:not(.card-item.expanded-card),
-body.small #item-list.filtered.french .card-item.french:not(.card-item.expanded-card),
-body.small #item-list.filtered.halal .card-item.halal:not(.card-item.expanded-card),
-body.small #item-list.filtered.indian .card-item.indian:not(.card-item.expanded-card),
-body.small #item-list.filtered.italian .card-item.italian:not(.card-item.expanded-card),
-body.small #item-list.filtered.latin .card-item.latin:not(.card-item.expanded-card),
-body.small #item-list.filtered.mediterranean .card-item.mediterranean:not(.card-item.expanded-card),
-body.small #item-list.filtered.middleeast .card-item.middleeast:not(.card-item.expanded-card),
-body.small #item-list.filtered.restaurant .card-item.restaurants:not(.card-item.expanded-card),
-body.small #item-list.filtered.bar .card-item.bars:not(.card-item.expanded-card),
-body.small #item-list.filtered.cafe .card-item.cafes:not(.card-item.expanded-card),
-body.small #item-list.filtered.fast-food .card-item.fast-food:not(.card-item.expanded-card),
-body.small #item-list.filtered.dessert .card-item.desserts:not(.card-item.expanded-card) {
-/* body.small #item-list.filtered.big .card-item.bigs:not(.expanded-card),
-body.small #item-list.filtered.forward .card-item.forwards:not(.expanded-card),
-body.small #item-list.filtered.guard .card-item.guards:not(.expanded-card) { */
+body.small #item-list.filtered .card-item.filtered-in:not(.card-item.expanded-card) {
     max-height: 145px;
     overflow: hidden
 }
