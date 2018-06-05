@@ -1,10 +1,24 @@
 /* The search field */
-#filters input {
+#filters input, 
+.nav-actions input {
+    color: var(--gray); 
     font-size: 13px;
     border-radius: 0.5em;
     border-width: 1px;
     border-style: none;
     padding: 0px; 
+    outline-color: var(--verylightgray); 
+}
+
+::placeholder {
+    color: var(--gray);
+}
+
+.nav-actions input {
+    font-size: 15px; 
+}
+.nav-actions input.active {
+    color: var(--lightred);
 }
 
 #filters input.active {
