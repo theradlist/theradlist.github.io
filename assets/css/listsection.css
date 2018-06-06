@@ -2493,7 +2493,7 @@ body #item-list.filtered .card-item {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    margin-bottom: -2px
+    margin-bottom: -2px; 
 }
 
 body #item-list.filtered .card-item.filtered-in {

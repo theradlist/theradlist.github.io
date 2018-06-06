@@ -21,7 +21,7 @@
 .map .highlight-card {
     z-index: 2;
     position: absolute;
-    height: 30%;
+    min-height: 30%;
     width: 30%;
     background: #F75648;
     color: white;
@@ -41,6 +41,7 @@
 .map .highlight-card .card-content {
     padding: 24px 24px 0;
     border-radius: 0 0 2px 2px;
+    border-bottom: none; 
 }
 
 .map .highlight-card .card-content .card-title {
@@ -55,7 +56,7 @@
 
 .map .highlight-card .card-action {
     background-color: inherit;
-    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    /* border-top: 1px solid rgba(160, 160, 160, 0.2); */
     position: relative;
     padding: 16px 24px;
     text-align: right; 

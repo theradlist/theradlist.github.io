@@ -1,3 +1,15 @@
+function mapAllRestaurants() {
+    console.log("map");
+}
+
+function searchInList(name) {
+    return jQuery.grep(list, function (listitem) {
+        if (listitem.name == name) {
+            return listitem;
+        }
+    });
+}
+
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -177,6 +189,8 @@ function initMap() {
         ]
     });
 
+    mapAllRestaurants(); 
+
     var infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
 
@@ -191,11 +205,24 @@ function initMap() {
             google.maps.event.addListener(marker, 'click', function () {
                 // infowindow.setContent('<div style="z-index: 2;"><strong>' + place.name + '</strong><br>' + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</div>');
                 // infowindow.open(map, this);
-                console.log("hi");
+
+                // get listitem
+                placeObj = searchInList(place.name)[0]
+                
+                // set title 
                 $(".map .highlight-card .card-content .card-title").empty();
                 $(".map .highlight-card .card-content .card-title").append(place.name);
+
+                // set description
                 $(".map .highlight-card .card-content p").empty();
-                $(".map .highlight-card .card-content p").append(place.name);
+                $(".map .highlight-card .card-content p").append($("." + placeObj.classname + " .player-headline")[0].innerText);
+
+                // button 
+                $(".map .highlight-card .card-action a").click(function() {
+                    $('html, body').animate({
+                        scrollTop: $("." + placeObj.classname).offset().top
+                    }, 1000);
+                })
             });
         }
     });
