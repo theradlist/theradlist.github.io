@@ -366,10 +366,10 @@ $("body").on('scroll', function () {
 })
 
 // Make search bar filter on text input
-function filterCusineOptions() {
+function filterCuisineOptions() {
     var input, filter, ul, li, a, i;
-    filter = $(".cusine-toggle input").val().toUpperCase();
-    a = $(".cusine-toggle .dropdown-content.cusineList a").get();
+    filter = $(".cuisine-toggle input").val().toUpperCase();
+    a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
     for (i = 0; i < a.length; i++) {
         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
             a[i].style.display = "";
@@ -378,9 +378,9 @@ function filterCusineOptions() {
         }
     }
 }
-function toggleCusineList(dir) {
+function toggleCuisineList(dir) {
     setTimeout(() => {
-        $(".cusineList.dropdown-content").toggleClass("show"); 
+        $(".cuisineList.dropdown-content").toggleClass("show"); 
     }, 250);
 }
 
@@ -417,20 +417,20 @@ function filterType(t) {
     filterListItems();
 }
 
-function filterCusine(t) {
+function filterCuisine(t) {
     // show that the filter is active
-    $(".cusine-toggle .active").removeClass("active");
+    $(".cuisine-toggle .active").removeClass("active");
     $("." + t.elementname).addClass("active");
 
     // add class to item-list 
     $('#item-list').removeClass("asian bakery barfood breaky french halal indian italian latin mediterranean middleeast");
     if (t.elementname != "filter-all") {
         $("#item-list").addClass("filtered " + t.class)
-        $(".cusine-toggle input").val(t.name);
-        $(".cusine-toggle input").addClass("active"); 
+        $(".cuisine-toggle input").val(t.name);
+        $(".cuisine-toggle input").addClass("active"); 
     } else {
-        $(".cusine-toggle input").val("");
-        $(".cusine-toggle input").removeClass("active");
+        $(".cuisine-toggle input").val("");
+        $(".cuisine-toggle input").removeClass("active");
     }
     
     // filter list items
