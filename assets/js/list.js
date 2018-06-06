@@ -6,7 +6,7 @@ var list = [{
     {
         "name": "Rostizado",
         "classname": "rostizado",
-        "place_id": ""
+        "place_id": "ChIJJaBKPkkioFMRzuMRISLlVNc"
     },
     {
         "name": "Bar Bricco",

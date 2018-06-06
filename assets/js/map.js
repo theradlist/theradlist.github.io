@@ -1,5 +1,34 @@
-function mapAllRestaurants() {
-    console.log("map");
+function mapAllRestaurants(m, s) {
+    list.forEach(listitem => {
+        console.log(listitem)
+        s.getDetails({
+            placeId: listitem.place_id
+        }, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                var marker = new google.maps.Marker({
+                    map: m,
+                    position: place.geometry.location
+                });
+                google.maps.event.addListener(marker, 'click', function () {
+
+                    // set title 
+                    $(".map .highlight-card .card-content .card-title").empty();
+                    $(".map .highlight-card .card-content .card-title").append(place.name);
+
+                    // set description
+                    $(".map .highlight-card .card-content p").empty();
+                    $(".map .highlight-card .card-content p").append($("." + listitem.classname + " .player-headline")[0].innerText);
+
+                    // button 
+                    $(".map .highlight-card .card-action a").click(function () {
+                        $('html, body').animate({
+                            scrollTop: $("." + listitem.classname).offset().top
+                        }, 1000);
+                    })
+                });
+            }
+        })
+    });
 }
 
 function searchInList(name) {
@@ -189,41 +218,23 @@ function initMap() {
         ]
     });
 
-    mapAllRestaurants(); 
-
     var infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
 
-    service.getDetails({
-        placeId: featuredPlace.place_id
-    }, function (place, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                // infowindow.setContent('<div style="z-index: 2;"><strong>' + place.name + '</strong><br>' + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</div>');
-                // infowindow.open(map, this);
+    mapAllRestaurants(map, service);
 
-                // get listitem
-                placeObj = searchInList(place.name)[0]
-                
-                // set title 
-                $(".map .highlight-card .card-content .card-title").empty();
-                $(".map .highlight-card .card-content .card-title").append(place.name);
+    // set featured title 
+    $(".map .highlight-card .card-content .card-title").empty();
+    $(".map .highlight-card .card-content .card-title").append(featuredPlace.name);
 
-                // set description
-                $(".map .highlight-card .card-content p").empty();
-                $(".map .highlight-card .card-content p").append($("." + placeObj.classname + " .player-headline")[0].innerText);
+    // set featured description
+    $(".map .highlight-card .card-content p").empty();
+    $(".map .highlight-card .card-content p").append($("." + featuredPlace.classname + " .player-headline")[0].innerText);
 
-                // button 
-                $(".map .highlight-card .card-action a").click(function() {
-                    $('html, body').animate({
-                        scrollTop: $("." + placeObj.classname).offset().top
-                    }, 1000);
-                })
-            });
-        }
-    });
+    // button 
+    $(".map .highlight-card .card-action a").click(function () {
+        $('html, body').animate({
+            scrollTop: $("." + featuredPlace.classname).offset().top
+        }, 1000);
+    })
 }
