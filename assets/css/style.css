@@ -221,7 +221,8 @@ body {
     right: 36px;
     top: 27px;
     z-index: 999;
-    line-height: 26px
+    line-height: 26px; 
+    font-size: small; 
 }
 
 #menu a {
@@ -237,6 +238,13 @@ body {
 #menu li {
     display: inline-block;
     padding-left: 20px
+}
+
+@media (max-width:475px) {
+    #menu {
+        float: left;
+        right: auto; 
+    }
 }
 
 footer.site-footer {

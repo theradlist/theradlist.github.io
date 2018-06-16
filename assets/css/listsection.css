@@ -2283,12 +2283,6 @@ body.large .card-item .ringer-coverage {
     }
 }
 
-@media (max-width:475px) {
-    nav ul {
-        display: none
-    }
-}
-
 #intro {
     position: relative;
     width: 95%;
