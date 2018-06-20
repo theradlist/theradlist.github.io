@@ -53,7 +53,6 @@ p {
 }
 
 /* Link style */
-
 a.red,
 h1 a {
     color: var(--red);

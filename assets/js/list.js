@@ -477,10 +477,11 @@ function changeSize(s) {
 }
 
 function toggleCard(param) {
-    if (param.parentElement.parentElement.className.includes(" expanded-card")) {
-        param.parentElement.parentElement.className = param.parentElement.parentElement.className.replace(" expanded-card", '');
+    var card = param.parentElement.parentElement.parentElement; 
+    if (card.className.includes(" expanded-card")) {
+        card.className = card.className.replace(" expanded-card", '');
     } else {
-        param.parentElement.parentElement.className += " expanded-card";
+        card.className += " expanded-card";
     }
 }
 

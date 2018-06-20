@@ -2572,8 +2572,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
 }
 
 .card-item:hover .toggle-card {
-    animation-name: bounce;
-    -moz-animation-name: bounce
+    fill: var(--lightred)
 }
 
 .card-item .card-info {
@@ -3290,7 +3289,17 @@ body.large .card-item .rank-column img,
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
-    -webkit-animation-iteration-count: 1
+    -webkit-animation-iteration-count: 1; 
+    fill: var(--gray); 
+}
+
+.toggle-card:hover {
+    fill: black !important;
+    /* animation-name: bounce; */
+    /* -moz-animation-name: bounce */
+}
+.card-item .toggle-card:first-child {
+    right: 71px; 
 }
 
 .card-item.expanded-card .medium-column {
@@ -3301,7 +3310,7 @@ body.large .card-item .rank-column img,
     bottom: 28px
 }
 
-.card-item.expanded-card .toggle-card svg {
+.card-item.expanded-card .toggle-card:not(.maps-icon) svg {
     -moz-transform: rotate(-180deg);
     -o-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
