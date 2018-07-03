@@ -3440,7 +3440,7 @@ body.large .card-item .rank-column img,
 
 @media (max-width:767px) {
     #item-list {
-        max-width: 80%;
+        max-width: 90%;
         margin: 0 auto
     }
     .card-item {

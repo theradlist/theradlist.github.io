@@ -12,6 +12,21 @@
 .map.section {
     display: none; 
 }
+@media (max-width: 767px) {
+    body.small .card-item:not(.expanded-card) .info-column {
+        left: 0%; 
+    }
+    body.small .card-item:not(.expanded-card) .toggle-card {
+        top: 0px !important; 
+        right: -30px; 
+    }
+    body.small .card-item:not(.expanded-card) .info-column h3 {
+        line-height: 1.2; 
+    }
+}
+body.small .card-item:not(.expanded-card) .info-column {
+    overflow: visible; 
+}
 
 /* Chrome-Windows font anti-aliasing fix */
 #forgoogle {
