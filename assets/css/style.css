@@ -1,5 +1,19 @@
-                        /* Chrome-Windows font anti-aliasing fix */
+/* SMALL THERADLIST */
+/* UNDO LISTSECTION.CSS:2695 */
+.toggle-card:not(.maps-icon) {
+    display: none; 
+}
+.player-meta, .player-description {
+    display: none; 
+}
+body.small .card-item:not(.expanded-card) .wrapper {
+    height: 70px; 
+}
+.map.section {
+    display: none; 
+}
 
+/* Chrome-Windows font anti-aliasing fix */
 #forgoogle {
     margin-bottom: 51px;
     margin-left: 30px;

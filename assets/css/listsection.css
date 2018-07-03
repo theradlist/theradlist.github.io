@@ -2693,7 +2693,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
 }
 
 .card-item h4 strong:after {
-    content: ', '
+    /* content: ', ' */
 }
 
 .card-item h6 {
