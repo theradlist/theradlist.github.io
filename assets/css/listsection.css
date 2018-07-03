@@ -2487,7 +2487,8 @@ body #item-list.filtered .card-item {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    margin-bottom: -2px; 
+    margin-bottom: -2px;
+    margin-bottom: 0px; 
 }
 
 body #item-list.filtered .card-item.filtered-in {
@@ -2784,7 +2785,7 @@ body.large .card-item .rank-column img,
 
 .card-item .info-column .player-main {
     float: left;
-    max-width: 47.5%
+    max-width: 82.5%;
 }
 
 .card-item .info-column .player-stats {

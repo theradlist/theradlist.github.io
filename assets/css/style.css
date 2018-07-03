@@ -6,9 +6,9 @@
 .player-meta, .player-description {
     display: none; 
 }
-body.small .card-item:not(.expanded-card) .wrapper {
+/* body.small .card-item:not(.expanded-card) .wrapper {
     height: 70px; 
-}
+} */
 .map.section {
     display: none; 
 }
