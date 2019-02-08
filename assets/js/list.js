@@ -489,8 +489,11 @@ function filterType(t) {
     // show that the filter is active
     $(".type-toggle .active").removeClass("active");
     $("." + t).addClass("active");
+    $('input:text').attr('placeholder', t);
+
 
     if (t == "All") {
+        $('input:text').attr('placeholder', "Search Cuisine..."); 
         $('#list-places').html(template(alldata))
         return 
     }
@@ -502,50 +505,42 @@ function filterType(t) {
     $('#list-places').html(template(newdata))
 }
 
-function filterCuisine(t) {
+function filterCuisine(c) {
     // show that the filter is active
     $(".cuisine-toggle .active").removeClass("active");
-    $("." + t.elementname).addClass("active");
+    $("." + c.elementname).addClass("active");
 
-    // add class to item-list 
-    $('#item-list').removeClass("asian bakery barfood breaky french halal indian italian latin mediterranean middleeast");
-    if (t.elementname != "filter-all") {
-        $("#item-list").addClass("filtered " + t.class)
-        $(".cuisine-toggle input").val(t.name);
-        $(".cuisine-toggle input").addClass("active"); 
-    } else {
-        $(".cuisine-toggle input").val("");
-        $(".cuisine-toggle input").removeClass("active");
+    if (c.name == "All") {
+        $('#list-places').html(template(alldata))
+        return
     }
-    
-    // filter list items
-    filterListItems();
+
+    var newdata = alldata.filter(function (itm) {
+        if (itm.cuisine == null) {
+            return false
+        }
+        return itm.cuisine.toUpperCase() == c.name.toUpperCase()
+    })
+    $('#list-places').html(template(newdata))
 }
 
-function filterListItems() {
-    // make classList
-    classList = new Set($("#item-list").attr("class").split(" "));
-    classList.delete("grid"); 
-    classList.delete("filtered"); 
+function filterPrice(p) {
+    // show that the filter is active
+    $(".price-toggle .active").removeClass("active");
+    var classname = p == "All" ? "0" : p.length
+    $(".filter-" + classname).addClass("active");
 
-    // remove filtered if there aren't any other classes
-    if (classList.size == 0) {
-        $("#item-list").removeClass("filtered"); 
-        $(".card-item").each(function () {
-            $(this).removeClass("filtered-in filtered-out"); 
-        })
+    if (p == "All") {
+        $('#list-places').html(template(alldata))
+        return
     }
 
-    $(".card-item").each(function() {
-        $(this).removeClass("filtered-in"); 
-        filteredin = true; 
-        classList.forEach(classfilter => {
-            if (!$(this).hasClass(classfilter)) {
-                filteredin = false; 
-            }
-        });
-        if (filteredin) {
-            $(this).addClass("filtered-in")
+    var newdata = alldata.filter(function (itm) {
+        if (itm.price == null) {
+            return false
         }
+        return itm.price.toUpperCase() == p.toUpperCase()
     })
+    $('#list-places').html(template(newdata))
+
 }
