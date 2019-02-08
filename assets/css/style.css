@@ -1,34 +1,5 @@
-/* SMALL THERADLIST */
-/* UNDO LISTSECTION.CSS:2695 */
-.toggle-card:not(.maps-icon) {
-    display: none; 
-}
-.player-meta, .player-description {
-    display: none; 
-}
-/* body.small .card-item:not(.expanded-card) .wrapper {
-    height: 70px; 
-} */
-.map.section {
-    display: none; 
-}
-@media (max-width: 767px) {
-    body.small .card-item:not(.expanded-card) .info-column {
-        left: 0%; 
-    }
-    body.small .card-item:not(.expanded-card) .toggle-card {
-        top: 0px !important; 
-        right: -30px; 
-    }
-    body.small .card-item:not(.expanded-card) .info-column h3 {
-        line-height: 1.2; 
-    }
-}
-body.small .card-item:not(.expanded-card) .info-column {
-    overflow: visible; 
-}
-
 /* Chrome-Windows font anti-aliasing fix */
+
 #forgoogle {
     margin-bottom: 51px;
     margin-left: 30px;
@@ -80,20 +51,20 @@ body {
     text-align: right;
     top: 80px;
     width: 500px;
-    z-index: 0; 
-    padding-left: 80px; 
+    z-index: 0;
+    padding-left: 80px;
 }
 
 @media all and (max-width:1440px) {
     .bg-image {
-        width: 480px; 
-        padding-left: 80px; 
+        width: 480px;
+        padding-left: 80px;
     }
 }
 
 @media all and (max-width:1280px) {
     .bg-image {
-        width: 400px; 
+        width: 400px;
         padding-left: 50px;
         padding-top: 100px;
     }
@@ -108,19 +79,21 @@ body {
 @media all and (max-width:850px) {
     .bg-image {
         width: 310px;
-        padding-top: 300px; 
+        padding-top: 300px;
     }
 }
 
 @media all and (max-width:770px) {
     .bg-image {
-        width: 330px; 
-        padding-left: 0px; 
-        padding-top: 0px; 
+        width: 330px;
+        padding-left: 0px;
+        padding-top: 0px;
     }
+
     .bg-image img.mobile {
         display: inline
     }
+
     .bg-image img.desktop {
         display: none
     }
@@ -250,8 +223,8 @@ body {
     right: 36px;
     top: 27px;
     z-index: 999;
-    line-height: 26px; 
-    font-size: small; 
+    line-height: 26px;
+    font-size: small;
 }
 
 #menu a {
@@ -272,7 +245,7 @@ body {
 @media (max-width:475px) {
     #menu {
         float: left;
-        right: auto; 
+        right: auto;
     }
 }
 
@@ -323,20 +296,21 @@ footer.site-footer {
     left: 36px;
     position: absolute;
     top: 27px;
-    z-index: 999; 
+    z-index: 999;
     /* width: 64px;  */
     height: 33px;
-    border: none; 
+    border: none;
 }
 
 @media all and (max-width:480px) {
     #logo {
-        left: unset; 
-        right: 36px; 
-        height: 25px; 
+        left: unset;
+        right: 36px;
+        height: 25px;
     }
+
     .top.wrapper {
-        padding-top: 130px; 
+        padding-top: 130px;
     }
 }
 
@@ -387,34 +361,13 @@ footer.site-footer {
 }
 
 .section {
-    padding-top: 30px; 
-    width: 70%; 
-    margin: 0 auto; 
+    padding-top: 30px;
+    width: 70%;
+    margin: 0 auto;
 }
 
 @media all and (max-width: 1500px) {
     .list.section {
-        width: 90%; 
+        width: 90%;
     }
 }
-
-@media all and (max-width:700px) {
-    #forgoogle }
-    @media all and (max-width: 449px) {
-        #forgoogle }
-        .lt-ie9 #forgoogle {
-            @media all and (max-width:700px) {
-                .lt-ie9 #forgoogle }
-                @media all and (max-width:449px) {
-                    .lt-ie9 #forgoogle }
-                    #forgoogle:after {
-                        #signature {
-                            margin-left:-15px;
-                            margin-top: 20px;
-                            max-width: 80%
-                        }
-                        @media all and (max-width:1024px) {
-                            #signature {
-                                max-width: 100%
-                            }
-                        }

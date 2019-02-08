@@ -1,7 +1,7 @@
 .list {
     padding: 10px;
     min-height: -webkit-fill-available;
-    font-size: 13px; 
+    font-size: 13px;
 }
 
 .list .list-item {
@@ -252,8 +252,8 @@ input[type=search] {
 
 input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-decoration {
-    appearance: none; 
-    -webkit-appearance: none; 
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 fieldset {
@@ -501,9 +501,11 @@ body.tablet .ringring {
         transform: scale(.1, .1);
         opacity: 0
     }
+
     50% {
         opacity: 1
     }
+
     100% {
         -moz-transform: scale(1.2, 1.2);
         -o-transform: scale(1.2, 1.2);
@@ -513,6 +515,7 @@ body.tablet .ringring {
         opacity: 0
     }
 }
+
 @-webkit-keyframes pulsate {
     0% {
         -moz-transform: scale(.1, .1);
@@ -522,9 +525,11 @@ body.tablet .ringring {
         transform: scale(.1, .1);
         opacity: 0
     }
+
     50% {
         opacity: 1
     }
+
     100% {
         -moz-transform: scale(1.2, 1.2);
         -o-transform: scale(1.2, 1.2);
@@ -562,7 +567,7 @@ body.small .card-item:not(.expanded-card) .rank-column {
 }
 
 body.small .card-item:not(.expanded-card) .info-column {
-    max-width: 86.75%; 
+    max-width: 86.75%;
 }
 
 body:not(.large) .card-item:not(.expanded-card) {
@@ -595,8 +600,7 @@ body:not(.small) .card-item.has-hover .rank-column img {
 }
 
 body .card-item.expanded-card.has-hover:hover .rank-column img,
-body:not(.small) .card-item.has-hover:hover .rank-column img {
-}
+body:not(.small) .card-item.has-hover:hover .rank-column img {}
 
 body .card-item.expanded-card .info-column,
 body:not(.small) .card-item .info-column {
@@ -772,12 +776,15 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         padding: 15px 0 15px 15px
     }
+
     body.small .card-item:not(.expanded-card) .wrapper {
         height: 115px
     }
+
     body.small .card-item:not(.expanded-card) .toggle-card {
         bottom: 54px !important
     }
+
     body.small .card-item:not(.expanded-card) .rank-column {
         position: absolute;
         top: 0;
@@ -785,9 +792,11 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         overflow: visible
     }
+
     body.small .card-item:not(.expanded-card) .rank-column img {
         display: none
     }
+
     body.small .card-item:not(.expanded-card) .info-column {
         max-width: 86.75%;
         position: absolute;
@@ -796,15 +805,18 @@ body.large .card-item .ringer-coverage {
         overflow: hidden;
         margin-top: -13px
     }
+
     body.small .card-item:not(.expanded-card) .info-column h3 {
         font-size: 18px !important;
         line-height: .85;
         margin-top: -2px
     }
+
     body .card-item.expanded-card,
     body:not(.small) .card-item {
         max-height: 100%
     }
+
     body .card-item.expanded-card .rank-column,
     body:not(.small) .card-item .rank-column {
         width: 100%;
@@ -812,58 +824,73 @@ body.large .card-item .ringer-coverage {
         position: relative;
         overflow: hidden
     }
+
     body .card-item.expanded-card .info-column,
     body:not(.small) .card-item .info-column {
         width: 100%;
         max-width: 100%;
         padding-left: 0
     }
+
     body:not(.large) .card-item .info-column .player-stats ul li:nth-child(n+5) {
         display: none
     }
+
     body.small .card-item {
         max-height: 100%
     }
+
     body.small .card-item .rank-column {
         width: 100%;
         max-width: 100%;
         position: relative;
         overflow: hidden
     }
+
     body.small .card-item .rank-column img {
         visibility: visible;
         opacity: 1;
         margin: -35px 0 0
     }
+
     body.small .card-item .info-column {
         padding-right: 15px
     }
+
     body.small .card-item .info-column .medium-column:not(:first-of-type),
     body.small .card-item .info-column .player-description {
         display: none
     }
+
     body.small .card-item .info-column .medium-column li:not(:first-of-type) {
         display: none
     }
+
     body.small .card-item .info-column .player-stats ul li {
         padding-bottom: 0
     }
+
     body.small .card-item .info-column .player-stats ul li:nth-child(n+5) {
         display: none
     }
+
     body.small .card-item .toggle-card {
         right: 15px
     }
+
     body.small .card-item:not(.expanded-card) {
         max-height: 100%
     }
+
     body.small .card-item:not(.expanded-card) .toggle-card {
         bottom: 20px
     }
+
     body.medium .card-item {
         max-height: 100%;
         height: auto
     }
+
     body.medium .card-item .rank-column {
         position: relative;
         max-width: 100%;
@@ -871,98 +898,123 @@ body.large .card-item .ringer-coverage {
         overflow: hidden;
         height: 210px !important
     }
+
     body.medium .card-item .info-column .player-description {
         margin-bottom: 0
     }
+
     body.medium .card-item .info-column .player-info {
         display: none
     }
+
     body.medium .card-item .info-column .player-meta .medium-column {
         width: 50%;
         float: left
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:first-of-type {
         padding-right: 0
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:nth-child(2) {
         padding-left: 15px
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:nth-child(3) {
         display: none
     }
+
     body.medium .card-item .info-column .player-meta li {
         visibility: visible;
         opacity: 1
     }
+
     body.large .card-item .rank-column img {
-        width: 100%; 
-        height: auto !important; 
-        max-height: 500px; 
+        width: 100%;
+        height: auto !important;
+        max-height: 500px;
     }
+
     body .card-item.expanded-card {
         max-height: 100%;
         height: auto
     }
+
     body .card-item.expanded-card .rank-column {
         width: 100%;
         max-width: 100%;
         position: relative;
         overflow: hidden
     }
+
     body .card-item.expanded-card .rank-column img {
         visibility: visible;
         opacity: 1
     }
+
     body .card-item.expanded-card .info-column {
         float: none;
         width: 100%;
         max-width: 100%;
         padding-right: 30px
     }
+
     body .card-item.expanded-card .info-column .player-description {
         display: block
     }
+
     body .card-item.expanded-card .info-column .player-meta {
         padding: 45px 0 30px
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column {
         width: 100%;
         float: none;
         padding-right: 0
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column:first-of-type {
         display: block;
         padding-right: 0
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column:nth-child(2) {
         display: block;
         padding-left: 0
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column:nth-child(3) {
         display: block;
         visibility: visible;
         opacity: 1
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column:nth-child(3) li {
         visibility: visible;
         opacity: 1
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column li {
         visibility: visible;
         opacity: 1
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column li:not(:first-of-type) {
         display: block
     }
+
     body .card-item.expanded-card .info-column .player-stats ul li {
         margin-bottom: 24px
     }
+
     body .card-item.expanded-card .info-column .player-stats ul li:nth-child(n+5) {
         display: inline-block
     }
+
     body .card-item.expanded-card .info-column .player-description {
         margin-bottom: 30px
     }
+
     body .card-item.expanded-card .info-column .player-info {
         display: block
     }
@@ -973,12 +1025,15 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         padding: 15px 0 15px 15px
     }
+
     body.small .card-item:not(.expanded-card) .toggle-card {
         bottom: 24px !important
     }
+
     body.small .card-item:not(.expanded-card) .wrapper {
         height: auto
     }
+
     body.small .card-item:not(.expanded-card) .rank-column {
         position: absolute;
         top: 0;
@@ -986,6 +1041,7 @@ body.large .card-item .ringer-coverage {
         background-color: #f5f5f5 !important;
         overflow: visible
     }
+
     body.small .card-item:not(.expanded-card) .info-column {
         margin-top: 0;
         position: relative;
@@ -993,32 +1049,41 @@ body.large .card-item .ringer-coverage {
         padding-left: 10px;
         left: 15%
     }
+
     body.small .card-item:not(.expanded-card) .info-column h3 {
         font-size: 18px !important;
         line-height: .85;
         margin-top: -2px
     }
+
     body.small .card-item:not(.expanded-card) .player-main {
         padding-left: 10px
     }
+
     body.small .card-item:not(.expanded-card) .medium-column {
         display: none
     }
+
     body.small .card-item:not(.expanded-card) .player-stats {
         display: none
     }
+
     body.small .card-item:not(.expanded-card) .player-meta {
         margin-bottom: 15px
     }
+
     body.small .card-item:not(.expanded-card) .player-description {
         display: none
     }
+
     body.small .filtered .card-item {
         padding: 0
     }
-    body.small .filtered .card-item.filtered-in { 
+
+    body.small .filtered .card-item.filtered-in {
         padding: 15px 0 15px 15px
     }
+
     body.small .card-item .rank-column {
         position: relative;
         display: inline-block;
@@ -1030,104 +1095,132 @@ body.large .card-item .ringer-coverage {
         padding: 0;
         float: left;
     }
+
     body.small .card-item .rank-column img {
         visibility: hidden
     }
+
     body.small .card-item .info-column {
         width: calc(100% - 60px);
         float: left;
         min-width: auto;
         padding: 0 0 0 15px
     }
+
     body.small .card-item .info-column h4 {
         font-size: 15px;
         font-weight: 300
     }
+
     body.small .card-item .info-column h4 strong {
         font-weight: 500
     }
+
     body.small .card-item .info-column .player-meta {
         padding-right: 15px;
         padding: 0;
         margin-bottom: 0
     }
+
     body.small .card-item .info-column .player-meta .medium-column:first-of-type li:first-of-type {
         display: block
     }
+
     body.small .card-item .info-column .player-meta li {
         display: none
     }
+
     body.small .card-item .info-column .player-meta li .label,
     body.small .card-item .info-column .player-meta li .value {
         float: none;
         padding: 0
     }
+
     body.small .card-item .info-column .player-meta li .label span {
         display: none
     }
+
     body.small .card-item .info-column .player-meta li:after {
         content: ': '
     }
+
     body.small .card-item .toggle-card {
         top: 20px
     }
+
     body.small .card-item.expanded-card .rank-column img {
         visibility: visible
     }
+
     body .card-item.expanded-card .rank-column,
     body:not(.small) .card-item .rank-column {
         max-width: 100%
     }
+
     body .card-item.expanded-card .info-column .player-stats,
     body:not(.small) .card-item .info-column .player-stats {
         width: 100%
     }
+
     body .card-item.expanded-card .info-column .player-main,
     body:not(.small) .card-item .info-column .player-main {
         width: 100%;
         max-width: 100%;
         padding-bottom: 15px
     }
+
     body .card-item.expanded-card .info-column .player-meta,
     body:not(.small) .card-item .info-column .player-meta {
         padding: 15px 0
     }
+
     body:not(.large) .card-item .info-column .player-stats ul li {
         padding-bottom: 0
     }
+
     body:not(.large) .card-item .info-column .player-stats ul li span.detail {
         margin-top: -8px
     }
+
     body.medium .card-item .toggle-card {
         bottom: 20px
     }
+
     body.medium .card-item .info-column {
         padding-bottom: 60px;
         padding-left: 15px
     }
+
     body.medium .card-item .info-column .player-meta {
         padding-bottom: 0
     }
+
     body.medium .card-item .info-column .player-meta ul {
         height: auto
     }
+
     body.medium .card-item .info-column .player-meta .medium-column {
         width: 100%;
         float: none
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:first-of-type {
         padding: 0
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:nth-child(2) {
         padding-left: 0
     }
+
     body.medium .card-item .info-column .player-meta .medium-column:nth-child(3) {
         display: none
     }
+
     body .card-item.expanded-card,
     body.large .card-item {
         padding: 0
     }
+
     body .card-item.expanded-card .rank-column,
     body.large .card-item .rank-column {
         position: relative;
@@ -1140,8 +1233,9 @@ body.large .card-item .ringer-coverage {
         max-height: 220px;
         height: 210px !important;
         overflow: hidden;
-        padding: 30px 0px; 
+        padding: 30px 0px;
     }
+
     body .card-item.expanded-card .info-column,
     body.large .card-item .info-column {
         padding-top: 20px;
@@ -1150,47 +1244,57 @@ body.large .card-item .ringer-coverage {
         padding-bottom: 10px;
         width: 100%
     }
+
     body .card-item.expanded-card .info-column .player-info,
     body.large .card-item .info-column .player-info {
         display: block;
         max-height: 100%
     }
+
     body .card-item.expanded-card .info-column .player-meta,
     body.large .card-item .info-column .player-meta {
         width: 100%;
         max-width: 100%
     }
+
     body .card-item.expanded-card .info-column .player-meta .medium-column,
     body.large .card-item .info-column .player-meta .medium-column {
         display: block !important
     }
+
     body .card-item.expanded-card .info-column .player-meta li,
     body.large .card-item .info-column .player-meta li {
         display: block
     }
+
     body .card-item.expanded-card .info-column .player-meta li .value,
     body.large .card-item .info-column .player-meta li .value {
         float: right
     }
+
     body .card-item.expanded-card .info-column .player-meta li:after,
     body.large .card-item .info-column .player-meta li:after {
         content: '........................................................................................................................................................'
     }
+
     body .card-item.expanded-card .info-column .player-stats ul li,
     body.large .card-item .info-column .player-stats ul li {
         max-height: 100%;
         height: auto;
         margin-bottom: 15px
     }
+
     body .card-item.expanded-card .info-column .player-stats ul li span.detail,
     body.large .card-item .info-column .player-stats ul li span.detail {
         margin-top: 0
     }
+
     body .card-item.expanded-card .info-column .player-stats ul li:nth-child(n+5),
     body.large .card-item .info-column .player-stats ul li:nth-child(n+5) {
         display: block;
         margin-top: 0
     }
+
     body .card-item.expanded-card .toggle-card,
     body.large .card-item .toggle-card {
         top: auto;
@@ -1266,9 +1370,11 @@ body.large .card-item .ringer-coverage {
     .more-coverage {
         padding-bottom: 0
     }
+
     .more-coverage div a {
         width: 100%
     }
+
     .more-coverage div a:nth-child(n+2) {
         display: none
     }
@@ -1370,12 +1476,15 @@ body.large .card-item .ringer-coverage {
     .european_inter .image {
         display: none
     }
+
     .european_inter .content {
         width: 100%
     }
+
     .european_inter .content .player-name {
         font-size: 48
     }
+
     .european_inter .content .inter-title {
         line-height: .95
     }
@@ -1516,12 +1625,14 @@ body.large .card-item .ringer-coverage {
 }
 
 @media (hover:hover) {
+
     #filter-bar-wrapper #filter-bar a.filter.all-coverage:hover,
     #filter-bar-wrapper #filter-bar div.filter.all-coverage:hover {
         color: #2a45a7;
         background-image: url(../../img/right-arrow-hover.png);
         background-image: url(../../img/right-arrow-hover.svg)
     }
+
     #filter-bar-wrapper #filter-bar a.filter.all-coverage:hover .updated,
     #filter-bar-wrapper #filter-bar div.filter.all-coverage:hover .updated {
         color: #2a45a7
@@ -1589,7 +1700,7 @@ body.large .card-item .ringer-coverage {
     background-position: right 20px top 27px;
     background-size: 20px auto;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, .35); 
+    background-color: rgba(0, 0, 0, .35);
     -webkit-transition: max-height .15s linear;
     -moz-transition: max-height .15s linear;
     -ms-transition: max-height .15s linear;
@@ -1611,10 +1722,12 @@ body.large .card-item .ringer-coverage {
 }
 
 @media (hover:hover) {
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person:hover,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person:hover {
         color: #2a45a7
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person:hover .updated,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person:hover .updated {
         color: #2a45a7
@@ -1675,6 +1788,7 @@ body.large .card-item .ringer-coverage {
 }
 
 @media (hover:none) {
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown.open .person:first-of-type,
     #filter-bar-wrapper #filter-bar div.filter.dropdown.open .person:first-of-type {
         color: #2a45a7
@@ -1807,98 +1921,119 @@ body.large .card-item .ringer-coverage {
         margin-bottom: 0;
         height: 55px
     }
+
     #filter-bar-wrapper .filter-logo {
         width: 6%
     }
+
     #filter-bar-wrapper .filter-logo img {
         max-width: 66%
     }
+
     #filter-bar-wrapper #filter-bar div.filter {
         font-size: 12px
     }
+
     #filter-bar-wrapper #filter-bar a.filter {
         border-right: 0
     }
+
     #filter-bar-wrapper #filter-bar a.filter,
     #filter-bar-wrapper #filter-bar div.filter {
         width: 25%;
         padding: 10px 15px
     }
+
     #filter-bar-wrapper #filter-bar a.filter .filter-wrapper span.updated,
     #filter-bar-wrapper #filter-bar div.filter .filter-wrapper span.updated {
         font-size: 12px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.all-coverage,
     #filter-bar-wrapper #filter-bar div.filter.all-coverage {
         background-position: right 10px center;
         background-size: auto 15px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown,
     #filter-bar-wrapper #filter-bar div.filter.dropdown {
         padding: 0;
         height: 52px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list {
         max-height: 49px;
         background-size: 15px auto;
         background-position: right 10px top 23px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person {
         height: 52px;
         padding: 0 10px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .image,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .image {
         height: 40px;
         width: 40px
     }
+
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .name,
     #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .updated,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .name,
     #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .updated {
         font-size: 12px
     }
+
     #filter-bar-wrapper #filter-bar a.filter .filter-wrapper span,
     #filter-bar-wrapper #filter-bar div.filter .filter-wrapper span {
         font-size: 12px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter {
         border-right: 0
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter {
         width: 24%;
         padding: 10px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown {
         padding: 0;
         height: 55px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list {
         max-height: 53px;
         background-size: 15px auto;
         background-position: right 15px top 24px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person {
         height: 53px;
         padding: 10px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .image,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .image {
         height: 50px;
         width: 50px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .name,
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter.dropdown .ranking_list .person .updated,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .name,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter.dropdown .ranking_list .person .updated {
         font-size: 12px
     }
+
     .filter-fixed #filter-bar-wrapper #filter-bar a.filter .filter-wrapper span,
     .filter-fixed #filter-bar-wrapper #filter-bar div.filter .filter-wrapper span {
         font-size: 12px
@@ -1906,6 +2041,7 @@ body.large .card-item .ringer-coverage {
 }
 
 @media (max-width:1023px) {
+
     #filter-bar div.filter .filter-wrapper a,
     #filter-bar div.filter .filter-wrapper img {
         display: none !important
@@ -2167,9 +2303,11 @@ body.large .card-item .ringer-coverage {
     .filter-links.size-toggle a {
         padding-left: 0
     }
+
     .filter-links {
         padding-left: 0
     }
+
     .filter-links .emoji,
     .filter-links .pointer {
         left: -25px
@@ -2181,6 +2319,7 @@ body.large .card-item .ringer-coverage {
         position: fixed;
         top: 90px
     }
+
     .filter-fixed #filters a {
         position: relative;
         display: block
@@ -2199,55 +2338,68 @@ body.large .card-item .ringer-coverage {
         margin: 0 auto;
         float: none
     }
+
     #filters .whats-new {
         display: none
     }
+
     #filters .switcher {
         display: inline-block;
         margin-bottom: 0;
-        float: left; 
+        float: left;
     }
+
     #filters .title {
         display: none
     }
+
     #filters div:nth-child(even) .filter-links {
         float: right;
-        margin-bottom: 0; 
+        margin-bottom: 0;
     }
+
     #filters div:nth-child(odd) .filter-links {
-        float: left; 
-        margin-bottom: 0; 
+        float: left;
+        margin-bottom: 0;
         width: 49%;
-        padding-left: 0; 
+        padding-left: 0;
     }
+
     #filters .filter-links .emoji,
     #filters .filter-links .pointer {
         display: none
     }
+
     #filters #amplitude {
         display: none
     }
+
     #filters div:nth-child(odd) .filter-links a {
         padding: 0;
         margin: 0 15px 0 0
     }
+
     #filters div:nth-child(odd) .filter-links li {
         left: -3px
     }
+
     #filters div:nth-child(odd) .filter-links li:nth-child(3) {
         right: -3px
     }
+
     #filters:after {
         content: '';
         clear: both;
         display: table
     }
+
     #filters a {
         display: inline-block;
         margin-bottom: 0;
         margin-left: 15px;
         vertical-align: top
     }
+
     .filter-fixed #filters {
         position: fixed;
         top: 52px;
@@ -2262,16 +2414,20 @@ body.large .card-item .ringer-coverage {
         padding: 10px 20px 4px;
         background: rgba(0, 0, 0, .95)
     }
+
     .filter-fixed #filters a:not(.active) {
         color: #fff
     }
+
     .filter-fixed #filters a.active {
         color: #2a45a7;
         font-weight: 500
     }
+
     .filter-fixed #filters ul.size-indicator li {
         background: #fff
     }
+
     .filter-fixed #filter-bar-wrapper {
         max-height: 40px
     }
@@ -2411,6 +2567,7 @@ body.large .card-item .ringer-coverage {
     #intro {
         font-size: 22px
     }
+
     #intro .intro-wrapper {
         padding: 60px 10px 60px
     }
@@ -2430,6 +2587,7 @@ body.large .card-item .ringer-coverage {
         font-size: 18px;
         text-align: left
     }
+
     #intro .credit {
         position: relative;
         float: right;
@@ -2437,12 +2595,15 @@ body.large .card-item .ringer-coverage {
         right: auto;
         font-size: 11px
     }
+
     #intro .intro-wrapper {
         padding: 50px 0 0
     }
+
     #intro .intro-actions {
         margin-top: 15px
     }
+
     #intro .ringer-draft-coverage {
         display: block;
         margin-bottom: 15px;
@@ -2451,12 +2612,14 @@ body.large .card-item .ringer-coverage {
         max-width: 100%;
         font-size: 11px
     }
+
     #intro .byline {
         position: relative;
         left: auto;
         margin-bottom: 30px;
         float: none
     }
+
     #intro .social {
         margin-top: 0
     }
@@ -2488,7 +2651,6 @@ body #item-list.filtered .card-item {
     opacity: 0;
     overflow: hidden;
     margin-bottom: -2px;
-    margin-bottom: 0px; 
 }
 
 body #item-list.filtered .card-item.filtered-in {
@@ -2566,14 +2728,16 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
 }
 
 body:not(.large) .card-item.has-hover:not(.expanded-card):hover .info-column {
-    color: var(--lightred); 
+    color: var(--lightred);
 }
+
 body:not(.large) .card-item.has-hover:hover .rank-column {
-    filter: grayscale(0%); 
+    filter: grayscale(0%);
 }
 
 .card-item:hover .toggle-card {
-    fill: var(--lightred)
+    animation-name: bounce;
+    -moz-animation-name: bounce
 }
 
 .card-item .card-info {
@@ -2674,11 +2838,11 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
 }
 
 .card-item h3 {
-    font-size: 20px; 
+    font-size: 20px;
     text-transform: uppercase;
-    display: inline-block; 
-    font-family: "eloquent-jf-pro", serif; 
-    font-style: italic; 
+    display: inline-block;
+    font-family: "eloquent-jf-pro", serif;
+    font-style: italic;
 }
 
 .card-item h4 {
@@ -2694,7 +2858,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
 }
 
 .card-item h4 strong:after {
-    /* content: ', ' */
+    content: ', '
 }
 
 .card-item h6 {
@@ -2717,10 +2881,10 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
     /* padding: 30px; */
     border-right: 1px solid #f5f5f5;
     background-size: 20%;
-    overflow: hidden; 
+    overflow: hidden;
 
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
 }
 
 .card-item .rank-column>.nba-team-wrapper {
@@ -2739,8 +2903,8 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
 
 body.large .card-item .rank-column img,
 .card-item.expanded-card .rank-column img {
-    height: 50%; 
-    max-height: 500px; 
+    height: 50%;
+    max-height: 500px;
 }
 
 .card-item .info-column {
@@ -2785,7 +2949,7 @@ body.large .card-item .rank-column img,
 
 .card-item .info-column .player-main {
     float: left;
-    max-width: 82.5%;
+    max-width: 47.5%
 }
 
 .card-item .info-column .player-stats {
@@ -3290,17 +3454,7 @@ body.large .card-item .rank-column img,
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
-    -webkit-animation-iteration-count: 1; 
-    fill: var(--gray); 
-}
-
-.toggle-card:hover {
-    fill: black !important;
-    /* animation-name: bounce; */
-    /* -moz-animation-name: bounce */
-}
-.card-item .toggle-card:first-child {
-    right: 71px; 
+    -webkit-animation-iteration-count: 1
 }
 
 .card-item.expanded-card .medium-column {
@@ -3311,7 +3465,7 @@ body.large .card-item .rank-column img,
     bottom: 28px
 }
 
-.card-item.expanded-card .toggle-card:not(.maps-icon) svg {
+.card-item.expanded-card .toggle-card svg {
     -moz-transform: rotate(-180deg);
     -o-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
@@ -3352,18 +3506,23 @@ body.large .card-item .rank-column img,
     body.small .card-item {
         overflow: hidden
     }
+
     body.small .card-item:not(.expanded-card) .medium-column {
         opacity: 0
     }
+
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type {
         opacity: 1
     }
+
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div {
         opacity: 1;
     }
+
     body.small .card-item:not(.expanded-card) .medium-column:first-of-type>div:first-of-type {
         opacity: 1
     }
+
     body.small .card-item:not(.expanded-card) .medium-column:nth-of-type(2) {
         opacity: 1
     }
@@ -3375,9 +3534,11 @@ body.large .card-item .rank-column img,
     body.small .card-item:not(.expanded-card) .medium-column:nth-of-type(2)>div:first-of-type {
         opacity: 1
     }
+
     body.small .card-item:not(.expanded-card) .player-main {
         margin-top: -10px
     }
+
     body.small .card-item .nba-team-wrapper {
         display: none
     }
@@ -3387,12 +3548,15 @@ body.large .card-item .rank-column img,
     #item-list {
         width: 100%
     }
+
     .card-item>.nba-team-wrapper {
         display: none
     }
+
     .card-item .card-info {
         display: none
     }
+
     .card-item .rank-column {
         height: 210px;
         background-size: 10%;
@@ -3402,17 +3566,20 @@ body.large .card-item .rank-column img,
         -moz-border-radius-topright: .625rem;
         border-top-left-radius: .625rem;
 
-        justify-content: end; 
+        justify-content: end;
     }
+
     .card-item .rank-column>.nba-team-wrapper {
         display: block;
         position: absolute;
         bottom: 0;
         right: 30px
     }
+
     .card-item .rank-column .ringer-coverage {
         display: none
     }
+
     .card-item .rank-column img {
         opacity: 1;
         visibility: 1;
@@ -3425,14 +3592,17 @@ body.large .card-item .rank-column img,
         -webkit-transform: translateX(0);
         transform: translateX(0)
     }
+
     .card-item .info-column .more-ringer-coverage {
         display: block;
         margin-bottom: 15px;
         border-bottom: 0
     }
+
     .card-item .info-column .player-headline {
         padding-top: 15px
     }
+
     .card-item .player-social {
         margin-top: 0
     }
@@ -3440,13 +3610,15 @@ body.large .card-item .rank-column img,
 
 @media (max-width:767px) {
     #item-list {
-        max-width: 90%;
+        max-width: 80%;
         margin: 0 auto
     }
+
     .card-item {
         max-width: 100%;
         margin-bottom: 20px
     }
+
     .card-item .rank-column {
         position: relative;
         top: auto;
@@ -3465,9 +3637,11 @@ body.large .card-item .rank-column img,
         -o-transition: all, 0s, linear, 0s;
         transition: all, 0s, linear, 0s
     }
+
     .card-item .rank-column>.nba-team-wrapper {
         right: 35px
     }
+
     .card-item .rank-column .movement {
         position: absolute;
         bottom: 0;
@@ -3477,6 +3651,7 @@ body.large .card-item .rank-column img,
         height: 20px;
         display: block
     }
+
     .card-item .rank-column .movement.change-up .move-up {
         background-image: url(../../img/trending-up-white.png);
         background-image: url(../../img/trending-up-white.svg);
@@ -3488,6 +3663,7 @@ body.large .card-item .rank-column img,
         top: auto;
         left: auto
     }
+
     .card-item .rank-column .movement.change-down .move-down {
         background-image: url(../../img/trending-down-white.png);
         background-image: url(../../img/trending-down-white.svg);
@@ -3499,15 +3675,17 @@ body.large .card-item .rank-column img,
         top: auto;
         left: auto
     }
+
     .card-item .rank-column img {
         margin-left: auto;
         top: 0;
         width: 100%;
         margin-top: auto;
         left: auto;
-        margin: 0 !important; 
+        margin: 0 !important;
         border-top-right-radius: .625rem;
     }
+
     .card-item .info-column {
         width: 100%;
         max-width: 100%;
@@ -3515,16 +3693,20 @@ body.large .card-item .rank-column img,
         min-width: auto;
         padding: 20px 15px
     }
+
     .card-item .info-column h3 {
         font-size: 18px
     }
+
     .card-item .info-column h4 {
         font-size: 13px
     }
+
     .card-item .info-column .player-main {
         width: 100%;
         max-width: 100%
     }
+
     .card-item .info-column .player-meta {
         padding: 30px 0 0;
         width: 100%;
@@ -3532,19 +3714,24 @@ body.large .card-item .rank-column img,
         margin-bottom: 30px;
         clear: both
     }
+
     .card-item .info-column .player-meta .medium-column {
         width: 100%;
         float: none
     }
+
     .card-item .info-column .player-description {
         padding-right: 0
     }
+
     .card-item .info-column .player-description .player-headline {
-        font-size: 15px; 
+        font-size: 15px;
     }
+
     .card-item .info-column .player-description .player-subline {
         font-size: 13px;
     }
+
     .card-item .info-column .player-stat-image {
         width: 100%;
         float: none;
@@ -3552,27 +3739,33 @@ body.large .card-item .rank-column img,
         padding-left: 0;
         padding-bottom: 0
     }
+
     .card-item .info-column .player-stat-image>div.stat-image-wrapper {
         margin-top: 10px
     }
+
     .card-item .info-column .player-stats {
         max-height: 100%;
         height: auto
     }
+
     .card-item .info-column .player-stats ul {
         margin-top: 10px;
         width: calc(100% + 10px);
         text-align: center;
         margin-left: -5px
     }
+
     .card-item .info-column .player-stats ul:after {
         clear: both;
         display: table;
         content: ''
     }
+
     .card-item .info-column .player-stats ul .medium-column:first-of-type {
         padding-right: 0
     }
+
     .card-item .info-column .player-stats ul li {
         position: relative;
         display: block;
@@ -3582,34 +3775,42 @@ body.large .card-item .rank-column img,
         margin-bottom: 0;
         float: left
     }
+
     .card-item .info-column .player-stats ul li:nth-child(n+5) {
         display: none;
         margin-top: 10px
     }
+
     .card-item .info-column .player-stats ul li span.detail {
         position: relative;
         bottom: auto;
         font-size: 7px;
         margin: 5px 0 0
     }
+
     .card-item .info-column .player-info {
         display: none;
         overflow: visible;
         padding-left: 0
     }
+
     .card-item .info-column .player-social {
         margin: 0
     }
+
     .card-item .info-column .player-plus-minus h6,
     .card-item .info-column .player-plus-minus h6:first-of-type {
         max-width: 100%
     }
+
     .card-item .info-column .player-plus-minus ul {
         margin-bottom: 30px
     }
+
     .card-item .info-column .medium-show {
         padding-left: 0
     }
+
     .card-item .toggle-card {
         bottom: 20px;
         right: 20px
@@ -3617,6 +3818,7 @@ body.large .card-item .rank-column img,
 }
 
 @keyframes bounce {
+
     0%,
     100%,
     20%,
@@ -3626,11 +3828,13 @@ body.large .card-item .rank-column img,
         -ms-transform: translateY(0);
         transform: translateY(0)
     }
+
     40% {
         -webkit-transform: translateY(-20px);
         -ms-transform: translateY(-20px);
         transform: translateY(-20px)
     }
+
     60% {
         -webkit-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
@@ -3744,16 +3948,20 @@ body.large .card-item .rank-column img,
     .list_inter .image {
         display: none
     }
+
     .list_inter .list-column {
         width: 100%;
         padding: 0 !important
     }
+
     .list_inter .content {
         width: 100%
     }
+
     .list_inter .content .player-name {
         font-size: 28;
     }
+
     .list_inter .content .inter-title {
         line-height: .95
     }
@@ -3971,6 +4179,7 @@ h3 .brand {
         padding: 0 15px;
         width: 100%
     }
+
     .credits {
         margin-top: -15px;
         text-align: left
@@ -4001,12 +4210,15 @@ h3 .brand {
     .is-mobile {
         display: none
     }
+
     .non-mobile {
         display: none
     }
+
     .is-tablet {
         display: block
     }
+
     .is-tablet.label {
         display: inline-block
     }
@@ -4016,16 +4228,20 @@ h3 .brand {
     .is-mobile {
         display: inline-block
     }
+
     .non-mobile {
         display: none !important
     }
+
     .mobile .logo,
     .mobile .main-nav {
         display: none
     }
+
     .show-teams .nav-actions {
         display: none !important
     }
+
     #mobile-nav {
         position: relative;
         display: block;
@@ -4042,6 +4258,7 @@ h3 .brand {
         z-index: 5555;
         margin-bottom: 30px
     }
+
     #mobile-nav .filter-logo {
         position: absolute;
         width: 16.5%;
@@ -4057,11 +4274,13 @@ h3 .brand {
         -o-transition: left 125ms linear;
         transition: left 125ms linear
     }
+
     #mobile-nav .filter-logo a {
         display: block;
         width: 100%;
         height: 100%
     }
+
     #mobile-nav .filter-logo img {
         position: absolute;
         left: 50%;
@@ -4073,6 +4292,7 @@ h3 .brand {
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%)
     }
+
     #mobile-nav .toggle-zone {
         position: absolute;
         top: 0;
@@ -4081,6 +4301,7 @@ h3 .brand {
         z-index: 5;
         height: 40px
     }
+
     #mobile-nav .toggle-close {
         position: fixed;
         top: 0;
@@ -4091,6 +4312,7 @@ h3 .brand {
         z-index: 0;
         display: none
     }
+
     #mobile-nav .toggle {
         float: left;
         width: 18px;
@@ -4107,6 +4329,7 @@ h3 .brand {
         -o-transition: margin-left 125ms linear;
         transition: margin-left 125ms linear
     }
+
     #mobile-nav .current-sort {
         font-weight: 700;
         text-transform: uppercase;
@@ -4114,42 +4337,52 @@ h3 .brand {
         letter-spacing: .1em;
         padding: 2px 0
     }
+
     #mobile-nav .nav-contents {
         display: none
     }
+
     #mobile-nav.open {
         background-position: right 15px top 17px;
         bottom: 0;
         margin-bottom: 0
     }
+
     #mobile-nav.open .filter-logo {
         left: -16.5%
     }
+
     #mobile-nav.open .current-sort {
         display: none
     }
+
     #mobile-nav.open .toggle {
-        margin-left: 15.5px; 
+        margin-left: 15.5px;
         /* margin-left: 100%;  */
         /* float: right;  */
     }
+
     #mobile-nav.open .nav-contents {
         position: relative;
         display: block;
         z-index: 1
     }
+
     #mobile-nav.open .nav-contents .current-sort {
         display: block
     }
+
     #mobile-nav.open .nav-contents div.sort {
         margin-top: 10px;
         list-style: none;
         width: 100%;
         border-top: 1px solid #ccc
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.all-coverage {
         display: none
     }
+
     #mobile-nav.open .nav-contents div.sort .filter,
     #mobile-nav.open .nav-contents div.sort .person {
         color: #000;
@@ -4165,6 +4398,7 @@ h3 .brand {
         letter-spacing: .1em;
         color: var(--gray)
     }
+
     #mobile-nav.open .nav-contents div.sort .filter .updated,
     #mobile-nav.open .nav-contents div.sort .person .updated {
         font-size: 14px;
@@ -4176,6 +4410,7 @@ h3 .brand {
         padding-top: 0;
         font-size: 13px
     }
+
     #mobile-nav.open .nav-contents div.sort .filter svg,
     #mobile-nav.open .nav-contents div.sort .person svg {
         display: none;
@@ -4184,18 +4419,22 @@ h3 .brand {
         left: 12px;
         top: 14px
     }
+
     #mobile-nav.open .nav-contents div.sort .filter span,
     #mobile-nav.open .nav-contents div.sort .person span {
         display: block
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.lists,
     #mobile-nav.open .nav-contents div.sort .person.lists {
         padding: 0
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.active_filter,
     #mobile-nav.open .nav-contents div.sort .person.active_filter {
         color: #2a45a7
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.active_filter:before,
     #mobile-nav.open .nav-contents div.sort .person.active_filter:before {
         content: '';
@@ -4209,25 +4448,31 @@ h3 .brand {
         background-size: 100%;
         background-position: center center
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.active_filter svg,
     #mobile-nav.open .nav-contents div.sort .person.active_filter svg {
         display: none
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.active_filter span,
     #mobile-nav.open .nav-contents div.sort .person.active_filter span {
         color: #2a45a7
     }
+
     #mobile-nav.open .nav-contents div.sort .filter:last-of-type,
     #mobile-nav.open .nav-contents div.sort .person:last-of-type {
         border-bottom: 1px solid #ccc
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.inactive,
     #mobile-nav.open .nav-contents div.sort .person.inactive {
         font-weight: 500
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.inactive.lists:before {
         display: none
     }
+
     #mobile-nav.open .nav-contents div.sort .filter.inactive.lists .ranking-mobile-title {
         color: #000;
         padding-top: 10px;
@@ -4236,49 +4481,61 @@ h3 .brand {
         font-size: 12.5px;
         letter-spacing: .1em
     }
+
     #mobile-nav.open .nav-contents div.sort .person {
         width: 100%;
         border-bottom: none;
         padding-top: 0
     }
+
     #mobile-nav.open .nav-contents div.sort .person .name {
         font-weight: 500
     }
+
     #mobile-nav.open .nav-contents div.sort .person .image {
         width: 30px;
         float: left
     }
+
     #mobile-nav.open .nav-contents div.sort .person .image img {
         width: 100%
     }
+
     #mobile-nav.open .nav-contents div.sort .person .person-content {
         width: calc(100% - 30px);
         padding-left: 0;
         float: left
     }
+
     #mobile-nav.open .nav-contents div.sort .person:after {
         content: '';
         clear: both;
         display: table
     }
+
     #mobile-nav.open .nav-contents div.sort .person:last-of-type {
         border-bottom: 0
     }
+
     #mobile-nav.open .nav-contents .ranking_list .person:first-of-type.active_filter:before {
         top: 30px
     }
+
     #mobile-nav.open .nav-contents .ranking-mobile-title {
         padding-bottom: 5px
     }
+
     #mobile-nav.open .nav-contents .nav-actions {
         padding: 35px 0 10px;
         width: 100%
     }
+
     #mobile-nav.open .nav-contents .nav-actions:after {
         content: '';
         clear: both;
         display: table
     }
+
     #mobile-nav.open .nav-contents .nav-actions>div {
         float: left;
         width: 50%;
@@ -4286,12 +4543,15 @@ h3 .brand {
         font-size: 14px;
         padding: 0 0 0 40px
     }
+
     #mobile-nav.open .nav-contents .nav-actions>div.nav-switcher {
         padding-left: 15px
     }
+
     #mobile-nav.open .nav-contents .nav-actions .size-toggle a {
         padding-left: 0
     }
+
     #mobile-nav.open .nav-contents .nav-actions .title {
         width: 100%;
         position: relative;
@@ -4302,6 +4562,7 @@ h3 .brand {
         margin-bottom: 5px;
         line-height: 1.15
     }
+
     #mobile-nav.open .nav-contents .nav-actions .label {
         margin-bottom: 5px;
         font-size: 10px;
@@ -4309,14 +4570,17 @@ h3 .brand {
         font-weight: 300;
         text-align: left
     }
+
     #mobile-nav.open .nav-contents .nav-actions .emoji,
     #mobile-nav.open .nav-contents .nav-actions .pointer {
         left: -27px;
         top: 2px
     }
+
     #mobile-nav.open .nav-contents .nav-actions .filter-links {
         padding-left: 0
     }
+
     #mobile-nav.open .nav-contents .nav-actions a {
         display: block;
         color: var(--gray);
@@ -4324,15 +4588,19 @@ h3 .brand {
         font-weight: 100;
         font-size: 15px
     }
+
     #mobile-nav.open .nav-contents .nav-actions a.active {
-        color: var(--lightred); 
+        color: var(--lightred);
     }
+
     #mobile-nav.open .nav-switcher .label {
         margin-left: 30px
     }
+
     #mobile-nav.open .toggle-close {
         display: block
     }
+
     #mobile-nav .size-toggle-z {
         position: relative;
         float: left;
@@ -4341,6 +4609,7 @@ h3 .brand {
         margin: 0 10px 0 8px;
         vertical-align: top
     }
+
     #mobile-nav .size-toggle-z:after {
         content: '';
         position: relative;
@@ -4358,6 +4627,7 @@ h3 .brand {
         font-size: 12.5px;
         letter-spacing: .1em
     }
+
     #mobile-nav .size-toggle-z li {
         position: absolute;
         top: 0;
@@ -4370,12 +4640,15 @@ h3 .brand {
         vertical-align: top;
         z-index: 1
     }
+
     #mobile-nav .size-toggle-z li:nth-child(2) {
         top: calc(50% - 3px)
     }
+
     #mobile-nav .size-toggle-z li:nth-child(3) {
         top: calc(100% - 3px)
     }
+
     .filter-fixed #mobile-nav {
         position: fixed;
         top: 0;
@@ -4917,10 +5190,11 @@ h3 .brand {
 }
 
 @media (max-width:767px) {
+
     .card-item .rank-column img,
     .card-item.expanded-card .rank-column img {
         max-width: 100%;
-        height: auto; 
+        height: auto;
         /* margin-top: 10px !important; */
         -moz-transform: translateX(0) !important;
         -o-transform: translateX(0) !important;
@@ -4966,14 +5240,14 @@ h3 .brand {
     width: 30px
 }
 
-    position: relative;
-    z-index: 2;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    color: #fff;
-    margin-bottom: 10px
+position: relative;
+z-index: 2;
+font-weight: 700;
+text-transform: uppercase;
+font-size: 12.5px;
+letter-spacing: .1em;
+color: #fff;
+margin-bottom: 10px
 }
 
 #amplitude .amplitude {
@@ -5139,11 +5413,13 @@ h3 .brand {
 }
 
 @media (max-width:1230px) {
+
     .filter-fixed.podcast-open #amplitude,
     .podcast-open #amplitude {
         bottom: 0;
         top: auto
     }
+
     #amplitude,
     .filter-fixed #amplitude {
         position: fixed;
@@ -5162,53 +5438,59 @@ h3 .brand {
         -o-transition: bottom .25s linear;
         transition: bottom .25s linear
     }
-        display: none;
-        margin-bottom: 5px
-    }
-    #amplitude span[amplitude-song-info=artist],
-    .filter-fixed #amplitude span[amplitude-song-info=artist] {
-        line-height: 60%;
-        margin-bottom: 5px
-    }
-    #amplitude span[amplitude-song-info=name],
-    .filter-fixed #amplitude span[amplitude-song-info=name] {
-        display: block;
-        margin-bottom: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis
-    }
-    #amplitude .toggle-click,
-    .filter-fixed #amplitude .toggle-click {
-        display: block;
-        width: auto;
-        height: 40px;
-        width: 50%;
-        position: absolute;
-        top: -40px;
-        right: 0
-    }
-    #amplitude .toggle-click .toggle,
-    .filter-fixed #amplitude .toggle-click .toggle {
-        position: absolute;
-        bottom: 0;
-        height: 25px;
-        background: #000;
-        font-size: 12px;
-        color: #ddd;
-        font-weight: 700;
-        letter-spacing: 2px;
-        padding: 6px 10px 4px;
-        right: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 12.5px;
-        letter-spacing: .1em;
-        line-height: 100%
-    }
-    .filter-fixed #amplitude {
-        bottom: -80px
-    }
+
+    display: none;
+    margin-bottom: 5px
+}
+
+#amplitude span[amplitude-song-info=artist],
+.filter-fixed #amplitude span[amplitude-song-info=artist] {
+    line-height: 60%;
+    margin-bottom: 5px
+}
+
+#amplitude span[amplitude-song-info=name],
+.filter-fixed #amplitude span[amplitude-song-info=name] {
+    display: block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#amplitude .toggle-click,
+.filter-fixed #amplitude .toggle-click {
+    display: block;
+    width: auto;
+    height: 40px;
+    width: 50%;
+    position: absolute;
+    top: -40px;
+    right: 0
+}
+
+#amplitude .toggle-click .toggle,
+.filter-fixed #amplitude .toggle-click .toggle {
+    position: absolute;
+    bottom: 0;
+    height: 25px;
+    background: #000;
+    font-size: 12px;
+    color: #ddd;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 10px 4px;
+    right: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    letter-spacing: .1em;
+    line-height: 100%
+}
+
+.filter-fixed #amplitude {
+    bottom: -80px
+}
 }
 
 #sticky-phantom {
@@ -5347,13 +5629,13 @@ h3 .brand {
     margin-top: 30px
 }
 
-    font-size: 12.5px;
-    margin-bottom: 7.5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-    letter-spacing: .1em
+font-size: 12.5px;
+margin-bottom: 7.5px;
+text-transform: uppercase;
+font-weight: 700;
+text-transform: uppercase;
+font-size: 12.5px;
+letter-spacing: .1em
 }
 
 .team-card .team-top-section .team-needs li {
@@ -5542,11 +5824,11 @@ h3 .brand {
     margin-top: 30px
 }
 
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    margin-bottom: 7.5px
+font-weight: 700;
+text-transform: uppercase;
+font-size: 12.5px;
+letter-spacing: .1em;
+margin-bottom: 7.5px
 }
 
 .team-card .team-history-section .team-history {
@@ -5560,12 +5842,15 @@ h3 .brand {
         margin-right: 30px;
         width: calc(33.33% - 20px)
     }
+
     .team-card .team-player-section .team-player:last-of-type {
         margin-right: 0
     }
+
     .team-card .team-player-section .team-player:after {
         display: none
     }
+
     .team-card .team-player-section .team-player img {
         position: relative;
         max-height: 250px;
@@ -5585,15 +5870,19 @@ h3 .brand {
     .team-card {
         padding: 25px
     }
+
     .team-card .team-top-section {
         padding: 0
     }
+
     .team-card .team-top-section .top-title {
         display: flex
     }
+
     .team-card .team-top-section .logo-wrapper {
         min-width: 60px
     }
+
     .team-card .team-top-section .team-logo {
         width: 45px;
         position: relative;
@@ -5602,17 +5891,20 @@ h3 .brand {
         vertical-align: middle;
         margin-right: 5px
     }
+
     .team-card .team-top-section .team-name {
         display: inline-block;
         vertical-align: middle;
         flex-grow: 1
     }
+
     .team-card .team-player-section .team-player {
         width: 100%;
         float: none;
         margin: 5px 0 10px;
         padding-left: 0 !important
     }
+
     .team-card .team-player-section .team-player:after {
         display: none
     }
@@ -5626,6 +5918,7 @@ h3 .brand {
         -o-transition: max-height 325ms ease-out, .5s;
         transition: max-height 325ms ease-out, .5s
     }
+
     body:not(.mobile):not(.no-transition) .card-item.sort {
         -webkit-transition: max-height 325ms ease-out, 0s;
         -moz-transition: max-height 325ms ease-out, 0s;
@@ -5633,6 +5926,7 @@ h3 .brand {
         -o-transition: max-height 325ms ease-out, 0s;
         transition: max-height 325ms ease-out, 0s
     }
+
     body:not(.mobile):not(.no-transition) .player-info {
         -webkit-transition: max-height .5s ease-out, .25s;
         -moz-transition: max-height .5s ease-out, .25s;
@@ -5640,6 +5934,7 @@ h3 .brand {
         -o-transition: max-height .5s ease-out, .25s;
         transition: max-height .5s ease-out, .25s
     }
+
     body:not(.mobile):not(.no-transition) .card-item:not(.has-hover) .rank-column .image img:not(.hover-image) {
         -webkit-transition: opacity .25s linear;
         -moz-transition: opacity .25s linear;
@@ -5647,6 +5942,7 @@ h3 .brand {
         -o-transition: opacity .25s linear;
         transition: opacity .25s linear
     }
+
     body:not(.mobile):not(.no-transition) span.title {
         -webkit-transition: color .25s linear, border-color .25s linear;
         -moz-transition: color .25s linear, border-color .25s linear;
@@ -5766,11 +6062,11 @@ h3 .brand {
     transition: max-width .5s ease-in-out 0s
 }
 
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    color: #fff
+font-weight: 700;
+text-transform: uppercase;
+font-size: 12.5px;
+letter-spacing: .1em;
+color: #fff
 }
 
 .video_inter .video-content .video-title {
@@ -5909,21 +6205,25 @@ h3 .brand {
 }
 
 @-webkit-keyframes sk-bounce {
+
     0%,
     100% {
         -webkit-transform: scale(0)
     }
+
     50% {
         -webkit-transform: scale(1)
     }
 }
 
 @keyframes sk-bounce {
+
     0%,
     100% {
         transform: scale(0);
         -webkit-transform: scale(0)
     }
+
     50% {
         transform: scale(1);
         -webkit-transform: scale(1)
@@ -6051,29 +6351,37 @@ h3 .brand {
         top: calc(100% - 55px);
         right: 11px
     }
+
     .video_inter .video-content .video-title {
         font-size: 65px
     }
+
     .video_inter .video-content .video-dek {
         font-size: 14px
     }
+
     .video_inter .video-content .video-presentedby {
         width: 100%
     }
+
     .video_inter .video-content .video-presentedby img {
         height: 16px
     }
+
     .video_inter .video-content .video-presentedby span {
         font-size: 16px
     }
+
     .video_inter.playing .video-content {
         width: 33%;
         max-width: 33%
     }
+
     .video_inter.playing .video-video {
         width: 67%;
         max-width: 67%
     }
+
     .video_inter.playing .video-video .youtube-wrapper.fixed {
         width: 52vw !important;
         height: auto !important;
@@ -6083,22 +6391,27 @@ h3 .brand {
         right: 11px !important;
         left: auto !important
     }
+
     .video_inter.playing .video-video .youtube-wrapper.fixed .current-youtube {
         display: none
     }
+
     .video_inter.playing .video-video .youtube-wrapper.fixed .close .hide {
         display: none
     }
+
     .video_inter.playing .video-video .youtube-wrapper.fixed iframe {
         width: 52vw !important;
         height: 29vw !important
     }
+
     .video_inter.playing .video-video .youtube-wrapper iframe {
         max-height: 100%
     }
 }
 
 @media (max-width:767px) {
+
     .video_inter .video-content,
     .video_inter.playing .video-content {
         padding: 25px;
@@ -6106,26 +6419,31 @@ h3 .brand {
         width: 100%;
         max-width: 100%
     }
+
     .video_inter .video-content .video-dek,
     .video_inter.playing .video-content .video-dek {
         position: relative;
         height: auto;
         min-height: 0
     }
+
     .video_inter .video-content .video-presentedby,
     .video_inter.playing .video-content .video-presentedby {
         position: relative;
         bottom: 0;
         margin-top: 20px
     }
+
     .video_inter .video-content .video-title,
     .video_inter.playing .video-content .video-title {
         font-size: 65px
     }
+
     .video_inter .video-content .video-dek,
     .video_inter.playing .video-content .video-dek {
         opacity: 1
     }
+
     .video_inter .video-video,
     .video_inter.playing .video-video {
         position: relative;

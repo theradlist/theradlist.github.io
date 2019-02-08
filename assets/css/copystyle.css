@@ -1,6 +1,7 @@
 /* Copy Style (style of text) */
 
 @import url("https://use.typekit.net/kmt3uyl.css");
+
 body {
     color: var(--gray);
     font-family: 'nimbus-sans', sans-serif;
@@ -27,7 +28,7 @@ h1.big-text i {
 @media all and (max-width: 1160px) {
     h1.big-text {
         font-size: 5vw;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
 }
 
@@ -53,6 +54,7 @@ p {
 }
 
 /* Link style */
+
 a.red,
 h1 a {
     color: var(--red);
@@ -61,7 +63,7 @@ h1 a {
 
 a.red:hover,
 h1 a:hover {
-    color: var(--darkred); 
+    color: var(--darkred);
 }
 
 a {
