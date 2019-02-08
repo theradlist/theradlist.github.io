@@ -490,14 +490,11 @@ function filterType(t) {
     $(".type-toggle .active").removeClass("active");
     $("." + t.name).addClass("active");
 
-    // add class to item-list 
-    $('#item-list').removeClass("restaurant bar cafe fast-food dessert");
-    if (t.name != "filter-all") {
-        $("#item-list").addClass("filtered " + t.class)
-    } 
-    
-    // filter list items
-    filterListItems();
+    var newdata = alldata.filter(function (itm) {
+        if (itm.type == null) { return false }
+        return itm.type.toUpperCase() == t.class.toUpperCase()
+    })
+    $('#list-places').html(template(newdata))
 }
 
 function filterCuisine(t) {
