@@ -86,56 +86,57 @@
 	<script id="item-template" type="text/x-handlebars-template">
 		{{#each this}}
 			<div class="card-item dorinku col-xs-12 has-hover">
-				<a class="cardlink" href="{{mapsLink}}" target="_blank">
 				<div class="card-info show-info-">
 				</div>
 				<div class="wrapper">
-					<div class="rank-column background-theme" style="background-color: var(--red)">
-					</div>
-					<div class="info-column">
-						<div class="medium-show">
-							<div class="player-main">
-								<h3>{{name}}</h3>
-							</div>
-							<div class="player-meta">
-								<div>
-									<div class="medium-column">
-										<div class="ringer-stat">
-											<span class="label non-mobile is-tablet">Cuisine</span>
-											<span class="label is-mobile">Cuisine:</span>
-											<span class="value">{{cuisine}}</span>
+					<a class="cardlink" href="{{mapsLink}}" target="_blank">
+						<div class="rank-column background-theme" style="background-color: var(--red)">
+						</div>
+						<div class="info-column">
+							<div class="medium-show">
+								<div class="player-main">
+									<h3>{{name}}</h3>
+								</div>
+								<div class="player-meta">
+									<div>
+										<div class="medium-column">
+											<div class="ringer-stat">
+												<span class="label non-mobile is-tablet">Cuisine</span>
+												<span class="label is-mobile">Cuisine:</span>
+												<span class="value">{{cuisine}}</span>
+											</div>
+											<div>
+												<span class="label">Price</span>
+												<span class="value">{{price}}</span>
+											</div>
 										</div>
-										<div>
-											<span class="label">Price</span>
-											<span class="value">{{price}}</span>
-										</div>
-									</div>
-									<div class="medium-column">
-										<div>
-											<span class="label">Type</span>
-											<span class="value">{{type}}</span>
-										</div>
-										<div>
-											<span class="label">Region</span>
-											<span class="value">{{region}}</span>
+										<div class="medium-column">
+											<div>
+												<span class="label">Type</span>
+												<span class="value">{{type}}</span>
+											</div>
+											<div>
+												<span class="label">Region</span>
+												<span class="value">{{region}}</span>
+											</div>
 										</div>
 									</div>
 								</div>
+								<div class="player-description">
+									<div class="player-headline">{{description}}</div>
+									<!-- <div class="player-subline">
+										<strong>Types Of Food:</strong> Sushi/Sashimi, Noodles, Meat
+									</div> -->
+								</div>
 							</div>
-							<div class="player-description">
-								<div class="player-headline">{{description}}</div>
-								<!-- <div class="player-subline">
-									<strong>Types Of Food:</strong> Sushi/Sashimi, Noodles, Meat
-								</div> -->
+							<div class="player-info">
+								<div class="player-plus-minus">
+									<h6>NOTES</h6>
+									<div>{{notes}}</div>
+								</div>
 							</div>
 						</div>
-						<div class="player-info">
-							<div class="player-plus-minus">
-								<h6>NOTES</h6>
-								<div>{{notes}}</div>
-							</div>
-						</div>
-					</div>
+					</a>
 					<div class="toggle-card" onclick="toggleCard(this)">
 						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.5 39.5">
 							<defs>
@@ -153,7 +154,6 @@
 						</svg>
 					</div>
 				</div>
-				</a>
 			</div>
 		{{/each}}
 	</script>
