@@ -74,10 +74,10 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		var alldata, template; 
+		var alldata, template;
 		$(document).ready(function () {
 			$.getJSON('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e', function (data) {
-				alldata = data; 
+				alldata = data;
 				template = Handlebars.compile($('#item-template').html())
 				$('#list-places').html(template(shuffle(data)))
 			})
@@ -86,6 +86,7 @@
 	<script id="item-template" type="text/x-handlebars-template">
 		{{#each this}}
 			<div class="card-item dorinku col-xs-12 has-hover">
+				<a class="cardlink" href="{{mapsLink}}" target="_blank">
 				<div class="card-info show-info-">
 				</div>
 				<div class="wrapper">
@@ -152,6 +153,7 @@
 						</svg>
 					</div>
 				</div>
+				</a>
 			</div>
 		{{/each}}
 	</script>
@@ -237,14 +239,6 @@
 					</div>
 
 					<div class="nav-actions">
-						<!-- <div class="actions-column">
-							<div class="title">How Much Do You
-								<br> Want to Know?
-							</div>
-							<div class="filter-links size-toggle">
-								<!-- <a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
-									<span>Skim</span>
-								</a> -->
 						<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
 							<span>Peruse</span>
 						</a>
@@ -252,7 +246,7 @@
 							<span>Deep Dive</span>
 						</a>
 					</div>
-				</div> -->
+				</div>
 				<div class="actions-column">
 					<div class="title">Sort By Type</div>
 					<div class="filter-links type-toggle">
@@ -268,32 +262,33 @@
 						<a href="#" class="filter-cafe" data-filter="Cafe" onclick="filterType({'name':'filter-cafe', 'class':'cafe'})">
 							<span>Cafe</span>
 						</a>
-						<!-- <a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType({'name':'filter-fast-food', 'class':'fast-food'})">
-									<span>Fast Food</span>
-								</a>
-								<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType({'name':'filter-dessert', 'class':'dessert'})">
-									<span>Dessert</span>
-								</a> -->
+						<a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType({'name':'filter-fast-food', 'class':'fast-food'})">
+							<span>Fast Food</span>
+						</a>
+						<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType({'name':'filter-dessert', 'class':'dessert'})">
+							<span>Dessert</span>
+						</a>
 					</div>
 				</div>
 				<div class="actions-column">
 					<div class="title">Sort By Cuisine</div>
 					<div class="filter-links cuisine-toggle">
-						<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()" onfocus="toggleCuisineList('in')" onfocusout="toggleCuisineList('out')">
-								<div class="dropdown-content cuisineList">
-									<a href="#" class="filter-all active" onclick="filterCuisine({'name':'All', 'elementname':'filter-all', 'class':'allcuisines'})">All</a>
-									<a href="#" class="filter-asian" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian', 'class':'asian'})">Asian</a>
-									<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery', 'class':'bakery'})">Baked Goods</a>
-									<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood', 'class':'barfood'})">Bar Food</a>
-									<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky', 'class':'breaky'})">Breakfast and Brunch</a>
-									<a href="#" class="filter-french" onclick="filterCuisine({'name':'French', 'elementname':'filter-french', 'class':'french'})">French</a>
-									<a href="#" class="filter-halal" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal', 'class':'halal'})">Halal</a>
-									<a href="#" class="filter-indian" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian', 'class':'indian'})">Indian</a>
-									<a href="#" class="filter-italian" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian', 'class':'italian'})">Italian</a>
-									<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin', 'class':'latin'})">Latin American</a>
-									<a href="#" class="filter-mediterranean" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean', 'class':'mediterranean'})">Mediterranean</a>
-									<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast', 'class':'middleeast'})">Middle Eastern</a>
-								</div>
+						<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()" onfocus="toggleCuisineList('in')"
+						 onfocusout="toggleCuisineList('out')">
+						<div class="dropdown-content cuisineList">
+							<a href="#" class="filter-all active" onclick="filterCuisine({'name':'All', 'elementname':'filter-all', 'class':'allcuisines'})">All</a>
+							<a href="#" class="filter-asian" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian', 'class':'asian'})">Asian</a>
+							<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery', 'class':'bakery'})">Baked Goods</a>
+							<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood', 'class':'barfood'})">Bar Food</a>
+							<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky', 'class':'breaky'})">Breakfast and Brunch</a>
+							<a href="#" class="filter-french" onclick="filterCuisine({'name':'French', 'elementname':'filter-french', 'class':'french'})">French</a>
+							<a href="#" class="filter-halal" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal', 'class':'halal'})">Halal</a>
+							<a href="#" class="filter-indian" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian', 'class':'indian'})">Indian</a>
+							<a href="#" class="filter-italian" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian', 'class':'italian'})">Italian</a>
+							<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin', 'class':'latin'})">Latin American</a>
+							<a href="#" class="filter-mediterranean" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean', 'class':'mediterranean'})">Mediterranean</a>
+							<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast', 'class':'middleeast'})">Middle Eastern</a>
+						</div>
 					</div>
 				</div>
 				<div class="actions-column">
@@ -308,9 +303,7 @@
 						<i>Price Filter Coming Soon</i>
 					</div>
 				</div>
-		</div>
-		</div>
-		</nav>
+			</nav>
 		</div>
 
 		<div class="list section">
@@ -364,16 +357,21 @@
 								<div class="dropdown-content cuisineList">
 									<a href="#" class="filter-all active" onclick="filterCuisine({'name':'All', 'elementname':'filter-all'})">All</a>
 									<a href="#" class="filter-asian" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian'})">Asian</a>
-									<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked Goods</a>
-									<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar Food</a>
-									<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast and Brunch</a>
+									<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked
+										Goods</a>
+									<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar
+										Food</a>
+									<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast
+										and Brunch</a>
 									<a href="#" class="filter-french" onclick="filterCuisine({'name':'French', 'elementname':'filter-french'})">French</a>
 									<a href="#" class="filter-halal" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal'})">Halal</a>
 									<a href="#" class="filter-indian" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian'})">Indian</a>
 									<a href="#" class="filter-italian" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian'})">Italian</a>
-									<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin American</a>
+									<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin
+										American</a>
 									<a href="#" class="filter-mediterranean" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean'})">Mediterranean</a>
-									<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle Eastern</a>
+									<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle
+										Eastern</a>
 								</div>
 							</div>
 						</div>
@@ -413,7 +411,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</main>
 

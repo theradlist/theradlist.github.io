@@ -66,12 +66,16 @@ h1 a:hover {
     color: var(--darkred);
 }
 
-a {
+a:not(.cardlink) {
     color: var(--lightgray);
     font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
+    color: var(--gray);
+}
+
+a.cardlink {
     color: var(--gray);
 }
