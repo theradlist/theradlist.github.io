@@ -488,11 +488,16 @@ function toggleCard(param) {
 function filterType(t) {
     // show that the filter is active
     $(".type-toggle .active").removeClass("active");
-    $("." + t.name).addClass("active");
+    $("." + t).addClass("active");
+
+    if (t == "All") {
+        $('#list-places').html(template(alldata))
+        return 
+    }
 
     var newdata = alldata.filter(function (itm) {
         if (itm.type == null) { return false }
-        return itm.type.toUpperCase() == t.class.toUpperCase()
+        return itm.type.toUpperCase() == t.toUpperCase()
     })
     $('#list-places').html(template(newdata))
 }
