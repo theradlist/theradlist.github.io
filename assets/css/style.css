@@ -1,5 +1,34 @@
-                        /* Chrome-Windows font anti-aliasing fix */
+/* SMALL THERADLIST */
+/* UNDO LISTSECTION.CSS:2695 */
+.toggle-card:not(.maps-icon) {
+    display: none; 
+}
+.player-meta, .player-description {
+    display: none; 
+}
+/* body.small .card-item:not(.expanded-card) .wrapper {
+    height: 70px; 
+} */
+.map.section {
+    display: none; 
+}
+@media (max-width: 767px) {
+    body.small .card-item:not(.expanded-card) .info-column {
+        left: 0%; 
+    }
+    body.small .card-item:not(.expanded-card) .toggle-card {
+        top: 0px !important; 
+        right: -30px; 
+    }
+    body.small .card-item:not(.expanded-card) .info-column h3 {
+        line-height: 1.2; 
+    }
+}
+body.small .card-item:not(.expanded-card) .info-column {
+    overflow: visible; 
+}
 
+/* Chrome-Windows font anti-aliasing fix */
 #forgoogle {
     margin-bottom: 51px;
     margin-left: 30px;
