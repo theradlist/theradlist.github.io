@@ -79,7 +79,7 @@
 			$.getJSON('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e', function (data) {
 				alldata = data; 
 				template = Handlebars.compile($('#item-template').html())
-				$('#list-places').html(template(data))
+				$('#list-places').html(template(shuffle(data)))
 			})
 		})
 	</script>
