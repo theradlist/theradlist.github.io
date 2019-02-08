@@ -2054,9 +2054,21 @@ body.large .card-item .ringer-coverage {
     }
 }
 
-.filter-links {
-    position: relative;
+.actions-column {
+    margin-top: 30px;
+}
+
+.actions-column .filter-links {
+    padding-left: 25px;
+}
+
+.actions-column .title {
     padding-left: 25px
+}
+
+#filters .filter-links {
+    position: relative;
+    margin-bottom: 30px; 
 }
 
 .filter-links .emoji,
@@ -2075,10 +2087,6 @@ body.large .card-item .ringer-coverage {
     -ms-transition: top .15s linear;
     -o-transition: top .15s linear;
     transition: top .15s linear
-}
-
-.filter-links {
-    margin-bottom: 30px
 }
 
 .filter-links.size-toggle {
@@ -2115,6 +2123,11 @@ body.large .card-item .ringer-coverage {
 
 .filter-links.size-toggle a.detailed .emoji {
     background-image: url(https://nbadraft.theringer.com/img/detailed-emoji.png)
+}
+
+.filter-links a span {
+    font-weight: 500; 
+    
 }
 
 .show-teams #filters .size-filter {
