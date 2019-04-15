@@ -161,8 +161,7 @@
 
 <body class="medium">
 
-	<main class="outer-container">
-
+	<main id="app" class="outer-container">
 		<div class="bg-image">
 			<img class="desktop" title="" alt="" src="./assets/images/bg-cropped.png">
 			<img class="mobile" title="" alt="" src="./assets/images/bg-cropped-mobile.png">
@@ -172,7 +171,7 @@
 
 		<nav id="menu">
 			<ul>
-				<li><a href="https://github.com/theradlist/theradlist.github.io/" target="_blank">Github</a></li>
+				<li><a href="https://github.com/theradlist/theradlist.github.io/" target="_blank">Github {{message}}</a></li>
 	            <li><a href="https://docs.google.com/spreadsheets/d/1XmlmM5n6t3kVBSNt9Gq4N346IUaRPfx23JSiw2pJjJc/edit?usp=sharing">Data</a></li>
 			</ul>
 		</nav>
@@ -428,17 +427,19 @@
 		<div id="made-by-arjun"></div>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin="anonymous"></script>
-	<script src="assets/js/list.js"></script>
+	<!-- Vue -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.js"></script>
 	<script>
-		changeSize({
-			'name': 'default',
-			'class': 'medium'
-		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue!'
+			}
+		})
 	</script>
+
+	<!-- Footer  -->
+	<script src="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120962453-1"></script>
