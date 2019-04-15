@@ -71,18 +71,6 @@
 	<link rel="stylesheet" href="./assets/css/footerstyle.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.css" />
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		var alldata, template;
-		$(document).ready(function () {
-			$.getJSON('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e', function (data) {
-				alldata = data;
-				template = Handlebars.compile($('#item-template').html())
-				// $('#list-places').html(template(shuffle(data)))
-			})
-		})
-	</script>
 	<script id="item-template" type="text/x-handlebars-template">
 		{{#each this}}
 			<div class="card-item dorinku col-xs-12 has-hover">
@@ -173,7 +161,10 @@
 					 :price="price"
 					 @filter-the-list="updateList"></filters>
 
-			<list></list>
+			<list :type="type"
+				  :cuisine="cuisine"
+				  :region="region"
+				  :price="price"></list>
 		</div>
 	</main>
 
@@ -382,13 +373,31 @@
 		})
 
 		Vue.component('list', {
-			template: '<p id="list">HI</p>'
+			props: ["type", "cuisine", "region", "price"],
+			data() {
+				return {
+					data: [],
+					list: [],
+				}
+			},
+			methods: {
+				filterList() {
+					console.log("I gotta filter ", this.type, ",", this.cuisine, ",", this.region, ",", this.region, ",", this.price)
+					console.log("from ", this.data, " to ", this.list)
+				}
+			},
+			async created() {
+				fetch('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e')
+					.then(stream => stream.json())
+					.then(data => this.data = data)
+					.catch(error => console.error(error))
+			},
+			template: '<p id="list">{{data}}</p>'
 		})
 
 		var app = new Vue({
 			el: '#app',
 			data: {
-				list: [], 
 				view: "medium",
 				type: "All", 
 				cuisine: "All", 
