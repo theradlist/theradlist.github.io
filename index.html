@@ -234,10 +234,8 @@
 			methods: {
 				changeSize(size) { this.$emit("filter-the-list", {view: size, type: this.type, cuisine: this.cuisine, region: this.region, price: this.price}) },
 				filterType(type) { this.$emit("filter-the-list", {view: this.view, type: type, cuisine: this.cuisine, region: this.region, price: this.price}) },
-				filterCuisine(cuisine) { 
-					console.log(cuisine); 
-					this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: cuisine, region: this.region, price: this.price}) 
-				},
+				filterCuisine(cuisine) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: cuisine, region: this.region, price: this.price}) },
+				filterRegion(region) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: this.cuisine, region: region, price: this.price}) }, 
 				filterPrice(price) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: this.cuisine, region: this.region, price: price}) }, 
 				filterCuisineOptions() {
 					filter = $(".cuisine-toggle input").val().toUpperCase();
@@ -249,16 +247,27 @@
 							a[i].style.display = "none";
 						}
 					}
-				}
+				}, 
+				filterRegionOptions() {
+					filter = $(".region-toggle input").val().toUpperCase();
+					a = $(".region-toggle .dropdown-content.regionList a").get();
+					for (i = 0; i < a.length; i++) { 
+						if (a[i].innerHTML.toUpperCase().indexOf(filter)> -1) {
+							a[i].style.display = "";
+						} else {
+							a[i].style.display = "none";
+						}
+					}
+				}, 
 			},
 			computed: {
-				cuisinePlaceholder() {
-					return (this.cuisine=='All') ? 'Search Cuisine...' : this.cuisine
-				}
+				cuisinePlaceholder() { return (this.cuisine=='All') ? 'Search Cuisine...' : this.cuisine },
+				regionPlaceholder() { return (this.region=='All') ? 'Search Region...' : this.region }
 			},
 			data() {
 				return {
-					showList: false,
+					showCuisineList: false,
+					showRegionList: false,
 				}
 			},
 			template: `<div id="filters">
@@ -304,8 +313,8 @@
 						<input type="text" 
 							:placeholder="cuisinePlaceholder" 
 							@keyup="filterCuisineOptions"
-							@focus="showList=true" @focusout="setTimeout(() => { showList=false }, 250);">
-						<div class="dropdown-content cuisineList" v-show="showList">
+							@focus="showCuisineList=true" @focusout="setTimeout(() => { showCuisineList=false }, 250);">
+						<div class="dropdown-content cuisineList" v-show="showCuisineList">
 							<a href="#/" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
 							<a href="#/" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
 							<a href="#/" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>
@@ -347,7 +356,26 @@
 				<div class="location-filter">
 					<div class="title">Sort By Region</div>
 					<div class="filter-links location-toggle">
-						<i>Location Filter Coming Soon</i>
+						<input type="text" 
+							:placeholder="regionPlaceholder" 
+							@keyup="filterRegionOptions"
+							@focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
+						<div class="dropdown-content regionList" v-show="showRegionList">
+							<a href="#/" :class="{active: (region=='All')}" @click="filterRegion('All')">All</a>
+							<a href="#/" :class="{active: (region=='Jasper Ave')}" @click="filterRegion('Jasper Ave')">Jasper Ave</a>
+							<a href="#/" :class="{active: (region=='Whyte Ave')}" @click="filterRegion('Whyte Ave')">Whyte Ave</a>
+							<a href="#/" :class="{active: (region=='Ice District')}" @click="filterRegion('Ice District')">Ice District</a>
+							<a href="#/" :class="{active: (region=='Downtown')}" @click="filterRegion('Downtown')">Downtown</a>
+							<a href="#/" :class="{active: (region=='Windermere')}" @click="filterRegion('Windermere')">Windermere</a>
+							<a href="#/" :class="{active: (region=='SummerSide')}" @click="filterRegion('SummerSide')">SummerSide</a>
+							<a href="#/" :class="{active: (region=='South Gateway')}" @click="filterRegion('South Gateway')">South Gateway</a>
+							<a href="#/" :class="{active: (region=='Belgravia')}" @click="filterRegion('Belgravia')">Belgravia</a>
+							<a href="#/" :class="{active: (region=='Bonnie Doon')}" @click="filterRegion('Bonnie Doon')">Bonnie Doon</a>
+							<a href="#/" :class="{active: (region=='Mill Creek')}" @click="filterRegion('Mill Creek')">Mill Creek</a>
+							<a href="#/" :class="{active: (region=='Mayfield')}" @click="filterRegion('Mayfield')">Mayfield</a>
+							<a href="#/" :class="{active: (region=='Garneau')}" @click="filterRegion('Garneau')">Garneau</a>
+							<a href="#/" :class="{active: (region=='Millwoods')}" @click="filterRegion('Millwoods')">Millwoods</a>
+						</div>
 					</div>
 				</div>
 			</div>`
