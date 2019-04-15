@@ -166,7 +166,11 @@
 
 		<div id="main-content" class="section">
 
-			<filters></filters>
+			<filters :view="view"
+					 :type="type"
+					 :cuisine="cuisine"
+					 :region="region"
+					 :price="price"></filters>
 
 			<list></list>
 		</div>
@@ -225,18 +229,17 @@
 		})
 
 		Vue.component('filters', {
+			props: ["view", "type", "cuisine", "region", "price"],
 			template: `<div id="filters">
 				<div class="size-filter">
 					<div class="title">How Much Do You
 						<br> Want to Know?
 					</div>
 					<div class="filter-links size-toggle">
-						<a href="#" class="active  default" data-size="medium"
-							onclick="changeSize({'name':'default', 'class':'medium'})">
+						<a href="#" :class="{ active: (view=='medium') }" onclick="changeSize({'name':'default', 'class':'medium'})">
 							<span>Peruse</span>
 						</a>
-						<a href="#" class=" detailed" data-size="large"
-							onclick="changeSize({'name':'detailed', 'class':'large'})">
+						<a href="#" :class="{ active: (view=='large') }" onclick="changeSize({'name':'detailed', 'class':'large'})">
 							<span>Deep Dive</span>
 						</a>
 					</div>
@@ -244,22 +247,22 @@
 				<div class="type-filter">
 					<div class="title">Sort By Type</div>
 					<div class="filter-links type-toggle">
-						<a href="#" class="active filter-all" data-filter="All" onclick="filterType('All')">
+						<a href="#" :class="{ active: (type=='All') }" onclick="filterType('All')">
 							<span>All</span>
 						</a>
-						<a href="#" class="filter-restaurant" data-filter="Restaurant" onclick="filterType('Restaurant')">
+						<a href="#" :class="{ active: (type=='Restaurant') }" onclick="filterType('Restaurant')">
 							<span>Restaurant</span>
 						</a>
-						<a href="#" class="filter-bar" data-filter="Bar" onclick="filterType('Bar')">
+						<a href="#" :class="{ active: (type=='Bar') }" onclick="filterType('Bar')">
 							<span>Bar</span>
 						</a>
-						<a href="#" class="filter-cafe" data-filter="Cafe" onclick="filterType('Cafe')">
+						<a href="#" :class="{ active: (type=='Cafe') }" onclick="filterType('Cafe')">
 							<span>Cafe</span>
 						</a>
-						<a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType('Fast Food')">
+						<a href="#" :class="{ active: (type=='Fast Food') }" onclick="filterType('Fast Food')">
 							<span>Fast Food</span>
 						</a>
-						<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType('Dessert')">
+						<a href="#" :class="{ active: (type=='Dessert') }" onclick="filterType('Dessert')">
 							<span>Dessert</span>
 						</a>
 					</div>
@@ -270,55 +273,40 @@
 						<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()"
 							onfocus="toggleCuisineList('in')" onfocusout="toggleCuisineList('out')">
 						<div class="dropdown-content cuisineList">
-							<a href="#" class="filter-all active"
-								onclick="filterCuisine({'name':'All', 'elementname':'filter-all'})">All</a>
-							<a href="#" class="filter-asian"
-								onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian'})">Asian</a>
-							<a href="#" class="filter-bakery"
-								onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked Goods</a>
-							<a href="#" class="filter-barfood"
-								onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar Food</a>
-							<a href="#" class="filter-breaky"
-								onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast
-								and Brunch</a>
-							<a href="#" class="filter-french"
-								onclick="filterCuisine({'name':'French', 'elementname':'filter-french'})">French</a>
-							<a href="#" class="filter-halal"
-								onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal'})">Halal</a>
-							<a href="#" class="filter-indian"
-								onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian'})">Indian</a>
-							<a href="#" class="filter-italian"
-								onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian'})">Italian</a>
-							<a href="#" class="filter-latin"
-								onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin
-								American</a>
-							<a href="#" class="filter-mediterranean"
-								onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean'})">Mediterranean</a>
-							<a href="#" class="filter-middleeast"
-								onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle
-								Eastern</a>
+							<a href="#" :class="{active: (cuisine=='All')}" onclick="filterCuisine({'name':'All', 'elementname':'filter-all'})">All</a>
+							<a href="#" :class="{active: (cuisine=='Asian')}" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian'})">Asian</a>
+							<a href="#" :class="{active: (cuisine=='Baked Goods')}" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked Goods</a>
+							<a href="#" :class="{active: (cuisine=='Bar Food')}" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar Food</a>
+							<a href="#" :class="{active: (cuisine=='Breakfast and Brunch')}" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast and Brunch</a>
+							<a href="#" :class="{active: (cuisine=='French')}" onclick="filterCuisine({'name':'French', 'elementname':'filter-french'})">French</a>
+							<a href="#" :class="{active: (cuisine=='Halal')}" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal'})">Halal</a>
+							<a href="#" :class="{active: (cuisine=='Indian')}" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian'})">Indian</a>
+							<a href="#" :class="{active: (cuisine=='Italian')}" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian'})">Italian</a>
+							<a href="#" :class="{active: (cuisine=='Latin American')}" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin American</a>
+							<a href="#" :class="{active: (cuisine=='Mediterranean')}" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean'})">Mediterranean</a>
+							<a href="#" :class="{active: (cuisine=='Middle Eastern')}" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle Eastern</a>
 						</div>
 					</div>
 				</div>
 				<div class="price-filter">
 					<div class="title">Sort By Price</div>
 					<div class="filter-links price-toggle">
-						<a href="#" class="active filter-0" data-filter="All" onclick="filterPrice('All')">
+						<a href="#" :class="{active:(price=='All')}" onclick="filterPrice('All')">
 							<span>All</span>
 						</a>
-						<a href="#" class="filter-1" data-filter="Restaurant" onclick="filterPrice('$')">
+						<a href="#" :class="{active:(price=='$')}" onclick="filterPrice('$')">
 							<span>$</span>
 						</a>
-						<a href="#" class="filter-2" data-filter="Bar" onclick="filterPrice('$$')">
+						<a href="#" :class="{active:(price=='$$')}" onclick="filterPrice('$$')">
 							<span>$$</span>
 						</a>
-						<a href="#" class="filter-3" data-filter="Cafe" onclick="filterPrice('$$$')">
+						<a href="#" :class="{active:(price=='$$$')}" onclick="filterPrice('$$$')">
 							<span>$$$</span>
 						</a>
-						<a href="#" class="filter-4" data-filter="Fast Food" onclick="filterPrice('$$$$')">
+						<a href="#" :class="{active:(price=='$$$$')}" onclick="filterPrice('$$$$')">
 							<span>$$$$</span>
 						</a>
-						<a href="#" class="filter-5" data-filter="Dessert" onclick="filterPrice('$$$$$')">
+						<a href="#" :class="{active:(price=='$$$$$')}" onclick="filterPrice('$$$$$')">
 							<span>$$$$$</span>
 						</a>
 					</div>
@@ -339,7 +327,12 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
-				message: 'Hello Vue!'
+				list: [], 
+				view: "medium",
+				type: "All", 
+				cuisine: "All", 
+				region: "All", 
+				price: "All"
 			}
 		})
 	</script>
