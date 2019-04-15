@@ -215,7 +215,7 @@
 							<p>but only for those that look it seems. Here to help you see, TheRADList. Look through Edmonton's
 								most
 								interesting bars, cafe's and restaurants.
-								<!-- <a class="red read-more" href="#">more</a> -->
+								<!-- <a class="red read-more" href="#/">more</a> -->
 							</p>
 
 						</div>
@@ -267,10 +267,10 @@
 						<br> Want to Know?
 					</div>
 					<div class="filter-links size-toggle">
-						<a href="#" :class="{ active: (view=='medium') }" @click="changeSize('medium')">
+						<a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')">
 							<span>Peruse</span>
 						</a>
-						<a href="#" :class="{ active: (view=='large') }" @click="changeSize('large')">
+						<a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')">
 							<span>Deep Dive</span>
 						</a>
 					</div>
@@ -278,22 +278,22 @@
 				<div class="type-filter">
 					<div class="title">Sort By Type</div>
 					<div class="filter-links type-toggle">
-						<a href="#" :class="{ active: (type=='All') }" @click="filterType('All')">
+						<a href="#/" :class="{ active: (type=='All') }" @click="filterType('All')">
 							<span>All</span>
 						</a>
-						<a href="#" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')">
+						<a href="#/" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')">
 							<span>Restaurant</span>
 						</a>
-						<a href="#" :class="{ active: (type=='Bar') }" @click="filterType('Bar')">
+						<a href="#/" :class="{ active: (type=='Bar') }" @click="filterType('Bar')">
 							<span>Bar</span>
 						</a>
-						<a href="#" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')">
+						<a href="#/" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')">
 							<span>Cafe</span>
 						</a>
-						<a href="#" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')">
+						<a href="#/" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')">
 							<span>Fast Food</span>
 						</a>
-						<a href="#" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')">
+						<a href="#/" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')">
 							<span>Dessert</span>
 						</a>
 					</div>
@@ -306,40 +306,40 @@
 							@keyup="filterCuisineOptions"
 							@focus="showList=true" @focusout="setTimeout(() => { showList=false }, 250);">
 						<div class="dropdown-content cuisineList" v-show="showList">
-							<a href="#" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
-							<a href="#" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
-							<a href="#" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>
-							<a href="#" :class="{active: (cuisine=='Bar Food')}" @click="filterCuisine('Bar Food')">Bar Food</a>
-							<a href="#" :class="{active: (cuisine=='Breakfast and Brunch')}" @click="filterCuisine('Breakfast and Brunch')">Breakfast and Brunch</a>
-							<a href="#" :class="{active: (cuisine=='French')}" @click="filterCuisine('French')">French</a>
-							<a href="#" :class="{active: (cuisine=='Halal')}" @click="filterCuisine('Halal')">Halal</a>
-							<a href="#" :class="{active: (cuisine=='Indian')}" @click="filterCuisine('Indian')">Indian</a>
-							<a href="#" :class="{active: (cuisine=='Italian')}" @click="filterCuisine('Italian')">Italian</a>
-							<a href="#" :class="{active: (cuisine=='Latin American')}" @click="filterCuisine('Latin American')">Latin American</a>
-							<a href="#" :class="{active: (cuisine=='Mediterranean')}" @click="filterCuisine('Mediterranean')">Mediterranean</a>
-							<a href="#" :class="{active: (cuisine=='Middle Eastern')}" @click="filterCuisine('Middle Eastern')">Middle Eastern</a>
+							<a href="#/" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
+							<a href="#/" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
+							<a href="#/" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>
+							<a href="#/" :class="{active: (cuisine=='Bar Food')}" @click="filterCuisine('Bar Food')">Bar Food</a>
+							<a href="#/" :class="{active: (cuisine=='Breakfast and Brunch')}" @click="filterCuisine('Breakfast and Brunch')">Breakfast and Brunch</a>
+							<a href="#/" :class="{active: (cuisine=='French')}" @click="filterCuisine('French')">French</a>
+							<a href="#/" :class="{active: (cuisine=='Halal')}" @click="filterCuisine('Halal')">Halal</a>
+							<a href="#/" :class="{active: (cuisine=='Indian')}" @click="filterCuisine('Indian')">Indian</a>
+							<a href="#/" :class="{active: (cuisine=='Italian')}" @click="filterCuisine('Italian')">Italian</a>
+							<a href="#/" :class="{active: (cuisine=='Latin American')}" @click="filterCuisine('Latin American')">Latin American</a>
+							<a href="#/" :class="{active: (cuisine=='Mediterranean')}" @click="filterCuisine('Mediterranean')">Mediterranean</a>
+							<a href="#/" :class="{active: (cuisine=='Middle Eastern')}" @click="filterCuisine('Middle Eastern')">Middle Eastern</a>
 						</div>
 					</div>
 				</div>
 				<div class="price-filter">
 					<div class="title">Sort By Price</div>
 					<div class="filter-links price-toggle">
-						<a href="#" :class="{active:(price=='All')}" @click="filterPrice('All')">
+						<a href="#/" :class="{active:(price=='All')}" @click="filterPrice('All')">
 							<span>All</span>
 						</a>
-						<a href="#" :class="{active:(price=='$')}" @click="filterPrice('$')">
+						<a href="#/" :class="{active:(price=='$')}" @click="filterPrice('$')">
 							<span>$</span>
 						</a>
-						<a href="#" :class="{active:(price=='$$')}" @click="filterPrice('$$')">
+						<a href="#/" :class="{active:(price=='$$')}" @click="filterPrice('$$')">
 							<span>$$</span>
 						</a>
-						<a href="#" :class="{active:(price=='$$$')}" @click="filterPrice('$$$')">
+						<a href="#/" :class="{active:(price=='$$$')}" @click="filterPrice('$$$')">
 							<span>$$$</span>
 						</a>
-						<a href="#" :class="{active:(price=='$$$$')}" @click="filterPrice('$$$$')">
+						<a href="#/" :class="{active:(price=='$$$$')}" @click="filterPrice('$$$$')">
 							<span>$$$$</span>
 						</a>
-						<a href="#" :class="{active:(price=='$$$$$')}" @click="filterPrice('$$$$$')">
+						<a href="#/" :class="{active:(price=='$$$$$')}" @click="filterPrice('$$$$$')">
 							<span>$$$$$</span>
 						</a>
 					</div>
