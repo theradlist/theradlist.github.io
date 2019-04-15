@@ -234,8 +234,32 @@
 			methods: {
 				changeSize(size) { this.$emit("filter-the-list", {view: size, type: this.type, cuisine: this.cuisine, region: this.region, price: this.price}) },
 				filterType(type) { this.$emit("filter-the-list", {view: this.view, type: type, cuisine: this.cuisine, region: this.region, price: this.price}) },
-				filterCuisine(cuisine) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: cuisine, region: this.region, price: this.price}) },
-				filterPrice(price) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: this.cuisine, region: this.region, price: price}) }
+				filterCuisine(cuisine) { 
+					console.log(cuisine); 
+					this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: cuisine, region: this.region, price: this.price}) 
+				},
+				filterPrice(price) { this.$emit("filter-the-list", {view: this.view, type: this.type, cuisine: this.cuisine, region: this.region, price: price}) }, 
+				filterCuisineOptions() {
+					filter = $(".cuisine-toggle input").val().toUpperCase();
+					a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
+					for (i = 0; i < a.length; i++) { 
+						if (a[i].innerHTML.toUpperCase().indexOf(filter)> -1) {
+							a[i].style.display = "";
+						} else {
+							a[i].style.display = "none";
+						}
+					}
+				}
+			},
+			computed: {
+				cuisinePlaceholder() {
+					return (this.cuisine=='All') ? 'Search Cuisine...' : this.cuisine
+				}
+			},
+			data() {
+				return {
+					showList: false,
+				}
 			},
 			template: `<div id="filters">
 				<div class="size-filter">
@@ -277,8 +301,11 @@
 				<div class="cuisine-filter">
 					<div class="title">Sort By Cuisine</div>
 					<div class="filter-links cuisine-toggle">
-						<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()" onfocus="toggleCuisineList('in')" onfocusout="toggleCuisineList('out')">
-						<div class="dropdown-content cuisineList">
+						<input type="text" 
+							:placeholder="cuisinePlaceholder" 
+							@keyup="filterCuisineOptions"
+							@focus="showList=true" @focusout="setTimeout(() => { showList=false }, 250);">
+						<div class="dropdown-content cuisineList" v-show="showList">
 							<a href="#" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
 							<a href="#" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
 							<a href="#" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>

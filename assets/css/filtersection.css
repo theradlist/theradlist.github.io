@@ -34,7 +34,6 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
     position: absolute;
     background-color: var(--bglightgray);
     border: 1px solid var(--lightgray);
