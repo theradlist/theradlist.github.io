@@ -86,7 +86,8 @@
 					 :price="price"
 					 @filter-the-list="updateList"></filters>
 
-			<list :type="type"
+			<list :view="view"
+				  :type="type"
 				  :cuisine="cuisine"
 				  :region="region"
 				  :price="price"></list>
@@ -298,7 +299,7 @@
 		})
 
 		Vue.component('list', {
-			props: ["type", "cuisine", "region", "price"],
+			props: ["view", "type", "cuisine", "region", "price"],
 			data() {
 				return {
 					data: [],
@@ -373,17 +374,20 @@
 			},
 			template: `<div id="list">
 				<div v-for="item in list">
-					<item-card :data="item"></item-card>
+					<item-card :data="item" :expand="view"></item-card>
 				</div>
 			</div>`
 		})
 
 		Vue.component('item-card', {
-			props: ['data'], 
+			props: ['data', 'expand'], 
 			data() {
 				return {
 					expanded: false
 				}
+			},
+			watch: {
+				expand(newVal, oldVal) { this.expanded = (newVal=="large") }
 			},
 			template: `<div class="card-item col-xs-12 has-hover" :class="{ 'expanded-card': expanded }">
 				<a class="cardlink wrapper" :href="data.mapsLink" target="_blank">
