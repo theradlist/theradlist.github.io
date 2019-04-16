@@ -269,7 +269,8 @@ body.large .card-item .info-column .player-meta .medium-column li {
     body .card-item .info-column {
         width: 100%;
         max-width: 100%;
-        padding-left: 0
+        min-width: unset;
+        padding-left: 0; 
     }
 
     body:not(.large) .card-item .info-column .player-stats ul li:nth-child(n+5) {
@@ -286,7 +287,7 @@ body.large .card-item .info-column .player-meta .medium-column li {
         max-width: 100%;
         float: none;
         overflow: hidden;
-        height: 210px !important
+        height: 100px !important
     }
 
     body.medium .card-item .info-column .player-description {
@@ -1614,7 +1615,7 @@ body.large .card-item .info-column .player-meta .medium-column li {
     #filters div:nth-child(odd) .filter-links {
         float: left;
         margin-bottom: 0;
-        width: 49%;
+        /* width: 49%; */
         padding-left: 0;
     }
 
@@ -1679,6 +1680,12 @@ body.large .card-item .info-column .player-meta .medium-column li {
 
     .filter-fixed #filter-bar-wrapper {
         max-height: 40px
+    }
+
+    #filters .dropdown-content a {
+        width: 100%; 
+        margin: 0 0 5px !important; 
+        padding: 2px 6px !important; 
     }
 }
 
@@ -2665,18 +2672,6 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
     }
 }
 
-@media (min-width:1024px) {
-
-
-
-
-
-
-
-
-
-}
-
 @media (max-width:1023px) {
     #item-list {
         width: 100%
@@ -2698,7 +2693,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
         -moz-border-radius-topleft: .625rem;
         -moz-border-radius-topright: .625rem;
         border-top-left-radius: .625rem;
-
+        border-top-right-radius: .625rem;
         justify-content: end;
     }
 
