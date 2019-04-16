@@ -95,6 +95,18 @@ body .card-item .info-column {
     opacity: 1
 }
 
+@media (min-width: 1500px) {
+    body .card-item.expanded-card .rank-column,
+    body .card-item .rank-column {
+        max-width: 200px; 
+    }
+
+    body .card-item.expanded-card .info-column,
+    body .card-item .info-column {
+        max-width: calc(100% - 200px);
+    }
+}
+
 body .card-item.expanded-card .info-column .player-main,
 body .card-item .info-column .player-main {
     width: 50%
@@ -1378,7 +1390,7 @@ body.large .card-item .info-column .player-meta .medium-column li {
 #filters {
     width: 16.25%;
     max-width: 180px;
-    height: calc(100vh - 110px);
+    /* height: calc(100vh - 110px); */
     min-height: 560px;
     float: left;
     margin: 0;
@@ -2935,7 +2947,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
     }
 }
 
-#mobile-nav {
+#mobile-filters {
     display: none
 }
 
@@ -2987,9 +2999,12 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
         display: none
     }
 
+    #mobile-filters {
+        display: block; 
+    }
+
     #mobile-nav {
         position: relative;
-        display: block;
         width: 100%;
         border-radius: 5px;
         background: #fff;
