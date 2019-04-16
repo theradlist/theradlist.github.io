@@ -1392,7 +1392,7 @@ body.large .card-item .info-column .player-meta .medium-column li {
     z-index: 5
 }
 
-#filters .title {
+#filters #desktop-filters .title {
     width: 100%;
     position: relative;
     font-weight: 700;
@@ -1593,26 +1593,12 @@ body.large .card-item .info-column .player-meta .medium-column li {
         float: none
     }
 
-    #filters .whats-new {
-        display: none
-    }
-
-    #filters .switcher {
-        display: inline-block;
-        margin-bottom: 0;
-        float: left;
-    }
-
-    #filters .title {
-        display: none
-    }
-
-    #filters div:nth-child(even) .filter-links {
+    #filters #desktop-filters div:nth-child(even) .filter-links {
         float: right;
         margin-bottom: 0;
     }
 
-    #filters div:nth-child(odd) .filter-links {
+    #filters #desktop-filters div:nth-child(odd) .filter-links {
         float: left;
         margin-bottom: 0;
         /* width: 49%; */
@@ -1689,8 +1675,15 @@ body.large .card-item .info-column .player-meta .medium-column li {
     }
 }
 
+@media (max-width:1200px) and (min-width:767px) {
+    #filters #desktop-filters .title {
+        display: none
+    }
+
+}
+
 @media (max-width:767px) {
-    #filters {
+    #desktop-filters {
         display: none
     }
 }
