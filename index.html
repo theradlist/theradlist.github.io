@@ -149,7 +149,6 @@
 				return {
 					showCuisineList: false,
 					showRegionList: false,
-					stickyAnchorPlacement: false, 
 					showFilters: false, 
 				}
 			},
@@ -185,30 +184,11 @@
 						}
 					}
 				}, 
-				handleScroll: function (evt, el) {
-					if (window.innerWidth < 882) {
-						if (stickyAnchorPlacement && $("#sticky-anchor").offset().top > 0) toggleFixedMobileNavButton();
-						if (!stickyAnchorPlacement && $("#sticky-anchor").offset().top < 0) toggleFixedMobileNavButton();
-					}
-					// if (window.scrollY > 50) {
-					// 	el.setAttribute(
-					// 	'style',
-					// 	'opacity: 1; transform: translate3d(0, -10px, 0)'
-					// 	)
-					// }
-					// sticky-phantom, body(?), sticky-anchor
-					return window.scrollY > 100
-				},
-				toggleFixedMobileNavButton() {
-					$("body").toggleClass("filter-fixed");
-					stickyAnchorPlacement = !stickyAnchorPlacement;
-					$("#sticky-phantom").toggle();
-				},
 			},
 			template: `<div id="filters">
 				<div id="mobile-filters">
-					<div id="sticky-anchor" v-scroll="handleScroll"></div>
-					<div id="sticky-phantom" v-scroll="handleScroll">&nbsp; &nbsp;</div>
+					<div id="sticky-anchor"></div>
+					<div id="sticky-phantom">&nbsp; &nbsp;</div>
 					<nav id="mobile-nav" :class="{open: showFilters}">
 						<div class="toggle-zone" @click="showFilters=!showFilters"></div>
 						<div class="toggle-close"></div>
