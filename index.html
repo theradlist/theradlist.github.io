@@ -335,7 +335,7 @@
 					if (this.filters.region != "All") {
 						this.list = this.list.filter((itm) => {
 							if (itm.region == null) { return false }
-							return itm.region.toUpperCase() == this.filterItems.region.toUpperCase()
+							return itm.region.toUpperCase() == this.filters.region.toUpperCase()
 						})
 					}
 
