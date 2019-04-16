@@ -3286,7 +3286,7 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
         width: 50%;
         font-weight: 500;
         font-size: 14px;
-        padding: 0 0 0 40px
+        margin: 0 0 0 40px
     }
 
     #mobile-nav.open .nav-contents .nav-actions>div.nav-switcher {
@@ -3332,6 +3332,10 @@ body:not(.large) .card-item.has-hover:hover .rank-column {
         margin-bottom: 3px;
         font-weight: 100;
         font-size: 15px
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions input {
+        margin-left: 15px;
     }
 
     #mobile-nav.open .nav-contents .nav-actions a.active {

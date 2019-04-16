@@ -19,4 +19,3 @@ $("body").on('scroll', function () {
         if (!stickyAnchorPlacement && $("#sticky-anchor").offset().top < 0) toggleFixedMobileNavButton();
     }
 })
-

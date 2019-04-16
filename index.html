@@ -145,6 +145,18 @@
 
 		Vue.component('filters', {
 			props: ["view", "type", "cuisine", "region", "price"],
+			data() {
+				return {
+					showCuisineList: false,
+					showRegionList: false,
+					stickyAnchorPlacement: false, 
+					showFilters: false, 
+				}
+			},
+			computed: {
+				cuisinePlaceholder() { return (this.cuisine=='All') ? 'Search Cuisine...' : this.cuisine },
+				regionPlaceholder() { return (this.region=='All') ? 'Search Region...' : this.region }
+			},
 			methods: {
 				changeSize(size) { this.$emit("filter-the-list", {view: size, type: this.type, cuisine: this.cuisine, region: this.region, price: this.price}) },
 				filterType(type) { this.$emit("filter-the-list", {view: this.view, type: type, cuisine: this.cuisine, region: this.region, price: this.price}) },
@@ -163,8 +175,8 @@
 					}
 				}, 
 				filterRegionOptions() {
-					filter = $(".region-toggle input").val().toUpperCase();
-					a = $(".region-toggle .dropdown-content.regionList a").get();
+					filter = $(".location-toggle input").val().toUpperCase();
+					a = $(".location-toggle .dropdown-content.regionList a").get();
 					for (i = 0; i < a.length; i++) { 
 						if (a[i].innerHTML.toUpperCase().indexOf(filter)> -1) {
 							a[i].style.display = "";
@@ -173,24 +185,32 @@
 						}
 					}
 				}, 
-			},
-			computed: {
-				cuisinePlaceholder() { return (this.cuisine=='All') ? 'Search Cuisine...' : this.cuisine },
-				regionPlaceholder() { return (this.region=='All') ? 'Search Region...' : this.region }
-			},
-			data() {
-				return {
-					showCuisineList: false,
-					showRegionList: false,
-				}
+				handleScroll: function (evt, el) {
+					if (window.innerWidth < 882) {
+						if (stickyAnchorPlacement && $("#sticky-anchor").offset().top > 0) toggleFixedMobileNavButton();
+						if (!stickyAnchorPlacement && $("#sticky-anchor").offset().top < 0) toggleFixedMobileNavButton();
+					}
+					// if (window.scrollY > 50) {
+					// 	el.setAttribute(
+					// 	'style',
+					// 	'opacity: 1; transform: translate3d(0, -10px, 0)'
+					// 	)
+					// }
+					// sticky-phantom, body(?), sticky-anchor
+					return window.scrollY > 100
+				},
+				toggleFixedMobileNavButton() {
+					$("body").toggleClass("filter-fixed");
+					stickyAnchorPlacement = !stickyAnchorPlacement;
+					$("#sticky-phantom").toggle();
+				},
 			},
 			template: `<div id="filters">
 				<div id="mobile-filters">
-					<div id="sticky-anchor"></div>
-					<div id="sticky-phantom">&nbsp; &nbsp;</div>
-					<nav id="mobile-nav">
-						<div class="toggle-zone">
-						</div>
+					<div id="sticky-anchor" v-scroll="handleScroll"></div>
+					<div id="sticky-phantom" v-scroll="handleScroll">&nbsp; &nbsp;</div>
+					<nav id="mobile-nav" :class="{open: showFilters}">
+						<div class="toggle-zone" @click="showFilters=!showFilters"></div>
 						<div class="toggle-close"></div>
 						<div class="filter-logo"><img src="assets/images/ColourWhiteIcon64.png" alt="View"></div>
 						<div class="toggle"></div>
@@ -202,41 +222,20 @@
 								TheRadList
 							</div>
 
-							<div class="nav-actions">
-								<a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')">
-									<span>Peruse</span>
-								</a>
-								<a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')">
-									<span>Deep Dive</span>
-								</a>
+							<div class="nav-actions size-filter">
+								<a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')"><span>Peruse</span></a>
+								<a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')"><span>Deep Dive</span></a>
 							</div>
-						</div>
-						<div class="actions-column type-filter">
-							<div class="title">Sort By Type</div>
-							<div class="filter-links type-toggle">
-								<a href="#/" :class="{ active: (type=='All') }" @click="filterType('All')">
-									<span>All</span>
-								</a>
-								<a href="#/" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')">
-									<span>Restaurant</span>
-								</a>
-								<a href="#/" :class="{ active: (type=='Bar') }" @click="filterType('Bar')">
-									<span>Bar</span>
-								</a>
-								<a href="#/" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')">
-									<span>Cafe</span>
-								</a>
-								<a href="#/" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')">
-									<span>Fast Food</span>
-								</a>
-								<a href="#/" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')">
-									<span>Dessert</span>
-								</a>
+
+							<div class="nav-actions type-filter">
+								<a href="#/" :class="{ active: (type=='All') }" @click="filterType('All')"><span>All</span></a>
+								<a href="#/" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')"><span>Restaurant</span></a>
+								<a href="#/" :class="{ active: (type=='Bar') }" @click="filterType('Bar')"><span>Bar</span></a>
+								<a href="#/" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')"><span>Cafe</span></a>
+								<a href="#/" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')"><span>Fast Food</span></a>
+								<a href="#/" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')"><span>Dessert</span></a>
 							</div>
-						</div>
-						<div class="actions-column cuisine-filter">
-							<div class="title">Sort By Cuisine</div>
-							<div class="filter-links cuisine-toggle">
+							<div class="nav-actions cuisine-filter">
 								<input type="text" 
 									:placeholder="cuisinePlaceholder" 
 									@keyup="filterCuisineOptions"
@@ -256,10 +255,7 @@
 									<a href="#/" :class="{active: (cuisine=='Middle Eastern')}" @click="filterCuisine('Middle Eastern')">Middle Eastern</a>
 								</div>
 							</div>
-						</div>
-						<div class="actions-column price-filter">
-							<div class="title">Sort By Price</div>
-							<div class="filter-links price-toggle">
+							<div class="nav-actions price-filter">
 								<a href="#/" :class="{active:(price=='All')}" @click="filterPrice('All')"><span>All</span></a>
 								<a href="#/" :class="{active:(price=='$')}" @click="filterPrice('$')"><span>$</span></a>
 								<a href="#/" :class="{active:(price=='$$')}" @click="filterPrice('$$')"><span>$$</span></a>
@@ -267,10 +263,7 @@
 								<a href="#/" :class="{active:(price=='$$$$')}" @click="filterPrice('$$$$')"><span>$$$$</span></a>
 								<a href="#/" :class="{active:(price=='$$$$$')}" @click="filterPrice('$$$$$')"><span>$$$$$</span></a>
 							</div>
-						</div>
-						<div class="actions-column location-filter">
-							<div class="title">Sort By Region</div>
-							<div class="filter-links location-toggle">
+							<div class="nav-actions location-filter">
 								<input type="text" :placeholder="regionPlaceholder" @keyup="filterRegionOptions"
 									@focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
 								<div class="dropdown-content regionList" v-show="showRegionList">
