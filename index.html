@@ -305,10 +305,57 @@
 					list: [],
 				}
 			},
+			computed: {
+				allProps() {
+					this.type; 
+					this.cuisine; 
+					this.region; 
+					this.price; 
+					return Date.now()
+				}
+			},
 			methods: {
+				shuffle() {
+					// http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+					for (var i = 0; i < this.data.length; i++) {
+						var j = i + Math.floor(Math.random() * (this.data.length - i));
+
+						var temp = this.data[j];
+						this.data[j] = this.data[i];
+						this.data[i] = temp;
+					}
+					this.list = this.data; 
+				},
 				filterList() {
-					console.log("I gotta filter ", this.type, ",", this.cuisine, ",", this.region, ",", this.region, ",", this.price)
-					console.log("from ", this.data, " to ", this.list)
+					if (this.type != "All") {
+						this.list = this.data.filter((itm) => {
+							if (itm.type == null) { return false }
+							return itm.type.toUpperCase() == this.type.toUpperCase()
+						})
+					} else {
+						this.list = this.data
+					}
+
+					if (this.cuisine != "All") {
+						this.list = this.list.filter((itm) => {
+							if (itm.cuisine == null) { return false }
+							return itm.cuisine.toUpperCase() == this.cuisine.toUpperCase()
+						})
+					}
+
+					if (this.region != "All") {
+						this.list = this.list.filter((itm) => {
+							if (itm.region == null) { return false }
+							return itm.region.toUpperCase() == this.region.toUpperCase()
+						})
+					}
+
+					if (this.price != "All") {
+						this.list = this.list.filter((itm) => {
+							if (itm.price == null) { return false }
+							return itm.price.toUpperCase() == this.price.toUpperCase()
+						})
+					}
 				}
 			},
 			async created() {
@@ -316,8 +363,13 @@
 					.then(stream => stream.json())
 					.then(data => {
 						this.data = data; 
-						this.list = this.data })
+						this.shuffle() })
 					.catch(error => console.error(error))
+			},
+			watch: {
+				allProps() {
+					if (this.data) { this.filterList() }
+				}
 			},
 			template: `<div id="list">
 				<div class="card-item dorinku col-xs-12 has-hover" v-for="item in list">
@@ -409,7 +461,6 @@
 					this.cuisine = filterProps.cuisine
 					this.region = filterProps.region
 					this.price = filterProps.price
-					console.log(filterProps)
 				}
 			}
 		})
