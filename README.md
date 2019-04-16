@@ -21,7 +21,7 @@ The most recent update of this project was refactoring the app to use Vue.js.
 
 I write about that [here](https://medium.com/arjunkalburgi/viewing-vue-with-theradlist-8851502ab709). 
 
-I originally made this website with a little bit of copying from [The Ringers 2018 NBA Draft Guide](https://nbadraft.theringer.com/) and hacked from there. A lot of the CSS is still from there, which is why it's such a mess. 
+I originally made this website with a little bit of copying from [The Ringers 2018 NBA Draft Guide](https://nbadraft.theringer.com/) and hacked from there. A lot of the CSS is still from there, which is why it's a little unorganized. 
 
 
 ### Backend Details
