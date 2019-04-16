@@ -87,10 +87,7 @@
 					 @filter-the-list="updateList"></filters>
 
 			<list :view="view"
-				  :type="type"
-				  :cuisine="cuisine"
-				  :region="region"
-				  :price="price"></list>
+				  :filters="filterItems"></list>
 		</div>
 	</main>
 
@@ -299,20 +296,11 @@
 		})
 
 		Vue.component('list', {
-			props: ["view", "type", "cuisine", "region", "price"],
+			props: ["view", "filters"],
 			data() {
 				return {
 					data: [],
 					list: [],
-				}
-			},
-			computed: {
-				allProps() {
-					this.type; 
-					this.cuisine; 
-					this.region; 
-					this.price; 
-					return Date.now()
 				}
 			},
 			methods: {
@@ -328,33 +316,33 @@
 					this.list = this.data; 
 				},
 				filterList() {
-					if (this.type != "All") {
+					if (this.filters.type != "All") {
 						this.list = this.data.filter((itm) => {
 							if (itm.type == null) { return false }
-							return itm.type.toUpperCase() == this.type.toUpperCase()
+							return itm.type.toUpperCase() == this.filters.type.toUpperCase()
 						})
 					} else {
 						this.list = this.data
 					}
 
-					if (this.cuisine != "All") {
+					if (this.filters.cuisine != "All") {
 						this.list = this.list.filter((itm) => {
 							if (itm.cuisine == null) { return false }
-							return itm.cuisine.toUpperCase() == this.cuisine.toUpperCase()
+							return itm.cuisine.toUpperCase() == this.filters.cuisine.toUpperCase()
 						})
 					}
 
-					if (this.region != "All") {
+					if (this.filters.region != "All") {
 						this.list = this.list.filter((itm) => {
 							if (itm.region == null) { return false }
-							return itm.region.toUpperCase() == this.region.toUpperCase()
+							return itm.region.toUpperCase() == this.filterItems.region.toUpperCase()
 						})
 					}
 
-					if (this.price != "All") {
+					if (this.filters.price != "All") {
 						this.list = this.list.filter((itm) => {
 							if (itm.price == null) { return false }
-							return itm.price.toUpperCase() == this.price.toUpperCase()
+							return itm.price.toUpperCase() == this.filters.price.toUpperCase()
 						})
 					}
 				}
@@ -368,9 +356,7 @@
 					.catch(error => console.error(error))
 			},
 			watch: {
-				allProps() {
-					if (this.data) { this.filterList() }
-				}
+				filters(oldVal, newVal) { if (this.data) { this.filterList() } }
 			},
 			template: `<div id="list">
 				<div v-for="item in list">
@@ -466,6 +452,9 @@
 				region: "All", 
 				price: "All"
 			}, 
+			computed: {
+				filterItems() { return {type: this.type, cuisine: this.cuisine, region: this.region, price: this.price} }
+			},
 			methods: {
 				updateList(filterProps) {
 					this.view = filterProps.view
