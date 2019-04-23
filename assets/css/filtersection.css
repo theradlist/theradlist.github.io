@@ -297,6 +297,75 @@
     #mobile-nav .nav-contents {
         display: none
     }
+
+    #mobile-nav.open {
+        background-position: right 15px top 17px;
+        bottom: 0;
+        margin-bottom: 0
+    }
+
+    #mobile-nav.open .filter-logo {
+        left: -16.5%
+    }
+
+    #mobile-nav.open .current-sort {
+        display: none
+    }
+
+    #mobile-nav.open .toggle {
+        margin-left: 15.5px;
+        /* margin-left: 100%;  */
+        /* float: right;  */
+    }
+
+    #mobile-nav.open .nav-contents {
+        position: relative;
+        display: block;
+        z-index: 1
+    }
+
+    #mobile-nav.open .nav-contents .current-sort {
+        display: block
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions {
+        padding: 35px 0 10px;
+        width: 100%
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions:after {
+        content: '';
+        clear: both;
+        display: table
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions>div {
+        float: left;
+        width: 50%;
+        font-weight: 500;
+        font-size: 14px;
+        margin: 0 0 0 40px
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions a {
+        display: block;
+        color: var(--gray);
+        margin-bottom: 3px;
+        font-weight: 100;
+        font-size: 15px
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions input {
+        margin-left: 15px;
+    }
+
+    #mobile-nav.open .nav-contents .nav-actions a.active {
+        color: var(--lightred);
+    }
+
+    #mobile-nav.open .toggle-close {
+        display: block
+    }
 }
 
 #sticky-phantom {
