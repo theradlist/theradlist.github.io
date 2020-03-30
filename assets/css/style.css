@@ -145,7 +145,8 @@ body {
     /* padding-bottom: 200px; */
     padding-left: 185px;
     padding-top: 225px;
-    position: relative
+    position: relative; 
+    padding-bottom: 20vh; 
 }
 
 .error-404 .top.wrapper {
@@ -366,8 +367,14 @@ footer.site-footer {
     margin: 0 auto;
 }
 
-@media all and (max-width: 1500px) {
-    .list.section {
-        width: 90%;
+@media (min-width: 1200px) {
+    #list {
+        width: 80%; 
+        float: right; 
+        min-height: 50vh; 
+    }
+
+    .card-item .info-column {
+        min-width: unset !important;
     }
 }

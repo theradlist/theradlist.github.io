@@ -70,357 +70,24 @@
 	<link rel="stylesheet" href="./assets/css/filtersection.css">
 	<link rel="stylesheet" href="./assets/css/footerstyle.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.css" />
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		var alldata, template;
-		$(document).ready(function () {
-			$.getJSON('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e', function (data) {
-				alldata = data;
-				template = Handlebars.compile($('#item-template').html())
-				$('#list-places').html(template(shuffle(data)))
-			})
-		})
-	</script>
-	<script id="item-template" type="text/x-handlebars-template">
-		{{#each this}}
-			<div class="card-item dorinku col-xs-12 has-hover">
-				<div class="card-info show-info-">
-				</div>
-				<div class="wrapper">
-					<a class="cardlink" href="{{mapsLink}}" target="_blank">
-						<div class="rank-column background-theme" style="background-color: var(--red)">
-						</div>
-						<div class="info-column">
-							<div class="medium-show">
-								<div class="player-main">
-									<h3>{{name}}</h3>
-								</div>
-								<div class="player-meta">
-									<div>
-										<div class="medium-column">
-											<div class="ringer-stat">
-												<span class="label non-mobile is-tablet">Cuisine</span>
-												<span class="label is-mobile">Cuisine:</span>
-												<span class="value">{{cuisine}}</span>
-											</div>
-											<div>
-												<span class="label">Price</span>
-												<span class="value">{{price}}</span>
-											</div>
-										</div>
-										<div class="medium-column">
-											<div>
-												<span class="label">Type</span>
-												<span class="value">{{type}}</span>
-											</div>
-											<div>
-												<span class="label">Region</span>
-												<span class="value">{{region}}</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="player-description">
-									<div class="player-headline">{{description}}</div>
-									<!-- <div class="player-subline">
-										<strong>Types Of Food:</strong> Sushi/Sashimi, Noodles, Meat
-									</div> -->
-								</div>
-							</div>
-							<div class="player-info">
-								<div class="player-plus-minus">
-									<h6>NOTES</h6>
-									<div>{{notes}}</div>
-								</div>
-							</div>
-						</div>
-					</a>
-					<div class="toggle-card" onclick="toggleCard(this)">
-						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.5 39.5">
-							<defs>
-								<clipPath>
-									<rect class="cls-1" width="39.5" height="39.5"></rect>
-								</clipPath>
-							</defs>
-							<title>newarrow</title>
-							<g class="cls-2">
-								<path class="arrow-fill" d="M19.75,39.5A19.75,19.75,0,1,1,39.5,19.75,19.75,19.75,0,0,1,19.75,39.5Zm0-38A18.25,18.25,0,1,0,38,19.75,18.25,18.25,0,0,0,19.75,1.5Z"></path>
-							</g>
-							<rect class="arrow-fill" x="19" y="11.75" width="1.5" height="15"></rect>
-							<rect class="arrow-fill" x="18.77" y="22.59" width="8.15" height="1.5" transform="translate(-9.81 22.99) rotate(-45)"></rect>
-							<rect class="arrow-fill" x="15.89" y="19.26" width="1.5" height="8.15" transform="translate(-11.63 18.6) rotate(-45)"></rect>
-						</svg>
-					</div>
-				</div>
-			</div>
-		{{/each}}
-	</script>
 </head>
 
 <body class="medium">
 
-	<main class="outer-container">
+	<main id="app" class="outer-container">
+		<hero></hero>
 
-		<div class="bg-image">
-			<img class="desktop" title="" alt="" src="./assets/images/bg-cropped.png">
-			<img class="mobile" title="" alt="" src="./assets/images/bg-cropped-mobile.png">
-		</div>
+		<div id="main-content" class="section">
 
-		<img id="logo" src="./assets/images/Logo500.png" />
+			<filters :view="view"
+					 :type="type"
+					 :cuisine="cuisine"
+					 :region="region"
+					 :price="price"
+					 @filter-the-list="updateList"></filters>
 
-		<nav id="menu">
-			<ul>
-				<li><a href="https://github.com/theradlist/theradlist.github.io/" target="_blank">Github</a></li>
-	            <li><a href="https://docs.google.com/spreadsheets/d/1XmlmM5n6t3kVBSNt9Gq4N346IUaRPfx23JSiw2pJjJc/edit?usp=sharing">Data</a></li>
-			</ul>
-		</nav>
-
-		<div class="top wrapper">
-
-			<div class="text-container">
-				<h1 id="forgoogle" class="big-text">
-					Foodies take note, <br /> Edmonton is <i>poppin'</i>
-				</h1>
-
-				<div class="copy">
-
-					<p>but only for those that look it seems. Here to help you see, TheRADList. Look through Edmonton's most
-						interesting bars, cafe's and restaurants.
-						<!-- <a class="red read-more" href="#">more</a> -->
-					</p>
-
-					<div class="hide">
-						<p>What is theradlist? Proin in, sit volutpat ipsum nec luctus ut, orci viverra nulla vel, vestibulum ut, arcu
-							nulla tristique morbi. Posuere dolor pellentesque nullam. Massa amet duis volutpat sagittis tincidunt quam, quis
-							est ac. Tellus tincidunt vel nulla tincidunt, turpis phasellus, lorem pede.</p>
-
-						<p>We are excited about…</p>
-						<ul>
-							<li>Exploring more of what Edmonton has to offer.</li>
-							<li>Sharing those places with you.</li>
-							<li>And hopefully… as a result of all this, make Edmonton feel a little more happening.</li>
-						</ul>
-
-						<p>What could be better? No wonder we are so excited to keep building up this website and continue adding to
-							@theradlist.</p>
-					</div>
-
-				</div>
-
-				<br>
-				<p class="signature">Your Friends from Edmonton</p>
-
-			</div>
-
-		</div>
-
-		<div class="search section">
-			<div id="sticky-anchor"></div>
-			<div id="sticky-phantom">&nbsp; &nbsp;</div>
-			<nav id="mobile-nav">
-				<div class="toggle-zone">
-				</div>
-				<div class="toggle-close"></div>
-				<div class="filter-logo">
-					<a target="_blank">
-						<img src="assets/images/ColourWhiteIcon64.png" alt="View">
-					</a>
-				</div>
-				<div class="toggle"></div>
-				<div class="current-sort">
-					Filter Restaurants
-				</div>
-				<div class="nav-contents size-filter">
-					<div class="current-sort color-theme">
-						TheRadList
-					</div>
-
-					<div class="nav-actions">
-						<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
-							<span>Peruse</span>
-						</a>
-						<a href="#" class=" detailed" data-size="large" onclick="changeSize({'name':'detailed', 'class':'large'})">
-							<span>Deep Dive</span>
-						</a>
-					</div>
-				</div>
-				<div class="actions-column type-filter">
-					<div class="title">Sort By Type</div>
-					<div class="filter-links type-toggle">
-						<a href="#" class="active filter-all" data-filter="All" onclick="filterType('All')">
-							<span>All</span>
-						</a>
-						<a href="#" class="filter-restaurant" data-filter="Restaurant" onclick="filterType('Restaurant')">
-							<span>Restaurant</span>
-						</a>
-						<a href="#" class="filter-bar" data-filter="Bar" onclick="filterType('Bar')">
-							<span>Bar</span>
-						</a>
-						<a href="#" class="filter-cafe" data-filter="Cafe" onclick="filterType('Cafe')">
-							<span>Cafe</span>
-						</a>
-						<a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType('Fast Food')">
-							<span>Fast Food</span>
-						</a>
-						<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType('Dessert')">
-							<span>Dessert</span>
-						</a>
-					</div>
-				</div>
-				<div class="actions-column cuisine-filter">
-					<div class="title">Sort By Cuisine</div>
-					<div class="filter-links cuisine-toggle">
-						<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()" onfocus="toggleCuisineList('in')"
-							onfocusout="toggleCuisineList('out')">
-						<div class="dropdown-content cuisineList">
-							<a href="#" class="filter-all active" onclick="filterCuisine({'name':'All', 'elementname':'filter-all'})">All</a>
-							<a href="#" class="filter-asian" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian'})">Asian</a>
-							<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked Goods</a>
-							<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar Food</a>
-							<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast and Brunch</a>
-							<a href="#" class="filter-french" onclick="filterCuisine({'name':'French', 'elementname':'filter-french'})">French</a>
-							<a href="#" class="filter-halal" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal'})">Halal</a>
-							<a href="#" class="filter-indian" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian'})">Indian</a>
-							<a href="#" class="filter-italian" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian'})">Italian</a>
-							<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin American</a>
-							<a href="#" class="filter-mediterranean" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean'})">Mediterranean</a>
-							<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle Eastern</a>
-						</div>
-					</div>
-				</div>
-				<div class="actions-column price-filter">
-					<div class="title">Sort By Price</div>
-					<div class="filter-links price-toggle">
-						<a href="#" class="active filter-0" data-filter="All" onclick="filterPrice('All')">
-							<span>All</span>
-						</a>
-						<a href="#" class="filter-1" data-filter="Restaurant" onclick="filterPrice('$')">
-							<span>$</span>
-						</a>
-						<a href="#" class="filter-2" data-filter="Bar" onclick="filterPrice('$$')">
-							<span>$$</span>
-						</a>
-						<a href="#" class="filter-3" data-filter="Cafe" onclick="filterPrice('$$$')">
-							<span>$$$</span>
-						</a>
-						<a href="#" class="filter-4" data-filter="Fast Food" onclick="filterPrice('$$$$')">
-							<span>$$$$</span>
-						</a>
-						<a href="#" class="filter-5" data-filter="Dessert" onclick="filterPrice('$$$$$')">
-							<span>$$$$$</span>
-						</a>
-					</div>
-				</div>
-				<div class="actions-column location-filter">
-					<div class="title">Sort By Region</div>
-					<div class="filter-links location-toggle">
-						<i>Location Filter Coming Soon</i>
-					</div>
-				</div>
-			</nav>
-		</div>
-
-		<div class="list section">
-			<div id="main-content">
-				<div style="position:relative; z-index:6;">
-					<div id="filters">
-						<div class="size-filter">
-							<div class="title">How Much Do You
-								<br> Want to Know?
-							</div>
-							<div class="filter-links size-toggle">
-								<!-- <a href="#" class=" compact" data-size="small" onclick="changeSize({'name':'compact', 'class':'small'})">
-									<span>Skim</span>
-								</a> -->
-								<a href="#" class="active  default" data-size="medium" onclick="changeSize({'name':'default', 'class':'medium'})">
-									<span>Peruse</span>
-								</a>
-								<a href="#" class=" detailed" data-size="large" onclick="changeSize({'name':'detailed', 'class':'large'})">
-									<span>Deep Dive</span>
-								</a>
-							</div>
-						</div>
-						<div class="type-filter">
-							<div class="title">Sort By Type</div>
-							<div class="filter-links type-toggle">
-								<a href="#" class="active filter-all" data-filter="All" onclick="filterType('All')">
-									<span>All</span>
-								</a>
-								<a href="#" class="filter-restaurant" data-filter="Restaurant" onclick="filterType('Restaurant')">
-									<span>Restaurant</span>
-								</a>
-								<a href="#" class="filter-bar" data-filter="Bar" onclick="filterType('Bar')">
-									<span>Bar</span>
-								</a>
-								<a href="#" class="filter-cafe" data-filter="Cafe" onclick="filterType('Cafe')">
-									<span>Cafe</span>
-								</a>
-								<a href="#" class="filter-fast-food" data-filter="Fast Food" onclick="filterType('Fast Food')">
-									<span>Fast Food</span>
-								</a>
-								<a href="#" class="filter-dessert" data-filter="Dessert" onclick="filterType('Dessert')">
-									<span>Dessert</span>
-								</a>
-							</div>
-						</div>
-						<div class="cuisine-filter">
-							<div class="title">Sort By Cuisine</div>
-							<div class="filter-links cuisine-toggle">
-								<input type="text" placeholder="Search Cuisine..." onkeyup="filterCuisineOptions()" onfocus="toggleCuisineList('in')"
-								 onfocusout="toggleCuisineList('out')">
-								<div class="dropdown-content cuisineList">
-									<a href="#" class="filter-all active" onclick="filterCuisine({'name':'All', 'elementname':'filter-all'})">All</a>
-									<a href="#" class="filter-asian" onclick="filterCuisine({'name':'Asian', 'elementname':'filter-asian'})">Asian</a>
-									<a href="#" class="filter-bakery" onclick="filterCuisine({'name':'Baked Goods', 'elementname':'filter-bakery'})">Baked Goods</a>
-									<a href="#" class="filter-barfood" onclick="filterCuisine({'name':'Bar Food', 'elementname':'filter-barfood'})">Bar Food</a>
-									<a href="#" class="filter-breaky" onclick="filterCuisine({'name':'Breakfast and Brunch', 'elementname':'filter-breaky'})">Breakfast and Brunch</a>
-									<a href="#" class="filter-french" onclick="filterCuisine({'name':'French', 'elementname':'filter-french'})">French</a>
-									<a href="#" class="filter-halal" onclick="filterCuisine({'name':'Halal', 'elementname':'filter-halal'})">Halal</a>
-									<a href="#" class="filter-indian" onclick="filterCuisine({'name':'Indian', 'elementname':'filter-indian'})">Indian</a>
-									<a href="#" class="filter-italian" onclick="filterCuisine({'name':'Italian', 'elementname':'filter-italian'})">Italian</a>
-									<a href="#" class="filter-latin" onclick="filterCuisine({'name':'Latin American', 'elementname':'filter-latin'})">Latin American</a>
-									<a href="#" class="filter-mediterranean" onclick="filterCuisine({'name':'Mediterranean', 'elementname':'filter-mediterranean'})">Mediterranean</a>
-									<a href="#" class="filter-middleeast" onclick="filterCuisine({'name':'Middle Eastern', 'elementname':'filter-middleeast'})">Middle Eastern</a>
-								</div>
-							</div>
-						</div>
-						<div class="price-filter">
-							<div class="title">Sort By Price</div>
-							<div class="filter-links price-toggle">
-								<a href="#" class="active filter-0" data-filter="All" onclick="filterPrice('All')">
-									<span>All</span>
-								</a>
-								<a href="#" class="filter-1" data-filter="Restaurant" onclick="filterPrice('$')">
-									<span>$</span>
-								</a>
-								<a href="#" class="filter-2" data-filter="Bar" onclick="filterPrice('$$')">
-									<span>$$</span>
-								</a>
-								<a href="#" class="filter-3" data-filter="Cafe" onclick="filterPrice('$$$')">
-									<span>$$$</span>
-								</a>
-								<a href="#" class="filter-4" data-filter="Fast Food" onclick="filterPrice('$$$$')">
-									<span>$$$$</span>
-								</a>
-								<a href="#" class="filter-5" data-filter="Dessert" onclick="filterPrice('$$$$$')">
-									<span>$$$$$</span>
-								</a>
-							</div>
-						</div>
-						<div class="location-filter">
-							<div class="title">Sort By Region</div>
-							<div class="filter-links location-toggle">
-								<i>Location Filter Coming Soon</i>
-							</div>
-						</div>
-					</div>
-					<div id="item-list" class="grid">
-						<div id="list-places"></div>
-					</div>
-				</div>
-			</div>
+			<list :view="view"
+				  :filters="filterItems"></list>
 		</div>
 	</main>
 
@@ -428,17 +95,39 @@
 		<div id="made-by-arjun"></div>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin="anonymous"></script>
-	<script src="assets/js/list.js"></script>
+	<!-- Vue -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.js"></script>
+	<script src="./assets/js/vueHeroComponent.js"></script>
+	<script src="./assets/js/vueFilterComponent.js"></script>
+	<script src="./assets/js/vueListComponent.js"></script>
+	<script src="./assets/js/vueItemComponent.js"></script>
 	<script>
-		changeSize({
-			'name': 'default',
-			'class': 'medium'
-		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				view: "medium",
+				type: "All", 
+				cuisine: "All", 
+				region: "All", 
+				price: "All"
+			}, 
+			computed: {
+				filterItems() { return {type: this.type, cuisine: this.cuisine, region: this.region, price: this.price} }
+			},
+			methods: {
+				updateList(filterProps) {
+					this.view = filterProps.view
+					this.type = filterProps.type
+					this.cuisine = filterProps.cuisine
+					this.region = filterProps.region
+					this.price = filterProps.price
+				}
+			}
+		})
 	</script>
+
+	<!-- Footer  -->
+	<script src="https://rawgit.com/askalburgi/Made-By-Arjun-Icon/master/made-by-arjun.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120962453-1"></script>
