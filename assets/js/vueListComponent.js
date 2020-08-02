@@ -59,10 +59,10 @@ Vue.component('list', {
         }
     },
     async created() {
-        fetch('https://api.sheety.co/c1471c68-f293-46d9-ab4c-ca5e24e6e24e')
+        fetch('https://v2-api.sheety.co/1d451b7406988a7d18b381d137c82628/theRadList/liveData')
             .then(stream => stream.json())
             .then(data => {
-                this.data = data;
+                this.data = data.liveData;
                 this.shuffle()
             })
             .catch(error => console.error(error))

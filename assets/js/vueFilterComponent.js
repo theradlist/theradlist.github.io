@@ -5,6 +5,10 @@ Vue.component('filters', {
             showCuisineList: false,
             showRegionList: false,
             showFilters: false,
+            cuisineOptions: null,
+            regionOptions: null, 
+            typeOptions: null,
+            priceOptions: null
         }
     },
     computed: {
@@ -14,6 +18,17 @@ Vue.component('filters', {
         regionPlaceholder() {
             return (this.region == 'All') ? 'Search Region...' : this.region
         }
+    },
+    async created() {
+        fetch('https://v2-api.sheety.co/1d451b7406988a7d18b381d137c82628/theRadList/info')
+            .then(stream => stream.json())
+            .then(data => {
+                this.cuisineOptions = data.info.map(a => a.cuisine).filter(a => a != undefined);
+                this.regionOptions = data.info.map(a => a.region).filter(a => a != undefined);
+                this.typeOptions = data.info.map(a => a.types).filter(a => a != undefined);
+                this.priceOptions = data.info.map(a => a.price).filter(a => a != undefined);
+            })
+            .catch(error => console.error(error))
     },
     methods: {
         changeSize(size) {
@@ -25,40 +40,13 @@ Vue.component('filters', {
                 price: this.price
             })
         },
-        filterType(type) {
+        filter(option, selection) {
             this.$emit("filter-the-list", {
                 view: this.view,
-                type: type,
-                cuisine: this.cuisine,
-                region: this.region,
-                price: this.price
-            })
-        },
-        filterCuisine(cuisine) {
-            this.$emit("filter-the-list", {
-                view: this.view,
-                type: this.type,
-                cuisine: cuisine,
-                region: this.region,
-                price: this.price
-            })
-        },
-        filterRegion(region) {
-            this.$emit("filter-the-list", {
-                view: this.view,
-                type: this.type,
-                cuisine: this.cuisine,
-                region: region,
-                price: this.price
-            })
-        },
-        filterPrice(price) {
-            this.$emit("filter-the-list", {
-                view: this.view,
-                type: this.type,
-                cuisine: this.cuisine,
-                region: this.region,
-                price: price
+                type: (option === 'type') ? selection : this.type,
+                cuisine: (option === 'cuisine') ? selection : this.cuisine,
+                region: (option === 'region') ? selection : this.region,
+                price: (option === 'price') ? selection : this.price
             })
         },
         filterCuisineOptions() {
@@ -83,6 +71,13 @@ Vue.component('filters', {
                 }
             }
         },
+        getOptions(filter) {
+            let html = "";
+            this[filter + "Options"].forEach(el => {
+                html += `<a href="#/" :class="{ active: (${filter}=='${el}') }" @click="filter('${filter}','${el}')"><span>${el}</span></a>`;
+            });
+            return html;
+        }
     },
     template: `<div id="filters">
         <div id="mobile-filters">
