@@ -59,6 +59,17 @@ Vue.component("filters", {
         price: option === "price" ? selection : this.price,
       });
     },
+    filterCuisineOptions() {
+      filter = $(".cuisine-toggle input").val().toUpperCase();
+      a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
+      for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    },
     filterOptionsOnType(className) {
       filter = $(`.${className} input`).val().toUpperCase();
       a = $(`.${className} .dropdown-content a`).get();
@@ -93,14 +104,14 @@ Vue.component("filters", {
                 <div class="nav-contents size-filter">
                     <div class="current-sort color-theme">
                         TheRadList
-                    </div>
+                    </div>`+
 
-                    <div class="nav-actions size-filter">
-                        <a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')"><span>Peruse</span></a>
-                        <a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')"><span>Deep Dive</span></a>
-                    </div>
+                    // <div class="nav-actions size-filter">
+                    //     <a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')"><span>Peruse</span></a>
+                    //     <a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')"><span>Deep Dive</span></a>
+                    // </div>
 
-                    <div class="nav-actions type-filter">
+                    `<div class="nav-actions type-filter">
                         <a v-for="item in typeOptions" href="#/" :class="{ active: (type==item) }" @click="filter('type', item)"><span>{{item}}</span></a>
                     </div>
                     <div class="nav-actions cuisine-filter">
@@ -125,21 +136,21 @@ Vue.component("filters", {
                 </div>
             </nav>
         </div>
-        <div id="desktop-filters">
-            <div class="size-filter">
-                <div class="title">How Much Do You
-                    <br> Want to Know?
-                </div>
-                <div class="filter-links size-toggle">
-                    <a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')">
-                        <span>Peruse</span>
-                    </a>
-                    <a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')">
-                        <span>Deep Dive</span>
-                    </a>
-                </div>
-            </div>
-            <div class="type-filter">
+        <div id="desktop-filters">`+
+            // <div class="size-filter">
+            //     <div class="title">How Much Do You
+            //         <br> Want to Know?
+            //     </div>
+            //     <div class="filter-links size-toggle">
+            //         <a href="#/" :class="{ active: (view=='medium') }" @click="changeSize('medium')">
+            //             <span>Peruse</span>
+            //         </a>
+            //         <a href="#/" :class="{ active: (view=='large') }" @click="changeSize('large')">
+            //             <span>Deep Dive</span>
+            //         </a>
+            //     </div>
+            // </div>
+            `<div class="type-filter">
                 <div class="title">Sort By Type</div>
                 <div class="filter-links type-toggle">
                     <a v-for="item in typeOptions" href="#/" :class="{ active: (type==item) }" @click="filter('type', item)"><span>{{item}}</span></a>
