@@ -139,7 +139,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
     padding: 30px 30px 30px 0;
     width: 100%;
     min-width: 728px;
-    max-width: 81.75%;
+    /* max-width: 81.75%; */
     opacity: 1
 }
 
@@ -298,7 +298,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
 
     body .card-item.expanded-card .info-column,
     body .card-item .info-column {
-        max-width: calc(100% - 200px);
+        /* max-width: calc(100% - 200px); */
     }
 }
 
@@ -481,11 +481,14 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
     }
 
     .card-item .info-column .player-description {
-        padding-right: 0
+        padding-right: 0;
+        margin: 0;
     }
 
     .card-item .info-column .player-description .player-headline {
         font-size: 15px;
+        padding: 15px 0 0 0;
+        margin: 0;
     }
 
     .card-item .info-column .player-info {
@@ -509,7 +512,7 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
     }
 
     body.medium .card-item .info-column {
-        padding-bottom: 60px;
+        padding-bottom: 38px;
         padding-left: 15px
     }
 
@@ -522,12 +525,13 @@ body:not(.large) .card-item.has-hover:not(.expanded-card) .rank-column {
     body .card-item .info-column .player-main {
         width: 100%;
         max-width: 100%;
-        padding-bottom: 15px
+        /* padding-bottom: 15px */
     }
 
     body .card-item.expanded-card .info-column .player-meta,
     body .card-item .info-column .player-meta {
-        padding: 15px 0
+        padding: 15px 0;
+        margin: 0;
     }
 
     body .card-item.expanded-card {
