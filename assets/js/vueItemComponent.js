@@ -12,7 +12,6 @@ Vue.component('item-card', {
     },
     template: `<div class="card-item col-xs-12 has-hover" :class="{ 'expanded-card': expanded }">
         <a class="cardlink wrapper" :href="data.mapsLink" target="_blank">
-            <div class="rank-column background-theme" style="background-color: var(--red)"></div>
             <div class="info-column">
                 <div class="medium-show">
                     <div class="player-main">

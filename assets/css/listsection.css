@@ -10,7 +10,7 @@ body .card-item .rank-column {
 
 body .card-item.expanded-card .info-column,
 body .card-item .info-column {
-    max-width: 728px;
+    max-width: 100%;
     visibility: visible;
     opacity: 1
 }
