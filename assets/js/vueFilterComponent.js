@@ -59,20 +59,9 @@ Vue.component("filters", {
         price: option === "price" ? selection : this.price,
       });
     },
-    filterCuisineOptions() {
-      filter = $(".cuisine-toggle input").val().toUpperCase();
-      a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
-      for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-          a[i].style.display = "";
-        } else {
-          a[i].style.display = "none";
-        }
-      }
-    },
-    filterRegionOptions() {
-      filter = $(".location-toggle input").val().toUpperCase();
-      a = $(".location-toggle .dropdown-content.regionList a").get();
+    filterOptionsOnType(className) {
+      filter = $(`.${className} input`).val().toUpperCase();
+      a = $(`.${className} .dropdown-content a`).get();
       for (i = 0; i < a.length; i++) {
         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
           a[i].style.display = "";
@@ -117,7 +106,7 @@ Vue.component("filters", {
                     <div class="nav-actions cuisine-filter">
                         <input type="text" 
                             :placeholder="cuisinePlaceholder" 
-                            @keyup="filterCuisineOptions"
+                            @keyup="filterOptionsOnType('cuisine-filter')"
                             @focus="showCuisineList=true" @focusout="setTimeout(() => { showCuisineList=false }, 250);">
                         <div class="dropdown-content cuisineList" v-show="showCuisineList">
                             <a v-for="item in cuisineOptions" href="#/" :class="{ active: (cuisine==item) }" @click="filter('cuisine', item)"><span>{{item}}</span></a>
@@ -127,7 +116,7 @@ Vue.component("filters", {
                         <a v-for="item in priceOptions" href="#/" :class="{ active: (price==item) }" @click="filter('price', item)"><span>{{item}}</span></a>
                     </div>
                     <div class="nav-actions location-filter">
-                        <input type="text" :placeholder="regionPlaceholder" @keyup="filterRegionOptions"
+                        <input type="text" :placeholder="regionPlaceholder" @keyup="filterOptionsOnType('location-filter')"
                             @focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
                         <div class="dropdown-content regionList" v-show="showRegionList">
                             <a v-for="item in regionOptions" href="#/" :class="{ active: (region==item) }" @click="filter('region', item)"><span>{{item}}</span></a>
@@ -161,7 +150,7 @@ Vue.component("filters", {
                 <div class="filter-links cuisine-toggle">
                     <input type="text" 
                         :placeholder="cuisinePlaceholder" 
-                        @keyup="filterCuisineOptions"
+                        @keyup="filterOptionsOnType('cuisine-toggle')"
                         @focus="showCuisineList=true" @focusout="setTimeout(() => { showCuisineList=false }, 250);">
                     <div class="dropdown-content cuisineList" v-show="showCuisineList">
                         <a v-for="item in cuisineOptions" href="#/" :class="{ active: (cuisine==item) }" @click="filter('cuisine', item)"><span>{{item}}</span></a>
@@ -179,7 +168,7 @@ Vue.component("filters", {
                 <div class="filter-links location-toggle">
                     <input type="text" 
                         :placeholder="regionPlaceholder" 
-                        @keyup="filterRegionOptions"
+                        @keyup="filterOptionsOnType('location-toggle')"
                         @focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
                     <div class="dropdown-content regionList" v-show="showRegionList">
                         <a v-for="item in regionOptions" href="#/" :class="{ active: (region==item) }" @click="filter('region', item)"><span>{{item}}</span></a>
