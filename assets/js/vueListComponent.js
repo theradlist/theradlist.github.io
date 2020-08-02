@@ -75,8 +75,6 @@ Vue.component('list', {
         }
     },
     template: `<div id="list">
-        <div v-for="item in list">
-            <item-card :data="item" :expand="view"></item-card>
-        </div>
+        <item-card v-for="item in list" :data="item" :expand="view"></item-card>
     </div>`
 })

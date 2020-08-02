@@ -1,85 +1,95 @@
-Vue.component('filters', {
-    props: ["view", "type", "cuisine", "region", "price"],
-    data() {
-        return {
-            showCuisineList: false,
-            showRegionList: false,
-            showFilters: false,
-            cuisineOptions: null,
-            regionOptions: null, 
-            typeOptions: null,
-            priceOptions: null
+Vue.component("filters", {
+  props: ["view", "type", "cuisine", "region", "price"],
+  data() {
+    return {
+      showCuisineList: false,
+      showRegionList: false,
+      showFilters: false,
+      cuisineOptions: null,
+      regionOptions: null,
+      typeOptions: null,
+      priceOptions: null,
+    };
+  },
+  computed: {
+    cuisinePlaceholder() {
+      return this.cuisine == "All" ? "Search Cuisine..." : this.cuisine;
+    },
+    regionPlaceholder() {
+      return this.region == "All" ? "Search Region..." : this.region;
+    },
+  },
+  async created() {
+    fetch(
+      "https://v2-api.sheety.co/1d451b7406988a7d18b381d137c82628/theRadList/info"
+    )
+      .then((stream) => stream.json())
+      .then((data) => {
+        this.cuisineOptions = data.info
+          .map((a) => a.cuisine)
+          .filter((a) => a != undefined);
+        this.regionOptions = data.info
+          .map((a) => a.region)
+          .filter((a) => a != undefined);
+        this.typeOptions = data.info
+          .map((a) => a.types)
+          .filter((a) => a != undefined);
+        this.priceOptions = data.info
+          .map((a) => a.price)
+          .filter((a) => a != undefined);
+      })
+      .catch((error) => console.error(error));
+  },
+  methods: {
+    changeSize(size) {
+      this.$emit("filter-the-list", {
+        view: size,
+        type: this.type,
+        cuisine: this.cuisine,
+        region: this.region,
+        price: this.price,
+      });
+    },
+    filter(option, selection) {
+      this.$emit("filter-the-list", {
+        view: this.view,
+        type: option === "type" ? selection : this.type,
+        cuisine: option === "cuisine" ? selection : this.cuisine,
+        region: option === "region" ? selection : this.region,
+        price: option === "price" ? selection : this.price,
+      });
+    },
+    filterCuisineOptions() {
+      filter = $(".cuisine-toggle input").val().toUpperCase();
+      a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
+      for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
         }
+      }
     },
-    computed: {
-        cuisinePlaceholder() {
-            return (this.cuisine == 'All') ? 'Search Cuisine...' : this.cuisine
-        },
-        regionPlaceholder() {
-            return (this.region == 'All') ? 'Search Region...' : this.region
+    filterRegionOptions() {
+      filter = $(".location-toggle input").val().toUpperCase();
+      a = $(".location-toggle .dropdown-content.regionList a").get();
+      for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
         }
+      }
     },
-    async created() {
-        fetch('https://v2-api.sheety.co/1d451b7406988a7d18b381d137c82628/theRadList/info')
-            .then(stream => stream.json())
-            .then(data => {
-                this.cuisineOptions = data.info.map(a => a.cuisine).filter(a => a != undefined);
-                this.regionOptions = data.info.map(a => a.region).filter(a => a != undefined);
-                this.typeOptions = data.info.map(a => a.types).filter(a => a != undefined);
-                this.priceOptions = data.info.map(a => a.price).filter(a => a != undefined);
-            })
-            .catch(error => console.error(error))
+    getOptions(filter) {
+      let html = "";
+      this[filter + "Options"].forEach((el) => {
+        html += `<a href="#/" :class="{ active: (${filter}=='${el}') }" @click="filter('${filter}','${el}')"><span>${el}</span></a>`;
+      });
+      return html;
     },
-    methods: {
-        changeSize(size) {
-            this.$emit("filter-the-list", {
-                view: size,
-                type: this.type,
-                cuisine: this.cuisine,
-                region: this.region,
-                price: this.price
-            })
-        },
-        filter(option, selection) {
-            this.$emit("filter-the-list", {
-                view: this.view,
-                type: (option === 'type') ? selection : this.type,
-                cuisine: (option === 'cuisine') ? selection : this.cuisine,
-                region: (option === 'region') ? selection : this.region,
-                price: (option === 'price') ? selection : this.price
-            })
-        },
-        filterCuisineOptions() {
-            filter = $(".cuisine-toggle input").val().toUpperCase();
-            a = $(".cuisine-toggle .dropdown-content.cuisineList a").get();
-            for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        },
-        filterRegionOptions() {
-            filter = $(".location-toggle input").val().toUpperCase();
-            a = $(".location-toggle .dropdown-content.regionList a").get();
-            for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        },
-        getOptions(filter) {
-            let html = "";
-            this[filter + "Options"].forEach(el => {
-                html += `<a href="#/" :class="{ active: (${filter}=='${el}') }" @click="filter('${filter}','${el}')"><span>${el}</span></a>`;
-            });
-            return html;
-        }
-    },
-    template: `<div id="filters">
+  },
+  template: `<div id="filters">
         <div id="mobile-filters">
             <div id="sticky-anchor"></div>
             <div id="sticky-phantom">&nbsp; &nbsp;</div>
@@ -102,12 +112,7 @@ Vue.component('filters', {
                     </div>
 
                     <div class="nav-actions type-filter">
-                        <a href="#/" :class="{ active: (type=='All') }" @click="filterType('All')"><span>All</span></a>
-                        <a href="#/" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')"><span>Restaurant</span></a>
-                        <a href="#/" :class="{ active: (type=='Bar') }" @click="filterType('Bar')"><span>Bar</span></a>
-                        <a href="#/" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')"><span>Cafe</span></a>
-                        <a href="#/" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')"><span>Fast Food</span></a>
-                        <a href="#/" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')"><span>Dessert</span></a>
+                        <a v-for="item in typeOptions" href="#/" :class="{ active: (type==item) }" @click="filter('type', item)"><span>{{item}}</span></a>
                     </div>
                     <div class="nav-actions cuisine-filter">
                         <input type="text" 
@@ -115,46 +120,17 @@ Vue.component('filters', {
                             @keyup="filterCuisineOptions"
                             @focus="showCuisineList=true" @focusout="setTimeout(() => { showCuisineList=false }, 250);">
                         <div class="dropdown-content cuisineList" v-show="showCuisineList">
-                            <a href="#/" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
-                            <a href="#/" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
-                            <a href="#/" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>
-                            <a href="#/" :class="{active: (cuisine=='Bar Food')}" @click="filterCuisine('Bar Food')">Bar Food</a>
-                            <a href="#/" :class="{active: (cuisine=='Breakfast and Brunch')}" @click="filterCuisine('Breakfast and Brunch')">Breakfast and Brunch</a>
-                            <a href="#/" :class="{active: (cuisine=='French')}" @click="filterCuisine('French')">French</a>
-                            <a href="#/" :class="{active: (cuisine=='Halal')}" @click="filterCuisine('Halal')">Halal</a>
-                            <a href="#/" :class="{active: (cuisine=='Indian')}" @click="filterCuisine('Indian')">Indian</a>
-                            <a href="#/" :class="{active: (cuisine=='Italian')}" @click="filterCuisine('Italian')">Italian</a>
-                            <a href="#/" :class="{active: (cuisine=='Latin American')}" @click="filterCuisine('Latin American')">Latin American</a>
-                            <a href="#/" :class="{active: (cuisine=='Mediterranean')}" @click="filterCuisine('Mediterranean')">Mediterranean</a>
-                            <a href="#/" :class="{active: (cuisine=='Middle Eastern')}" @click="filterCuisine('Middle Eastern')">Middle Eastern</a>
+                            <a v-for="item in cuisineOptions" href="#/" :class="{ active: (cuisine==item) }" @click="filter('cuisine', item)"><span>{{item}}</span></a>
                         </div>
                     </div>
                     <div class="nav-actions price-filter">
-                        <a href="#/" :class="{active:(price=='All')}" @click="filterPrice('All')"><span>All</span></a>
-                        <a href="#/" :class="{active:(price=='$')}" @click="filterPrice('$')"><span>$</span></a>
-                        <a href="#/" :class="{active:(price=='$$')}" @click="filterPrice('$$')"><span>$$</span></a>
-                        <a href="#/" :class="{active:(price=='$$$')}" @click="filterPrice('$$$')"><span>$$$</span></a>
-                        <a href="#/" :class="{active:(price=='$$$$')}" @click="filterPrice('$$$$')"><span>$$$$</span></a>
-                        <a href="#/" :class="{active:(price=='$$$$$')}" @click="filterPrice('$$$$$')"><span>$$$$$</span></a>
+                        <a v-for="item in priceOptions" href="#/" :class="{ active: (price==item) }" @click="filter('price', item)"><span>{{item}}</span></a>
                     </div>
                     <div class="nav-actions location-filter">
                         <input type="text" :placeholder="regionPlaceholder" @keyup="filterRegionOptions"
                             @focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
                         <div class="dropdown-content regionList" v-show="showRegionList">
-                            <a href="#/" :class="{active: (region=='All')}" @click="filterRegion('All')">All</a>
-                            <a href="#/" :class="{active: (region=='Jasper Ave')}" @click="filterRegion('Jasper Ave')">Jasper Ave</a>
-                            <a href="#/" :class="{active: (region=='Whyte Ave')}" @click="filterRegion('Whyte Ave')">Whyte Ave</a>
-                            <a href="#/" :class="{active: (region=='Ice District')}" @click="filterRegion('Ice District')">Ice District</a>
-                            <a href="#/" :class="{active: (region=='Downtown')}" @click="filterRegion('Downtown')">Downtown</a>
-                            <a href="#/" :class="{active: (region=='Windermere')}" @click="filterRegion('Windermere')">Windermere</a>
-                            <a href="#/" :class="{active: (region=='SummerSide')}" @click="filterRegion('SummerSide')">SummerSide</a>
-                            <a href="#/" :class="{active: (region=='South Gateway')}" @click="filterRegion('South Gateway')">South Gateway</a>
-                            <a href="#/" :class="{active: (region=='Belgravia')}" @click="filterRegion('Belgravia')">Belgravia</a>
-                            <a href="#/" :class="{active: (region=='Bonnie Doon')}" @click="filterRegion('Bonnie Doon')">Bonnie Doon</a>
-                            <a href="#/" :class="{active: (region=='Mill Creek')}" @click="filterRegion('Mill Creek')">Mill Creek</a>
-                            <a href="#/" :class="{active: (region=='Mayfield')}" @click="filterRegion('Mayfield')">Mayfield</a>
-                            <a href="#/" :class="{active: (region=='Garneau')}" @click="filterRegion('Garneau')">Garneau</a>
-                            <a href="#/" :class="{active: (region=='Millwoods')}" @click="filterRegion('Millwoods')">Millwoods</a>
+                            <a v-for="item in regionOptions" href="#/" :class="{ active: (region==item) }" @click="filter('region', item)"><span>{{item}}</span></a>
                         </div>
                     </div>
                 </div>
@@ -177,24 +153,7 @@ Vue.component('filters', {
             <div class="type-filter">
                 <div class="title">Sort By Type</div>
                 <div class="filter-links type-toggle">
-                    <a href="#/" :class="{ active: (type=='All') }" @click="filterType('All')">
-                        <span>All</span>
-                    </a>
-                    <a href="#/" :class="{ active: (type=='Restaurant') }" @click="filterType('Restaurant')">
-                        <span>Restaurant</span>
-                    </a>
-                    <a href="#/" :class="{ active: (type=='Bar') }" @click="filterType('Bar')">
-                        <span>Bar</span>
-                    </a>
-                    <a href="#/" :class="{ active: (type=='Cafe') }" @click="filterType('Cafe')">
-                        <span>Cafe</span>
-                    </a>
-                    <a href="#/" :class="{ active: (type=='Fast Food') }" @click="filterType('Fast Food')">
-                        <span>Fast Food</span>
-                    </a>
-                    <a href="#/" :class="{ active: (type=='Dessert') }" @click="filterType('Dessert')">
-                        <span>Dessert</span>
-                    </a>
+                    <a v-for="item in typeOptions" href="#/" :class="{ active: (type==item) }" @click="filter('type', item)"><span>{{item}}</span></a>
                 </div>
             </div>
             <div class="cuisine-filter">
@@ -205,42 +164,14 @@ Vue.component('filters', {
                         @keyup="filterCuisineOptions"
                         @focus="showCuisineList=true" @focusout="setTimeout(() => { showCuisineList=false }, 250);">
                     <div class="dropdown-content cuisineList" v-show="showCuisineList">
-                        <a href="#/" :class="{active: (cuisine=='All')}" @click="filterCuisine('All')">All</a>
-                        <a href="#/" :class="{active: (cuisine=='Asian')}" @click="filterCuisine('Asian')">Asian</a>
-                        <a href="#/" :class="{active: (cuisine=='Baked Goods')}" @click="filterCuisine('Baked Goods')">Baked Goods</a>
-                        <a href="#/" :class="{active: (cuisine=='Bar Food')}" @click="filterCuisine('Bar Food')">Bar Food</a>
-                        <a href="#/" :class="{active: (cuisine=='Breakfast and Brunch')}" @click="filterCuisine('Breakfast and Brunch')">Breakfast and Brunch</a>
-                        <a href="#/" :class="{active: (cuisine=='French')}" @click="filterCuisine('French')">French</a>
-                        <a href="#/" :class="{active: (cuisine=='Halal')}" @click="filterCuisine('Halal')">Halal</a>
-                        <a href="#/" :class="{active: (cuisine=='Indian')}" @click="filterCuisine('Indian')">Indian</a>
-                        <a href="#/" :class="{active: (cuisine=='Italian')}" @click="filterCuisine('Italian')">Italian</a>
-                        <a href="#/" :class="{active: (cuisine=='Latin American')}" @click="filterCuisine('Latin American')">Latin American</a>
-                        <a href="#/" :class="{active: (cuisine=='Mediterranean')}" @click="filterCuisine('Mediterranean')">Mediterranean</a>
-                        <a href="#/" :class="{active: (cuisine=='Middle Eastern')}" @click="filterCuisine('Middle Eastern')">Middle Eastern</a>
+                        <a v-for="item in cuisineOptions" href="#/" :class="{ active: (cuisine==item) }" @click="filter('cuisine', item)"><span>{{item}}</span></a>
                     </div>
                 </div>
             </div>
             <div class="price-filter">
                 <div class="title">Sort By Price</div>
                 <div class="filter-links price-toggle">
-                    <a href="#/" :class="{active:(price=='All')}" @click="filterPrice('All')">
-                        <span>All</span>
-                    </a>
-                    <a href="#/" :class="{active:(price=='$')}" @click="filterPrice('$')">
-                        <span>$</span>
-                    </a>
-                    <a href="#/" :class="{active:(price=='$$')}" @click="filterPrice('$$')">
-                        <span>$$</span>
-                    </a>
-                    <a href="#/" :class="{active:(price=='$$$')}" @click="filterPrice('$$$')">
-                        <span>$$$</span>
-                    </a>
-                    <a href="#/" :class="{active:(price=='$$$$')}" @click="filterPrice('$$$$')">
-                        <span>$$$$</span>
-                    </a>
-                    <a href="#/" :class="{active:(price=='$$$$$')}" @click="filterPrice('$$$$$')">
-                        <span>$$$$$</span>
-                    </a>
+                    <a v-for="item in priceOptions" href="#/" :class="{ active: (price==item) }" @click="filter('price', item)"><span>{{item}}</span></a>
                 </div>
             </div>
             <div class="location-filter">
@@ -251,23 +182,10 @@ Vue.component('filters', {
                         @keyup="filterRegionOptions"
                         @focus="showRegionList=true" @focusout="setTimeout(() => { showRegionList=false }, 250);">
                     <div class="dropdown-content regionList" v-show="showRegionList">
-                        <a href="#/" :class="{active: (region=='All')}" @click="filterRegion('All')">All</a>
-                        <a href="#/" :class="{active: (region=='Jasper Ave')}" @click="filterRegion('Jasper Ave')">Jasper Ave</a>
-                        <a href="#/" :class="{active: (region=='Whyte Ave')}" @click="filterRegion('Whyte Ave')">Whyte Ave</a>
-                        <a href="#/" :class="{active: (region=='Ice District')}" @click="filterRegion('Ice District')">Ice District</a>
-                        <a href="#/" :class="{active: (region=='Downtown')}" @click="filterRegion('Downtown')">Downtown</a>
-                        <a href="#/" :class="{active: (region=='Windermere')}" @click="filterRegion('Windermere')">Windermere</a>
-                        <a href="#/" :class="{active: (region=='SummerSide')}" @click="filterRegion('SummerSide')">SummerSide</a>
-                        <a href="#/" :class="{active: (region=='South Gateway')}" @click="filterRegion('South Gateway')">South Gateway</a>
-                        <a href="#/" :class="{active: (region=='Belgravia')}" @click="filterRegion('Belgravia')">Belgravia</a>
-                        <a href="#/" :class="{active: (region=='Bonnie Doon')}" @click="filterRegion('Bonnie Doon')">Bonnie Doon</a>
-                        <a href="#/" :class="{active: (region=='Mill Creek')}" @click="filterRegion('Mill Creek')">Mill Creek</a>
-                        <a href="#/" :class="{active: (region=='Mayfield')}" @click="filterRegion('Mayfield')">Mayfield</a>
-                        <a href="#/" :class="{active: (region=='Garneau')}" @click="filterRegion('Garneau')">Garneau</a>
-                        <a href="#/" :class="{active: (region=='Millwoods')}" @click="filterRegion('Millwoods')">Millwoods</a>
+                        <a v-for="item in regionOptions" href="#/" :class="{ active: (region==item) }" @click="filter('region', item)"><span>{{item}}</span></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>`
-})
+    </div>`,
+});
