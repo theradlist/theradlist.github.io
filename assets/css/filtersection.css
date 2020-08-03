@@ -22,6 +22,7 @@
     background-color: var(--bglightgray);
     border: 1px solid var(--lightgray);
     z-index: 1;
+    width: 100%;
 }
 
 /* Links inside the dropdown */
@@ -60,7 +61,7 @@
 
 #filters {
     width: 16.25%;
-    max-width: 180px;
+    max-width: 163px;
     /* height: calc(100vh - 110px); */
     min-height: 560px;
     float: left;

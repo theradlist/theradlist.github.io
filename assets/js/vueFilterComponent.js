@@ -27,16 +27,16 @@ Vue.component("filters", {
       .then((data) => {
         this.cuisineOptions = data.info
           .map((a) => a.cuisine)
-          .filter((a) => a != undefined);
+          .filter((a) => a != undefined && a != "");
         this.regionOptions = data.info
           .map((a) => a.region)
-          .filter((a) => a != undefined);
+          .filter((a) => a != undefined && a != "");
         this.typeOptions = data.info
           .map((a) => a.types)
-          .filter((a) => a != undefined);
+          .filter((a) => a != undefined && a != "");
         this.priceOptions = data.info
           .map((a) => a.price)
-          .filter((a) => a != undefined);
+          .filter((a) => a != undefined && a != "");
       })
       .catch((error) => console.error(error));
   },
